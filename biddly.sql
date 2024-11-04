@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2024 a las 10:21:33
+-- Tiempo de generación: 04-11-2024 a las 14:13:41
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -42,7 +42,7 @@ CREATE TABLE `categorias` (
 CREATE TABLE `favoritos` (
   `ID` int(11) NOT NULL,
   `producto` int(11) NOT NULL,
-  `usuario` int(11) NOT NULL
+  `usuario` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -54,7 +54,7 @@ CREATE TABLE `favoritos` (
 CREATE TABLE `ofertas` (
   `ID` int(11) NOT NULL,
   `producto` int(11) NOT NULL,
-  `comprador` int(11) NOT NULL,
+  `comprador` varchar(255) NOT NULL,
   `precio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -71,7 +71,8 @@ CREATE TABLE `productos` (
   `Categoria` int(11) NOT NULL,
   `Precio` int(11) NOT NULL,
   `Precio venta inmediata` int(11) NOT NULL,
-  `Fecha fin subasta` datetime NOT NULL
+  `Fecha fin subasta` datetime NOT NULL,
+  `vendedor` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -103,19 +104,25 @@ ALTER TABLE `categorias`
 -- Indices de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `favoritos_productos` (`producto`),
+  ADD KEY `favoritos_usuarios` (`usuario`);
 
 --
 -- Indices de la tabla `ofertas`
 --
 ALTER TABLE `ofertas`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ofertas_productos` (`producto`),
+  ADD KEY `ofertas_comprador` (`comprador`);
 
 --
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `productos_categoria` (`Categoria`),
+  ADD KEY `productos_usuario` (`vendedor`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -150,6 +157,31 @@ ALTER TABLE `ofertas`
 --
 ALTER TABLE `productos`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD CONSTRAINT `favoritos_productos` FOREIGN KEY (`producto`) REFERENCES `productos` (`ID`),
+  ADD CONSTRAINT `favoritos_usuarios` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`Nombre`);
+
+--
+-- Filtros para la tabla `ofertas`
+--
+ALTER TABLE `ofertas`
+  ADD CONSTRAINT `ofertas_comprador` FOREIGN KEY (`comprador`) REFERENCES `usuarios` (`Nombre`),
+  ADD CONSTRAINT `ofertas_productos` FOREIGN KEY (`producto`) REFERENCES `productos` (`ID`);
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_categoria` FOREIGN KEY (`Categoria`) REFERENCES `categorias` (`ID`),
+  ADD CONSTRAINT `productos_usuario` FOREIGN KEY (`vendedor`) REFERENCES `usuarios` (`Nombre`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
