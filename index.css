@@ -1,0 +1,56 @@
+body{
+    margin: 0px;
+}
+.logo{
+    width: 200px;
+}
+.log{
+    justify-content: end;
+    width: 100px;
+    margin: 0px;
+}
+header{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+.selected{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 12px;
+}
+.buscador{
+    margin: 0 200px;
+    padding: 8px;
+    flex: 1;
+    font-size: 16px;
+    border-radius: 10px;
+    border: solid 1px black;
+}
+a{
+    text-decoration: none;
+}
+nav{
+    background-color: #F67B21;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    margin: 5px 10px;
+}
+.container{
+    display: flex;
+    width: 30%;
+    height: 25%;
+    justify-content: center;
+    align-items: center;
+    border:solid 1px black;
+}
+.seleccionComunidad{
+    background-color: #F67B21;
+    border-radius: 10px;
+    padding: 0px 4px;
+}
