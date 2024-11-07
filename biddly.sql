@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2024 a las 12:50:56
+-- Tiempo de generación: 07-11-2024 a las 09:53:12
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -61,12 +61,14 @@ CREATE TABLE `ofertas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ofertasespeciales`
+-- Estructura de tabla para la tabla `pedidos`
 --
 
-CREATE TABLE `ofertasespeciales` (
-  `id` int(11) NOT NULL,
-  `idProducto` int(11) NOT NULL
+CREATE TABLE `pedidos` (
+  `idPedido` int(11) NOT NULL,
+  `idProducto` int(11) NOT NULL,
+  `idUsuario` varchar(255) NOT NULL,
+  `FechaEntrega` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -84,7 +86,8 @@ CREATE TABLE `productos` (
   `URLImagen` varchar(255) NOT NULL,
   `Precio venta inmediata` int(11) NOT NULL,
   `Fecha fin subasta` datetime NOT NULL,
-  `vendedor` varchar(255) NOT NULL
+  `Vendedor` varchar(255) NOT NULL,
+  `NumeroLikes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -99,6 +102,7 @@ CREATE TABLE `usuarios` (
   `Correo electronico` varchar(255) NOT NULL,
   `Telefono` int(11) NOT NULL,
   `DNI` int(11) NOT NULL,
+  `Direccion` varchar(255) NOT NULL,
   `Cuenta bancaria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -129,10 +133,11 @@ ALTER TABLE `ofertas`
   ADD KEY `ofertas_comprador` (`comprador`);
 
 --
--- Indices de la tabla `ofertasespeciales`
+-- Indices de la tabla `pedidos`
 --
-ALTER TABLE `ofertasespeciales`
-  ADD PRIMARY KEY (`id`),
+ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`idPedido`),
+  ADD KEY `clave_foranea_usuario` (`idUsuario`),
   ADD KEY `clave_foranea_producto` (`idProducto`);
 
 --
@@ -141,7 +146,7 @@ ALTER TABLE `ofertasespeciales`
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `productos_categoria` (`Categoria`),
-  ADD KEY `productos_usuario` (`vendedor`);
+  ADD KEY `productos_usuario` (`Vendedor`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -172,10 +177,10 @@ ALTER TABLE `ofertas`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `ofertasespeciales`
+-- AUTO_INCREMENT de la tabla `pedidos`
 --
-ALTER TABLE `ofertasespeciales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pedidos`
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -202,10 +207,11 @@ ALTER TABLE `ofertas`
   ADD CONSTRAINT `ofertas_productos` FOREIGN KEY (`producto`) REFERENCES `productos` (`ID`);
 
 --
--- Filtros para la tabla `ofertasespeciales`
+-- Filtros para la tabla `pedidos`
 --
-ALTER TABLE `ofertasespeciales`
-  ADD CONSTRAINT `clave_foranea_producto` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`ID`);
+ALTER TABLE `pedidos`
+  ADD CONSTRAINT `clave_foranea_producto` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`ID`),
+  ADD CONSTRAINT `clave_foranea_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`Nombre`);
 
 --
 -- Filtros para la tabla `productos`
