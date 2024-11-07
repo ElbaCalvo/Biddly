@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    width: 200px;
+}
+
+.topBar {
+    display: flex;
+    padding: 10px 20px;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.orangeLine {
+    height: 5px;
+    background-color: #F67B21;
+    width: 100%;
+}

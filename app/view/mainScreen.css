@@ -1,47 +1,66 @@
-body{
+body {
     margin: 0px;
 }
-.logo{
+
+.logo {
     width: 200px;
 }
-.log{
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.topBarButtons {
     justify-content: end;
     width: 100px;
     margin: 0px;
 }
-header{
+
+.topBar {
     display: flex;
     align-items: center;
     padding: 10px 20px;
 }
-.selected{
+
+.selected {
     background-color: white;
     border-radius: 10px;
     padding: 5px 12px;
+    font-weight: bold;
 }
-.buscador{
+
+.searchBar {
     margin: 0 200px;
     padding: 8px;
     flex: 1;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: solid 1px black;
 }
-a{
+
+a {
     text-decoration: none;
+    color: black;
 }
-nav{
+
+nav {
     background-color: #F67B21;
     display: flex;
     flex-direction: row;
     list-style: none;
     justify-content: center;
     align-items: center;
+    font-family: Arial, sans-serif;
 }
-li{
+
+li {
     margin: 5px 10px;
 }
-.container{
+
+.contentContainer {
     display: flex;
     width: 30%;
     height: 25%;
@@ -49,7 +68,8 @@ li{
     align-items: center;
     border:solid 1px black;
 }
-.seleccionComunidad{
+
+.comunitySelection {
     background-color: #F67B21;
     border-radius: 10px;
     padding: 0px 4px;
