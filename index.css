@@ -1,24 +1,30 @@
 body{
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif
 }
+
 .logo{
     width: 200px;
 }
+
 .log{
     justify-content: end;
     width: 100px;
     margin: 0px;
 }
+
 header{
     display: flex;
     align-items: center;
     padding: 10px 20px;
 }
+
 .selected{
     background-color: white;
     border-radius: 10px;
     padding: 5px 12px;
 }
+
 .buscador{
     margin: 0 200px;
     padding: 8px;
@@ -27,9 +33,11 @@ header{
     border-radius: 10px;
     border: solid 1px black;
 }
+
 a{
     text-decoration: none;
 }
+
 nav{
     background-color: #F67B21;
     display: flex;
@@ -38,9 +46,13 @@ nav{
     justify-content: center;
     align-items: center;
 }
+
 li{
     margin: 5px 10px;
+    color: black;
+    font-weight: bold;
 }
+
 .container{
     display: flex;
     width: 30%;
@@ -49,8 +61,80 @@ li{
     align-items: center;
     border:solid 1px black;
 }
+
 .seleccionComunidad{
     background-color: #F67B21;
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 0px 4px;
+}
+
+/* pruebaTarjeta */
+
+.tarjeta{
+    display: flex;
+    width: 320px;
+    background-color: #FFEFE6;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: #333;
+    margin: 50px auto;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.favoritosComunidad {
+    background-color: #FF813F;
+    color: #FFF;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 2px solid #0070E0;
+}
+
+.precio {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+.nombreProducto {
+    font-weight: bold;
+    color: #333;
+    margin: 4px 0;
+}
+
+.botonPuja {
+    font-size: 1em;
+    background-color: #FF813F;
+    color: #FFF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer; /*para que se vea un dedo*/
+    margin: 8px 0;
+    width: 100%;
+}
+
+.descripcion {
+    background-color: #FFF;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.tiempo {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 8px;
 }
