@@ -16,23 +16,26 @@
 
     <div class="orangeLine"></div>
 
-    <!-- Contenedor de inicio de sesión -->
-    <div class="signInContainer">
-    <a href="mainScreen.php"><div class="closeButton">✕</div></a>
-        <form class="signInForm">
-            <label>Correo electrónico</label>
-            <input type="email" id="email" placeholder="sonia@gmail.com" required>
+    <div class="mainContent">
+        <!-- Contenedor de inicio de sesión -->
+        <div class="signInContainer">
+        <a href="mainScreen.php"><div class="closeButton">✕</div></a>
+            <form class="signInForm">
+                <label>Correo electrónico</label>
+                <input type="email" id="email" placeholder="sonia@gmail.com" required>
 
-            <label>Contraseña</label>
-            <input type="password" id="password" placeholder="••••••••" required>
+                <label>Contraseña</label>
+                <input type="password" id="password" placeholder="••••••••" required>
 
-            <button type="submit" class="signInButton">Iniciar sesión</button>
+                <button type="submit" class="signInButton">Iniciar sesión</button>
 
-            <div class="registerLink">
-                <span>¿Ya tienes cuenta?</span> <a href="registerScreen.php">Regístrate</a>
-            </div>
-        </form>
+                <div class="registerLink">
+                    <span>¿Ya tienes cuenta?</span> <a href="registerScreen.php">Regístrate</a>
+                </div>
+            </form>
+        </div>
     </div>
-
 </body>
 </html>
+
+<?php include 'footer.php'; ?>

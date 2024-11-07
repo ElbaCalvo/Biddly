@@ -1,8 +1,30 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* El (html, body) se aplican tanto al html como al body para asegurar que ambos elementos ocupen toda
+la altura de la ventana y no tengan márgenes ni padding que puedan causar desplazamiento
+o espacio adicional*/
+
+html, body {
+    margin: 0; /* Elimina cualquier margen predeterminado del navegador */
+    padding: 0; /* Elimina cualquier padding predeterminado del navegador */
+    box-sizing: border-box; /* Hace que el ancho y alto de los elementos incluyan el padding y el borde */
     font-family: Arial, sans-serif;
+    height: 100%; /* Hace que el body ocupe el 100% del alto de la ventana */
+    overflow: hidden; /* Evita que la página se pueda desplazar */
+}
+
+/* El (body) se aplica solo al body para establecerlo como un contenedor flex y organizar su contenido en una columna,
+asegurando que ocupe toda la altura de la ventana*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
@@ -12,6 +34,7 @@ body {
 .topBar {
     display: flex;
     padding: 10px 20px;
+    width: 100%;
 }
 
 .logoContainer {
@@ -37,9 +60,8 @@ body {
     border-radius: 13px;
     border: 1px solid #4e4e4e;
     background-color: #FFE7D9;
-    margin: 50px auto;
-    margin-top: 125px;
     position: relative;
+    margin: 0;
 }
 
 

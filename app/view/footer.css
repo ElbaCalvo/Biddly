@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    background-color: #f1f1f1;
+    border-top: 1px solid #878787;
+    padding: 10px 30px 20px 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 100%;
+}
+
+.footerLogo .logoBlack {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 10px;
+}
+
+.footerText {
+    color: #333;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.footerIcons {
+    display: flex;
+}
+
+.footerIcons img {
+    width: 30px; 
+    height: 30px;
+}
