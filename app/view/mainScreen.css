@@ -128,7 +128,7 @@ li {
 }
 
 .bidButton:hover {
-    background-color: #e96c1e;
+    background-color: #F67B21;
 }
 
 .description {
@@ -150,4 +150,11 @@ li {
     font-size: 0.9em;
     color: #666;
     margin-top: 8px;
+}
+
+.orangeLine{
+    background-color: #F67B21;
+    height: 3px;
+    width: 80%;
+    margin: auto;
 }
