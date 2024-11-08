@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .logo {
@@ -58,19 +59,91 @@ nav {
 
 li {
     margin: 5px 10px;
-}
-
-.contentContainer {
-    display: flex;
-    width: 30%;
-    height: 25%;
-    justify-content: center;
-    align-items: center;
-    border:solid 1px black;
+    color: black;
+    font-weight: bold;
 }
 
 .comunitySelection {
     background-color: #F67B21;
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 0px 4px;
+}
+
+/* Tarjeta de "Favoritos de la comunidad" */
+.contentContainer{
+    display: flex;
+    width: 320px;
+    background-color: #FFEFE6;
+    border: 1px solid #b8b8b8;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3); /* Sombra más visible */
+    color: #333;
+    margin: 50px auto;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.comunityFavorites {
+    background-color: #FF813F;
+    color: #FFF;
+    padding: 4px 8px;
+    border: 1px solid #818181;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.contentContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 2px solid #0166ca;
+}
+
+.price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+.productName {
+    font-weight: bold;
+    color: #333;
+    margin: 4px 0;
+}
+
+.bidButton {
+    font-size: 1em;
+    background-color: #FF813F;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer; /*para que se vea un dedo*/
+    margin: 8px 0;
+    width: 100%;
+}
+
+.description {
+    background-color: #FFF;
+    padding: 8px;
+    border: 1px solid #b8b8b8;
+    border-radius: 4px;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.description p {
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.bidTime {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 8px;
 }

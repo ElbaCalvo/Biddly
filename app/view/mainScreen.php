@@ -26,11 +26,20 @@
     </nav>
 
     <div class="contentContainer">
-        <div class="comunitySelection">
-            <p>Seleccion de la comunidad</p>
+        <div class="comunityFavorites">Favoritos de la comunidad</div>
+        <img src="../../img/mando.png" alt="Xbox Elite Controller">
+        <div class="price">50€</div>
+        <div class="productName">XBOX ELITE 2 Core Edition</div>
+        <button class="bidButton">Pujar</button>
+        <div class="description">
+            <strong>Descripción</strong><br>
+            <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
         </div>
-        <img src="../../img/mando.png" alt="">
+        <div class="bidTime">
+            3 Dec. 2024, 08:41
+        </div>
     </div>
-
 </body>
 </html>
+
+<?php include 'footer.php'; ?>

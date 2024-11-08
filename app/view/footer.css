@@ -9,7 +9,7 @@ body {
     border-top: 1px solid #878787;
     padding: 10px 30px 20px 30px;
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Hace que el padding no afecte el tamaño del elemento*/
 }
 
 .footerContent {
