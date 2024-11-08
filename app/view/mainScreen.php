@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="mainScreen.css">
 </head>
+
 <body>
-    <header class="topBar">  
+    <header class="topBar">
         <div class="logoContainer">
             <a href="mainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
         </div>
@@ -17,29 +19,74 @@
         <a href="registerScreen.php"><img class="topBarButtons" src="../../img/register.png" alt=""></a>
     </header>
     <nav>
-        <a href=""><li class="selected">Todos</li></a>
-        <a href=""><li>Ropa</li></a>
-        <a href=""><li>Deporte</li></a>
-        <a href=""><li>Tecnología</li></a>
-        <a href=""><li>Mobiliario</li></a>
-        <a href=""><li>Vehículo</li></a>
+        <a href="">
+            <li class="selected">Todos</li>
+        </a>
+        <a href="">
+            <li>Ropa</li>
+        </a>
+        <a href="">
+            <li>Deporte</li>
+        </a>
+        <a href="">
+            <li>Tecnología</li>
+        </a>
+        <a href="">
+            <li>Mobiliario</li>
+        </a>
+        <a href="">
+            <li>Vehículo</li>
+        </a>
     </nav>
 
-    <div class="contentContainer">
-        <div class="comunityFavorites">Favoritos de la comunidad</div>
-        <img src="../../img/mando.png" alt="Xbox Elite Controller">
-        <div class="price">50€</div>
-        <div class="productName">XBOX ELITE 2 Core Edition</div>
-        <button class="bidButton">Pujar</button>
-        <div class="description">
-            <strong>Descripción</strong><br>
-            <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+    <div class="favoritesContainer">
+        <div class="contentContainer">
+            <div class="comunityFavorites">Favoritos de la comunidad</div>
+            <img src="../../img/mando.png" alt="Xbox Elite Controller">
+            <div class="price">50€</div>
+            <div class="productName">XBOX ELITE 2 Core Edition</div>
+            <button class="bidButton">Pujar</button>
+            <div class="description">
+                <strong>Descripción</strong><br>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+            </div>
+            <div class="bidTime">
+                3 Dec. 2024, 08:41
+            </div>
         </div>
-        <div class="bidTime">
-            3 Dec. 2024, 08:41
+
+        <div class="contentContainer">
+            <div class="comunityFavorites">Favoritos de la comunidad</div>
+            <img src="../../img/mando.png" alt="Xbox Elite Controller">
+            <div class="price">50€</div>
+            <div class="productName">XBOX ELITE 2 Core Edition</div>
+            <button class="bidButton">Pujar</button>
+            <div class="description">
+                <strong>Descripción</strong><br>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+            </div>
+            <div class="bidTime">
+                3 Dec. 2024, 08:41
+            </div>
+        </div>
+
+        <div class="contentContainer">
+            <div class="comunityFavorites">Favoritos de la comunidad</div>
+            <img src="../../img/mando.png" alt="Xbox Elite Controller">
+            <div class="price">50€</div>
+            <div class="productName">XBOX ELITE 2 Core Edition</div>
+            <button class="bidButton">Pujar</button>
+            <div class="description">
+                <strong>Descripción</strong><br>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+            </div>
+            <div class="bidTime">
+                3 Dec. 2024, 08:41
+            </div>
         </div>
     </div>
 </body>
+
 </html>
 
 <?php include 'footer.php'; ?>
