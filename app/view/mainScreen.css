@@ -120,6 +120,16 @@ li {
     margin: 4px 0;
 }
 
+.likeButton {
+    background-image: url("../../img/emptyHeart.png");
+    background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
+    background-position: center; /* Centra la imagen en el botón */
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border: none;
+}
+
 .bidButton {
     font-size: 1em;
     background-color: #FF813F;
