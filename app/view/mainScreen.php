@@ -42,7 +42,7 @@
         </a>
     </nav>
 
-    <!-- seccion de Favoritos -->
+    <!-- seccion de Favoritos (prueba para añadir ramaAngel) -->
     <div class="favoritesContainer">
         <div class="contentContainer">
             <div class="comunityFavorites">Favoritos de la comunidad</div>
