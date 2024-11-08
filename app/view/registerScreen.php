@@ -41,6 +41,11 @@
                 <input type="text" id="phone" placeholder="+34666666666" required>
 
                 <button type="submit" class="registerButton">Registrarse</button>
+
+                <div class="loginLink">
+                    <span>¿Ya tienes cuenta?</span> <a href="signInScreen.php">Inicia sesión</a>
+                </div>
+            </form>
             </form>
         </div>
     </div>

@@ -108,3 +108,16 @@ input {
 .registerButton:hover {
     background-color: #e65a00;
 }
+
+.loginLink {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.loginLink a {
+    color: #1300bd;
+    font-weight: bold;
+    text-decoration: underline;
+}

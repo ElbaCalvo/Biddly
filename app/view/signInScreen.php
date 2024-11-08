@@ -34,7 +34,7 @@
                 <button type="submit" class="signInButton">Iniciar sesión</button>
 
                 <div class="registerLink">
-                    <span>¿Ya tienes cuenta?</span> <a href="registerScreen.php">Regístrate</a>
+                    <span>¿No tienes cuenta?</span> <a href="registerScreen.php">Regístrate</a>
                 </div>
             </form>
         </div>
