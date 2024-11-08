@@ -70,7 +70,7 @@ li {
 }
 
 /* Tarjeta de "Favoritos de la comunidad" */
-.contentContainer{
+.contentContainer {
     display: flex;
     width: 320px;
     background-color: #FFEFE6;
@@ -79,9 +79,15 @@ li {
     padding: 16px;
     box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3); /* Sombra más visible */
     color: #333;
-    margin: 50px auto;
+    margin: 40px; /* Reduce el margen vertical entre filas */
     flex-direction: column;
     align-items: baseline;
+}
+
+.favoritesContainer {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center;
 }
 
 .comunityFavorites {
