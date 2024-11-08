@@ -20,8 +20,10 @@
         <a href="registerScreen.php"><img class="topBarButtons" src="../../img/register.png" alt=""></a>
     </header>
 
+    <div class="orangeLine"></div>
+
     <!-- navegacion por Categorias -->
-    <nav>
+    <!-- <nav>
         <a href="">
             <li class="selected">Todos</li>
         </a>
@@ -40,12 +42,13 @@
         <a href="">
             <li>Vehículo</li>
         </a>
-    </nav>
+    </nav> -->
 
     <!-- seccion de Favoritos -->
+    <div class="comunityFavorites">Favoritos de la comunidad</div>
+
     <div class="favoritesContainer">
         <div class="contentContainer">
-            <div class="comunityFavorites">Favoritos de la comunidad</div>
             <img src="../../img/mando.png" alt="Xbox Elite Controller">
             <div class="price">50€</div>
             <div class="productName">XBOX ELITE 2 Core Edition</div>
@@ -61,7 +64,6 @@
         </div>
 
         <div class="contentContainer">
-            <div class="comunityFavorites">Favoritos de la comunidad</div>
             <img src="../../img/mando.png" alt="Xbox Elite Controller">
             <div class="price">50€</div>
             <div class="productName">XBOX ELITE 2 Core Edition</div>
@@ -77,7 +79,6 @@
         </div>
 
         <div class="contentContainer">
-            <div class="comunityFavorites">Favoritos de la comunidad</div>
             <img src="../../img/mando.png" alt="Xbox Elite Controller">
             <div class="price">50€</div>
             <div class="productName">XBOX ELITE 2 Core Edition</div>
@@ -94,7 +95,44 @@
     </div>
 
     <!-- Barra naranja de separacion -->
-    <div class="orangeLine"></div>
+    <div class="orangeLine2"></div>
+
+    <div class="comunityFavorites">Categorias</div>
+
+    <!-- Categorías -->
+    <div class="malla">
+        <div class="contentContainer">
+            <img src="../../img/mando.png" alt="Xbox Elite Controller">
+            <div class="cat">MODA</div>
+        </div>
+        <div class="contentContainer">
+            <img src="../../img/mando.png" alt="Xbox Elite Controller">
+            <div class="cat">MODA</div>
+        </div>
+        <div class="contentContainer">
+            <img src="../../img/mando.png" alt="Xbox Elite Controller">
+            <div class="cat">MODA</div>
+        </div>
+        <div class="contentContainer">
+            <img src="../../img/mando.png" alt="Xbox Elite Controller">
+            <div class="cat">MODA</div>
+        </div>
+        <div class="contentContainer">
+            <img src="../../img/mando.png" alt="Xbox Elite Controller">
+            <div class="cat">MODA</div>
+        </div>
+    </div>
+    <!-- <div class="contentContainer">
+        <img src="../../img/mando.png" alt="Xbox Elite Controller">
+        <div class="price">50€</div>
+        <div class="productName">XBOX ELITE 2 Core Edition</div>
+        <button class="likeButton"></button>
+        <button class="bidButton">Pujar</button>
+        <div class="bidTime">
+            3 Dec. 2024, 08:41
+        </div>
+    </div> -->
+
 </body>
 
 </html>

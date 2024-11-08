@@ -1,176 +1,200 @@
 body {
-    margin: 0px;
-    font-family: Arial, Helvetica, sans-serif
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .logo {
-    width: 200px;
+  width: 200px;
 }
 
 .logoContainer {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 10px;
-    padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .topBarButtons {
-    justify-content: end;
-    width: 100px;
-    margin: 0px;
+  justify-content: end;
+  width: 100px;
+  margin: 0px;
 }
 
 .topBar {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .selected {
-    background-color: white;
-    border-radius: 10px;
-    padding: 5px 12px;
-    font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px 12px;
+  font-weight: bold;
 }
 
 .searchBar {
-    margin: 0 200px;
-    padding: 8px;
-    flex: 1;
-    font-size: 16px;
-    border-radius: 12px;
-    border: solid 1px black;
+  margin: 0 200px;
+  padding: 8px;
+  flex: 1;
+  font-size: 16px;
+  border-radius: 12px;
+  border: solid 1px black;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 nav {
-    background-color: #F67B21;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
+  background-color: #f67b21;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
 }
 
 li {
-    margin: 5px 10px;
-    color: black;
-    font-weight: bold;
-}
-
-.comunitySelection {
-    background-color: #F67B21;
-    border-radius: 4px;
-    padding: 0px 4px;
+  margin: 5px 10px;
+  color: black;
+  font-weight: bold;
 }
 
 /* Tarjeta de "Favoritos de la comunidad" */
 .contentContainer {
-    display: flex;
-    width: 320px;
-    background-color: #FFEFE6;
-    border: 1px solid #b8b8b8;
-    border-radius: 10px;
-    padding: 16px;
-    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3); /* Sombra más visible */
-    color: #333;
-    margin: 40px; /* Reduce el margen vertical entre filas */
-    flex-direction: column;
-    align-items: baseline;
+  display: flex;
+  width: 320px;
+  background-color: #ffefe6;
+  border: 1px solid #b8b8b8;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3); /* Sombra más visible */
+  color: #333;
+  margin: 40px; /* Reduce el margen vertical entre filas */
+  flex-direction: column;
+  align-items: baseline;
 }
 
 .favoritesContainer {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente los elementos */
-    align-items: center;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center;
 }
 
 .comunityFavorites {
-    background-color: #FF813F;
-    color: #FFF;
-    padding: 4px 8px;
-    border: 1px solid #818181;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-bottom: 8px;
+  font-size: 1.8em;
+  text-decoration: wavy;
+  background-color: #ff813f;
+  color: #fff;
+  padding: 4px 8px;
+  border: 1px solid #818181;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 30px auto;
 }
 
 .contentContainer img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    border: 2px solid #0166ca;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 2px solid #a8a8a8;
 }
 
 .price {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #333;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+}
+
+.cat {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  margin: auto;
 }
 
 .productName {
-    font-weight: bold;
-    color: #333;
-    margin: 4px 0;
+  font-weight: bold;
+  color: #333;
+  margin: 4px 0;
 }
 
 .likeButton {
-    background-image: url("../../img/emptyHeart.png");
-    background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
-    background-position: center; /* Centra la imagen en el botón */
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    border: none;
+  background-image: url("../../img/emptyHeart.png");
+  background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
+  background-position: center; /* Centra la imagen en el botón */
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
 }
 
 .bidButton {
-    font-size: 1em;
-    background-color: #FF813F;
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer; /*para que se vea un dedo*/
-    margin: 8px 0;
-    width: 100%;
+  font-size: 1em;
+  background-color: #ff813f;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer; /*para que se vea un dedo*/
+  margin: 8px 0;
+  width: 100%;
+}
+
+.favoritesContainer .contentContainer {
+  border: groove 4px #f67b21;
 }
 
 .bidButton:hover {
-    background-color: #F67B21;
+  background-color: #f67b21;
 }
 
 .description {
-    background-color: #FFF;
-    padding: 8px;
-    border: 1px solid #b8b8b8;
-    border-radius: 4px;
-    border-radius: 10px;
-    margin-top: 8px;
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
+  border-radius: 10px;
+  margin-top: 8px;
 }
 
 .description p {
-    margin-top: 8px;
-    margin-bottom: 2px;
-    font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  font-size: 14px;
 }
 
 .bidTime {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 8px;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 8px;
 }
 
-.orangeLine{
-    background-color: #F67B21;
-    height: 3px;
-    width: 80%;
+.orangeLine2 {
+  background-color: #f67b21;
+  min-height: 3px;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 50px;
+}
+.orangeLine {
+  min-height: 5px;
+  background-color: #f67b21;
+  width: 100%;
+}
+
+.malla{
+    width: 100%;
+    margin: auto auto 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.malla .contentContainer{
     margin: auto;
 }
