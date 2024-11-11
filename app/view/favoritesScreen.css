@@ -55,6 +55,10 @@ body {
   border-radius: 12px;
   border: solid 1px black;
 }
+.order:hover{
+  outline: solid 2px black;
+  cursor: pointer; 
+}
 .contentContainer {
     display: flex;
     width: 920px;
