@@ -1,0 +1,182 @@
+html, body {
+    margin: 0; /* Elimina cualquier margen predeterminado del navegador */
+    padding: 0; /* Elimina cualquier padding predeterminado del navegador */
+    box-sizing: border-box; /* Hace que el ancho y alto de los elementos incluyan el padding y el borde */
+    font-family: Arial, sans-serif;
+    height: 100%; /* Hace que el body ocupe el 100% del alto de la ventana */
+    overflow-x: hidden; /* Evita que aparezca la barra de desplazamiento horizontal */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 90px;
+}
+
+.logo {
+    width: 200px;
+}
+
+.topBar {
+    display: flex;
+    padding: 10px 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.profileSection {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre la imagen y el nombre */
+    margin-right: 50px;
+}
+
+.profileImage {
+    width: 43px; 
+    height: 40px;
+}
+
+.profileName {
+    font-size: 16px;
+    color: #4d4c4c;
+    font-weight: bold;
+}
+
+.orangeLine {
+    display: block;
+    min-height: 5px; 
+    background-color: #F67B21;
+    width: 100%;
+}
+
+.title {
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 50px 20px 40px 20px;
+    border-radius: 13px;
+    border: 1px solid #4e4e4e;
+    background-color: #ffffff;
+    position: relative;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+}
+
+.profileForm {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    grid-template-areas:
+        "name name name name"
+        "email email email email"
+        "password password password2 password2"
+        "dni dni dni dni"
+        "phone address address address"
+        "bankAccount bankAccount bankAccount bankAccount"
+        "saveButton saveButton saveButton saveButton"
+        "closeSession closeSession closeSession closeSession";
+} 
+
+.name { grid-area: name; }
+.email { grid-area: email; }
+.password { grid-area: password; }
+.password2 { grid-area: password2; }
+.dni { grid-area: dni; }
+.phone { grid-area: phone; }
+.address { grid-area: address; }
+.bankAccount { grid-area: bankAccount; }
+.saveButton { grid-area: saveButton; }
+.closeSession { grid-area: closeSession; }
+
+.profileForm label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4b4b4b;
+    font-size: 14px;
+}
+
+.profileForm input {
+    width: 100%; /* Ocupa el ancho completo de la celda */
+    padding: 10px;
+    border: 1px solid #a3a3a3;
+    border-radius: 15px;
+    font-size: 14px;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+.saveButton {
+    border: none;
+    border-radius: 15px;
+    background-color: #FF6600;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    grid-area: saveButton;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+.saveButton:hover {
+    background-color: #e65a00;
+}
+
+.closeSession {
+    border: none;
+    border-radius: 15px;
+    background-color: #d83434;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    grid-area: closeSession;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+.closeSession:hover {
+    background-color: #912c2c;
+}
