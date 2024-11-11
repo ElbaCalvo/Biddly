@@ -12,6 +12,11 @@
         <div class="logoContainer">
             <a href="mainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
         </div>
+
+        <div class="profileSection">
+        <img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage">
+        <span class="profileName">NombreUsuario</span>
+    </div>
     </header>
 
     <div class="orangeLine"></div>
@@ -62,12 +67,13 @@
 
                 <div class="bankAccount">
                     <label for="bankAccount">Cuenta bancaria</label>
-                    <input type="text" id="bankAccount" placeholder="ES123456789123456789" required>
+                    <input type="text" id="bankAccount" placeholder="ES12 3456 7891 2345 6789" required>
                 </div>
 
-                <div class="saveButton">
-                    <button type="submit" class="saveButton">Guardar</button>
-                </div>
+                <button type="submit" class="saveButton">Guardar</button>
+
+                <button type="submit" class="closeSession">Cerrar sesión</button>
+
             </form>
         </div>
     </div>

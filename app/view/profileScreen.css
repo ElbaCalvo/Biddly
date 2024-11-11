@@ -4,6 +4,7 @@ html, body {
     box-sizing: border-box; /* Hace que el ancho y alto de los elementos incluyan el padding y el borde */
     font-family: Arial, sans-serif;
     height: 100%; /* Hace que el body ocupe el 100% del alto de la ventana */
+    overflow-x: hidden; /* Evita que aparezca la barra de desplazamiento horizontal */
 }
 
 body {
@@ -17,6 +18,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 40px;
+    padding-bottom: 90px;
 }
 
 .logo {
@@ -27,6 +30,7 @@ body {
     display: flex;
     padding: 10px 20px;
     width: 100%;
+    justify-content: space-between;
 }
 
 .logoContainer {
@@ -36,13 +40,33 @@ body {
     padding-top: 10px;
 }
 
+.profileSection {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre la imagen y el nombre */
+    margin-right: 50px;
+}
+
+.profileImage {
+    width: 43px; 
+    height: 40px;
+}
+
+.profileName {
+    font-size: 16px;
+    color: #4d4c4c;
+    font-weight: bold;
+}
+
 .orangeLine {
-    height: 5px;
+    display: block;
+    min-height: 5px; 
     background-color: #F67B21;
     width: 100%;
 }
 
 .title {
+    margin-top: 60px;
     font-size: 24px;
     font-weight: bold;
     color: #333;
@@ -55,11 +79,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 100%; /* Asegúrate de que no exceda el ancho de la pantalla */
+    max-width: 100%;
     padding: 50px 20px 40px 20px;
     border-radius: 13px;
     border: 1px solid #4e4e4e;
-    background-color: #FFE7D9;
+    background-color: #ffffff;
     position: relative;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
 
@@ -76,22 +100,7 @@ body {
 
 .profileForm {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
-    gap: 20px;
-    width: 100%;
-    grid-template-areas:
-        "name name"
-        "email email"
-        "password password2"
-        "dni dni"
-        "phone address"
-        "bankAccount bankAccount"
-        "saveButton saveButton";
-}
-
-/*.profileForm {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); // Dos columnas de igual tamaño 
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 100%;
     grid-template-areas:
@@ -101,8 +110,9 @@ body {
         "dni dni dni dni"
         "phone address address address"
         "bankAccount bankAccount bankAccount bankAccount"
-        "saveButton saveButton saveButton saveButton";
-}*/
+        "saveButton saveButton saveButton saveButton"
+        "closeSession closeSession closeSession closeSession";
+} 
 
 .name { grid-area: name; }
 .email { grid-area: email; }
@@ -113,6 +123,7 @@ body {
 .address { grid-area: address; }
 .bankAccount { grid-area: bankAccount; }
 .saveButton { grid-area: saveButton; }
+.closeSession { grid-area: closeSession; }
 
 .profileForm label {
     display: block;
@@ -135,17 +146,37 @@ body {
     border: none;
     border-radius: 15px;
     background-color: #FF6600;
-    color: #fff;
+    color: #ffffff;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
     width: 100%;
     grid-area: saveButton;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
+    padding: 10px 0;
 }
 
 .saveButton:hover {
     background-color: #e65a00;
+}
+
+.closeSession {
+    border: none;
+    border-radius: 15px;
+    background-color: #d83434;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    grid-area: closeSession;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+.closeSession:hover {
+    background-color: #912c2c;
 }
