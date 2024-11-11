@@ -100,27 +100,31 @@
     <div class="comunityFavorites">Categorias</div>
 
     <!-- Categorías -->
-    <div class="malla">
-        <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="cat">MODA</div>
-        </div>
-        <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="cat">MODA</div>
-        </div>
-        <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="cat">MODA</div>
-        </div>
-        <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="cat">MODA</div>
-        </div>
-        <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="cat">MODA</div>
-        </div>
+    <div class="categoryContainer">
+        <button class="contentContainer">
+            <img class="image" src="../../img/clothes.jpg" alt="clothes">
+            <div class="cat">ROPA</div>
+        </button>
+        <button class="contentContainer">
+            <img class="image" src="../../img/sports.jpg" alt="sports">
+            <div class="cat">DEPORTES</div>
+        </button>
+        <button class="contentContainer">
+            <img class="image" src="../../img/tecnology.jpg" alt="tecnology">
+            <div class="cat">TECNOLOGÍA</div>
+        </button>
+        <button class="contentContainer">
+            <img class="image" src="../../img/vehicles.jpg" alt="vehicles">
+            <div class="cat">VEHÍCULOS</div>
+        </button>
+        <button class="contentContainer">
+            <img class="image" src="../../img/books.jpg" alt="books">
+            <div class="cat">LIBROS</div>
+        </button>
+        <button class="contentContainer">
+            <img class="image" src="../../img/furniture.jpg" alt="furniture">
+            <div class="cat">MOBILIARIA</div>
+        </button>
     </div>
     <!-- <div class="contentContainer">
         <img src="../../img/mando.png" alt="Xbox Elite Controller">
