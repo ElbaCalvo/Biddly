@@ -97,7 +97,7 @@
     <!-- Barra naranja de separacion -->
     <div class="orangeLine2"></div>
 
-    <div class="comunityFavorites">Categorias</div>
+    <div class="comunityFavorites">Categorías</div>
 
     <!-- Categorías -->
     <div class="malla">
