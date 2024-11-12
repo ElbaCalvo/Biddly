@@ -71,16 +71,19 @@ li {
   border: 1px solid #b8b8b8;
   border-radius: 10px;
   padding: 16px;
-  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3); /* Sombra más visible */
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
+  /* Sombra más visible */
   color: #333;
-  margin: 40px; /* Reduce el margen vertical entre filas */
+  margin: 40px;
+  /* Reduce el margen vertical entre filas */
   flex-direction: column;
   align-items: baseline;
 }
 
 .favoritesContainer {
   display: flex;
-  justify-content: center; /* Centra horizontalmente los elementos */
+  justify-content: center;
+  /* Centra horizontalmente los elementos */
   align-items: center;
 }
 
@@ -125,8 +128,10 @@ li {
 
 .likeButton {
   background-image: url("../../img/emptyHeart.png");
-  background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
-  background-position: center; /* Centra la imagen en el botón */
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el botón */
+  background-position: center;
+  /* Centra la imagen en el botón */
   width: 35px;
   height: 35px;
   cursor: pointer;
@@ -141,7 +146,8 @@ li {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-weight: bold;
-  cursor: pointer; /*para que se vea un dedo*/
+  cursor: pointer;
+  /*para que se vea un dedo*/
   margin: 8px 0;
   width: 100%;
 }
@@ -189,20 +195,20 @@ li {
   width: 100%;
 }
 
-.categoryContainer{
-    width: 1500px;
-    margin: 30px auto 100px auto;
-    gap: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.categoryContainer {
+  width: 1500px;
+  margin: 30px auto 100px auto;
+  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.categoryContainer .contentContainer{
+.categoryContainer .contentContainer {
   margin: auto;
   background-color: #fde4d5
 }
 
-.categoryContainer img{
+.categoryContainer img {
   width: 100%;
   height: 100%;
   border-radius: 8px;
@@ -210,6 +216,6 @@ li {
   border: 2px solid #a8a8a8;
 }
 
-.contentContainer:hover{
+.contentContainer:hover {
   border: solid 2px #f67b21;
 }

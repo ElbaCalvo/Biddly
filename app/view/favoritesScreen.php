@@ -11,7 +11,13 @@
 <body>
     <header class="topBar">
         <div class="logoContainer">
-            <a href="mainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
+            <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
+        </div>
+
+        <div class="buttonSection">
+            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos" class="favoritesImage"></a>
+            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage"></a>
+            <span class="profileName">NombreUsuario</span>
         </div>
     </header>
 
@@ -44,5 +50,6 @@
         </div>
     </div>
 </body>
-
 </html>
+
+<?php include 'footer.php'; ?>

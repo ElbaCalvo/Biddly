@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -15,7 +16,8 @@ body {
     border-top: 1px solid #878787;
     padding: 10px 30px 20px 30px;
     width: 100%;
-    box-sizing: border-box; /* Hace que el padding no afecte el tamaño del elemento*/
+    box-sizing: border-box;
+    /* Hace que el padding no afecte el tamaño del elemento*/
     margin-top: auto;
 }
 
@@ -43,6 +45,6 @@ body {
 }
 
 .footerIcons img {
-    width: 30px; 
+    width: 30px;
     height: 30px;
 }

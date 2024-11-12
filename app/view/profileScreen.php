@@ -10,13 +10,13 @@
     <!-- Barra superior con el logo -->
     <header class="topBar">
         <div class="logoContainer">
-            <a href="mainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
+            <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
         </div>
 
         <div class="profileSection">
-        <img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage">
-        <span class="profileName">NombreUsuario</span>
-    </div>
+            <img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage">
+            <span class="profileName">NombreUsuario</span>
+        </div>
     </header>
 
     <div class="orangeLine"></div>

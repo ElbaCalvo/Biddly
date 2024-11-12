@@ -1,0 +1,239 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    width: 200px;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.buttonSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Espacio entre la imagen y el nombre */
+    margin-right: 50px;
+}
+
+.profileImage {
+    width: 43px;
+    height: 40px;
+}
+
+.favoritesImage {
+    width: 43px;
+    height: 40px;
+}
+
+.profileName {
+    font-size: 16px;
+    color: #4d4c4c;
+    font-weight: bold;
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.selected {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 12px;
+    font-weight: bold;
+}
+
+.searchBar {
+    margin: 0 200px;
+    padding: 8px;
+    flex: 1;
+    font-size: 16px;
+    border-radius: 12px;
+    border: solid 1px black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    background-color: #f67b21;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+li {
+    margin: 5px 10px;
+    color: black;
+    font-weight: bold;
+}
+
+/* Tarjeta de "Favoritos de la comunidad" */
+.contentContainer {
+    display: flex;
+    width: 320px;
+    background-color: #ffefe6;
+    border: 1px solid #b8b8b8;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra más visible */
+    color: #333;
+    margin: 40px;
+    /* Reduce el margen vertical entre filas */
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.favoritesContainer {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente los elementos */
+    align-items: center;
+}
+
+.comunityFavorites {
+    font-size: 1.8em;
+    text-decoration: wavy;
+    background-color: #fff;
+    color: #ff813f;
+    padding: 4px 8px;
+    border: 4px solid #ff813f;
+    border-radius: 8px;
+    font-weight: bold;
+    margin: 30px auto;
+}
+
+.contentContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 2px solid #a8a8a8;
+}
+
+.price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+.cat {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin: auto;
+}
+
+.productName {
+    font-weight: bold;
+    color: #333;
+    margin: 4px 0;
+}
+
+.likeButton {
+    background-image: url("../../img/emptyHeart.png");
+    background-size: cover;
+    /* Ajusta la imagen para cubrir todo el botón */
+    background-position: center;
+    /* Centra la imagen en el botón */
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border: none;
+}
+
+.bidButton {
+    font-size: 1em;
+    background-color: #ff813f;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    /*para que se vea un dedo*/
+    margin: 8px 0;
+    width: 100%;
+}
+
+.favoritesContainer .contentContainer {
+    border: groove 4px #f67b21;
+}
+
+.bidButton:hover {
+    background-color: #f67b21;
+}
+
+.description {
+    background-color: #fff;
+    padding: 8px;
+    border: 1px solid #b8b8b8;
+    border-radius: 4px;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.description p {
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.bidTime {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 8px;
+}
+
+.orangeLine2 {
+    background-color: #f67b21;
+    min-height: 3px;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 50px;
+}
+
+.orangeLine {
+    min-height: 5px;
+    background-color: #f67b21;
+    width: 100%;
+}
+
+.categoryContainer {
+    width: 1500px;
+    margin: 30px auto 100px auto;
+    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.categoryContainer .contentContainer {
+    margin: auto;
+    background-color: #fde4d5
+}
+
+.categoryContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 2px solid #a8a8a8;
+}
+
+.contentContainer:hover {
+    border: solid 2px #f67b21;
+}

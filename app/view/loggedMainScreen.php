@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biddly</title>
-    <link rel="stylesheet" href="mainScreen.css">
+    <link rel="stylesheet" href="loggedMainScreen.css">
 </head>
 
 <body>
-    <!-- Logo, barra de busqueda y botones de inicio de sesión y registro. -->
+    <!-- Logo, barra de busqueda y botones de inicio de favoritos y usuario. -->
     <header class="topBar">
         <div class="logoContainer">
-            <a href="mainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
+            <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
         </div>
 
         <input class="searchBar" type="text" placeholder="Empieza a buscar por categoria o nombre...">
-        <a href="signInScreen.php"><img class="topBarButtons" src="../../img/signin.png" alt=""></a>
-        <a href="registerScreen.php"><img class="topBarButtons" src="../../img/register.png" alt=""></a>
+
+        <div class="buttonSection">
+            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos" class="favoritesImage"></a>
+            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage"></a>
+            <span class="profileName">NombreUsuario</span>
+        </div>
     </header>
 
     <div class="orangeLine"></div>
