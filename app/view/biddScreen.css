@@ -1,0 +1,235 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    width: 200px;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.topBarButtons {
+    justify-content: end;
+    width: 100px;
+    margin: 0px;
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.searchBar {
+    margin: 0 200px;
+    padding: 8px;
+    flex: 1;
+    font-size: 16px;
+    border-radius: 12px;
+    border: solid 1px black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    margin: auto auto;
+    justify-content: center;
+}
+
+.contentLeft {
+    display: flex;
+    width: 500px;
+    color: #333;
+    margin: 40px;
+    /* Reduce el margen vertical entre filas */
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.contentRight {
+    display: flex;
+    width: 320px;
+    background-color: #ffefe6;
+    border: 1px solid #b8b8b8;
+    border-radius: 10px;
+    padding: 16px;
+    /* Sombra más visible */
+    color: #333;
+    margin: 40px;
+    /* Reduce el margen vertical entre filas */
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.favoritesContainer {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente los elementos */
+    align-items: center;
+}
+
+input[type="number"] {
+    width: 150px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #b8b8b8;
+    font-size: 1.3em;
+    margin: 15px 0px;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.3em;
+    align-items: center;
+}
+
+.imgContent {
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 2px solid #a8a8a8;
+}
+
+.user img {
+    width: 50px;
+    margin: 10px 5px 10px 0px;
+}
+
+.price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin: 15px 0px;
+}
+
+.productName {
+    font-weight: bold;
+    color: #333;
+    margin: 4px 0;
+    margin: 15px 0px;
+}
+
+.likeButton {
+    background-image: url("../../img/emptyHeart.png");
+    background-size: cover;
+    /* Ajusta la imagen para cubrir todo el botón */
+    background-position: center;
+    /* Centra la imagen en el botón */
+    width: 35px;
+    height: 35px;
+    margin: 15px 0px;
+    cursor: pointer;
+    border: none;
+}
+
+.bidButton {
+    font-size: 1em;
+    background-color: #ff813f;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    /*para que se vea un dedo*/
+    margin: 15px 0px;
+    width: 100%;
+}
+
+.bidButton:hover {
+    background-color: #f67b21;
+}
+
+.description {
+    background-color: #fff;
+    padding: 8px;
+    border: 1px solid #b8b8b8;
+    border-radius: 4px;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    height: 400px;
+    width: 490px;
+}
+
+.biddingRegister {
+    background-color: #fff;
+    padding: 8px;
+    border: 1px solid #b8b8b8;
+    border-radius: 4px;
+    border-radius: 10px;
+    margin: 15px 0px;
+    width: 90%;
+    height: 200px;
+}
+
+.description p {
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.bidTime {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 8px;
+}
+
+.orangeLine2 {
+    background-color: #f67b21;
+    min-height: 3px;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 50px;
+}
+
+.orangeLine1 {
+    min-height: 3px;
+    margin: auto;
+    background-color: #f67b21;
+    width: 100%;
+}
+
+.orangeLine2 {
+    min-height: 3px;
+    margin: auto;
+    background-color: #f67b21;
+    width: 60%;
+}
+
+.categoryContainer {
+    width: 1500px;
+    margin: 30px auto 100px auto;
+    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.categoryContainer .contentContainer {
+    margin: auto;
+    background-color: #fde4d5
+}
+
+.categoryContainer img {
+    width: 503px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 2px solid #a8a8a8;
+}
+
+.contentContainer:hover {
+    border: solid 2px #f67b21;
+}
