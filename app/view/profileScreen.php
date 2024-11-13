@@ -70,11 +70,13 @@
                     <input type="text" id="bankAccount" placeholder="ES12 3456 7891 2345 6789" required>
                 </div>
 
-                <button type="submit" class="saveButton">Guardar</button>
-
-                <button type="submit" class="closeSession">Cerrar sesión</button>
+                <button type="submit" class="saveButton" formaction="profileScreen.php">Guardar</button>
 
             </form>
+            <form action = "mainScreen">
+                <button type="submit" class="closeSession">Cerrar sesión</button>
+            </form> 
+            
         </div>
     </div>
 </body>

@@ -105,12 +105,13 @@ body {
     cursor: pointer;
     color: #333;
 }
-
+form{
+    width: 100%;
+}
 .profileForm {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    width: 100%;
     grid-template-areas:
         "name name name name"
         "email email email email"
