@@ -129,10 +129,6 @@ a {
   width: 100%;
 }
 
-.favoritesContainer .contentContainer {
-  border: groove 4px #f67b21;
-}
-
 .bidButton:hover {
   background-color: #f67b21;
 }
@@ -195,4 +191,6 @@ a {
 
 .contentContainer:hover {
   border: solid 2px #f67b21;
+  transform: scale(1.2);
+  cursor: pointer;
 }

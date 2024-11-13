@@ -44,13 +44,6 @@ body {
     padding: 10px 20px;
 }
 
-.selected {
-    background-color: white;
-    border-radius: 10px;
-    padding: 5px 12px;
-    font-weight: bold;
-}
-
 .searchBar {
     margin: 0 200px;
     padding: 8px;
@@ -63,22 +56,6 @@ body {
 a {
     text-decoration: none;
     color: black;
-}
-
-nav {
-    background-color: #f67b21;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-}
-
-li {
-    margin: 5px 10px;
-    color: black;
-    font-weight: bold;
 }
 
 /* Tarjeta de "Favoritos de la comunidad" */
@@ -114,7 +91,7 @@ li {
     border: 4px solid #ff813f;
     border-radius: 8px;
     font-weight: bold;
-    margin: 30px auto;
+    margin: 50px auto 20px auto;
 }
 
 .contentContainer img {
@@ -168,10 +145,6 @@ li {
     /*para que se vea un dedo*/
     margin: 8px 0;
     width: 100%;
-}
-
-.favoritesContainer .contentContainer {
-    border: groove 4px #f67b21;
 }
 
 .bidButton:hover {
@@ -236,4 +209,6 @@ li {
 
 .contentContainer:hover {
     border: solid 2px #f67b21;
+    transform: scale(1.2);
+    cursor: pointer;
 }
