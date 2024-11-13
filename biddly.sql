@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2024 a las 12:32:44
+-- Tiempo de generación: 13-11-2024 a las 13:02:59
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -83,11 +83,10 @@ CREATE TABLE `productos` (
   `Descripcion` varchar(255) NOT NULL,
   `Categoria` int(11) NOT NULL,
   `Precio` int(11) NOT NULL,
-  `URLImagen` varchar(255) NOT NULL,
-  `Precio venta inmediata` int(11) NOT NULL,
-  `Fecha fin subasta` datetime NOT NULL,
+  `URL_Imagen` varchar(255) NOT NULL,
+  `Fecha_fin_subasta` datetime NOT NULL,
   `Vendedor` varchar(255) NOT NULL,
-  `NumeroLikes` int(11) NOT NULL
+  `Numero_Likes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
