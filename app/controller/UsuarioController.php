@@ -9,7 +9,7 @@ class UsuarioController {
         $usuario->setContrasena($contrasena);
         $usuario->setDni($dni);
         $usuario->setTelefono($telefono);
-        $usuario->addUsuario();
+        return $usuario->addUsuario();
     }
 }
 ?>

@@ -15,7 +15,13 @@
     $usuarioController = new UsuarioController();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registerForm'])) {
-        $usuarioController->addUsuario($_POST['usuario'], $_POST['contrasena'], $_POST['correo'], $_POST['telefono'], $_POST['dni']);
+        $isRegistered = $usuarioController->addUsuario($_POST['usuario'], $_POST['contrasena'], $_POST['correo'], $_POST['telefono'], $_POST['dni']);
+        if ($isRegistered) {
+            header("Location: mainScreen.php");
+            exit();
+        } else {
+            echo "<p>Error al registrar el usuario. Por favor, inténtelo de nuevo.</p>";
+        }
     }
     ?>
     <header class="topBar">
@@ -30,7 +36,7 @@
             <a href="mainScreen.php">
                 <div class="closeButton">✕</div>
             </a>
-            <form action="registerScreen.php" method="POST">
+            <form class="registerForm" action="registerScreen.php" method="POST">
                 <input type="hidden" name="registerForm">
                 <label>Nombre de Usuario</label>
                 <input type="text" name="usuario" id="username" placeholder="Juan" required>

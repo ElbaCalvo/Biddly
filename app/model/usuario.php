@@ -38,8 +38,10 @@ class Usuario {
             $sql->bindParam(':telefono', $this->telefono);
             $sql->bindParam(':dni', $this->dni);
             $sql->execute();
+            return true;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
+            return false;
         }
     }
 }
