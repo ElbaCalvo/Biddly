@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2024 a las 08:45:19
+-- Tiempo de generación: 13-11-2024 a las 12:32:44
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -84,6 +84,7 @@ CREATE TABLE `productos` (
   `Categoria` int(11) NOT NULL,
   `Precio` int(11) NOT NULL,
   `URLImagen` varchar(255) NOT NULL,
+  `Precio venta inmediata` int(11) NOT NULL,
   `Fecha fin subasta` datetime NOT NULL,
   `Vendedor` varchar(255) NOT NULL,
   `NumeroLikes` int(11) NOT NULL
@@ -98,9 +99,9 @@ CREATE TABLE `productos` (
 CREATE TABLE `usuarios` (
   `Nombre` varchar(255) NOT NULL,
   `Contraseña` varchar(255) NOT NULL,
-  `Correo electronico` varchar(255) NOT NULL,
-  `Telefono` int(11) NOT NULL,
-  `DNI` int(11) NOT NULL,
+  `Correo_electronico` varchar(255) NOT NULL,
+  `Telefono` int(9) NOT NULL,
+  `DNI` varchar(9) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
   `Cuenta bancaria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -217,7 +218,7 @@ ALTER TABLE `pedidos`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `productos_categoria` FOREIGN KEY (`Categoria`) REFERENCES `categorias` (`ID`),
-  ADD CONSTRAINT `productos_usuario` FOREIGN KEY (`vendedor`) REFERENCES `usuarios` (`Nombre`);
+  ADD CONSTRAINT `productos_usuario` FOREIGN KEY (`Vendedor`) REFERENCES `usuarios` (`Nombre`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
