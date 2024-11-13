@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2024 a las 09:53:12
+-- Tiempo de generación: 13-11-2024 a las 08:45:19
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -84,7 +84,6 @@ CREATE TABLE `productos` (
   `Categoria` int(11) NOT NULL,
   `Precio` int(11) NOT NULL,
   `URLImagen` varchar(255) NOT NULL,
-  `Precio venta inmediata` int(11) NOT NULL,
   `Fecha fin subasta` datetime NOT NULL,
   `Vendedor` varchar(255) NOT NULL,
   `NumeroLikes` int(11) NOT NULL
