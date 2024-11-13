@@ -1,6 +1,6 @@
 <?php
 
-function dbConnection() {
+function getDBConnection() {
     $host = "localhost";
     $db_name = "biddly";
     $username = "adrian";
