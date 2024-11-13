@@ -17,7 +17,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registerForm'])) {
         $isRegistered = $usuarioController->addUsuario($_POST['usuario'], $_POST['contrasena'], $_POST['correo'], $_POST['telefono'], $_POST['dni']);
         if ($isRegistered) {
-            header("Location: mainScreen.php");
+            header("Location: loggedMainScreen.php");
             exit();
         } else {
             echo "<p>Error al registrar el usuario. Por favor, inténtelo de nuevo.</p>";
