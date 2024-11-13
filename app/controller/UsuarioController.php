@@ -11,5 +11,12 @@ class UsuarioController {
         $usuario->setTelefono($telefono);
         return $usuario->addUsuario();
     }
+
+    public function comprobarUsuario($nombreUsuario, $contrasena) {
+        $usuario = new Usuario();
+        $usuario->setUsuario($nombreUsuario);
+        $usuario->setContrasena($contrasena);
+        return $usuario->comprobarUsuario();
+    }
 }
 ?>
