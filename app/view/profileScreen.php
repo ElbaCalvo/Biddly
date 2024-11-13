@@ -73,7 +73,7 @@
                 <button type="submit" class="saveButton" formaction="profileScreen.php">Guardar</button>
 
             </form>
-            <form action = "mainScreen">
+            <form action = "mainScreen.php">
                 <button type="submit" class="closeSession">Cerrar sesión</button>
             </form> 
             
