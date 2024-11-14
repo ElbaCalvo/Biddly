@@ -17,14 +17,24 @@
     $usuarioController = new UsuarioController();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registerForm'])) {
-        $isRegistered = $usuarioController->addUsuario($_POST['usuario'], $_POST['contrasena'], $_POST['correo'], $_POST['telefono'], $_POST['dni']);
-        if ($isRegistered) {
-            $_SESSION['usuario'] = $_POST['usuario'];
-            $_SESSION['contrasena'] = $_POST['contrasena'];
-            header("Location: loggedMainScreen.php");
-            exit();
+
+        $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
+        $contrasena = filter_input(INPUT_POST, 'contrasena', FILTER_SANITIZE_STRING);
+        $correo = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_EMAIL);
+        $dni = filter_input(INPUT_POST, 'dni', FILTER_SANITIZE_STRING);
+        if (!$usuario && !$correo && !$contrasena && !$dni) {
+
+            $isRegistered = $usuarioController->addUsuario($usuario, $contrasena, $correo, $_POST['telefono'], $dni);
+            if ($isRegistered) {
+                $_SESSION['usuario'] = $usuario;
+                $_SESSION['contrasena'] = $contrasena;
+                header("Location: loggedMainScreen.php");
+                exit();
+            } else {
+                echo "<script>alert('Error al registrar el usuario.')</script>";
+            }
         } else {
-            echo "<p>Error al registrar el usuario. Por favor, inténtelo de nuevo.</p>";
+            echo "<script>alert('Error al registrar el usuario, caracteres no válidos.')</script>";
         }
     }
     ?>
