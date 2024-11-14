@@ -42,8 +42,9 @@
                     <option value="ropa">Ropa</option>
                     <option value="deporte">Deporte</option>
                     <option value="tecnologia">Tecnología</option>
+                    <option value="vehiculo">Vehículos</option>
+                    <option value="vehiculo">Libros</option>
                     <option value="mobiliario">Mobiliario</option>
-                    <option value="vehiculo">Vehículo</option>
                 </select>
 
                 <label>URL de la imagen</label>
