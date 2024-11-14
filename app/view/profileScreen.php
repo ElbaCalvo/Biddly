@@ -12,6 +12,12 @@
 <?php
     session_start();
 
+    // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: mainScreen.php");
+        exit();
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cerrarsesion'])) {
         session_destroy();
         header("Location: mainScreen.php");
@@ -26,7 +32,10 @@
 
         <div class="profileSection">
             <img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage">
-            echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
+            <?php
+                echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
+            ?>
+            
         </div>
     </header>
 
@@ -36,7 +45,7 @@
     <div class="mainContent">
         <!-- Contenedor del formulario de editar perfil -->
         <div class="profileContainer">
-            <a href="mainScreen.php">
+            <a href="loggedMainScreen.php">
                 <div class="closeButton">✕</div>
             </a>
 
