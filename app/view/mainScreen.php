@@ -34,7 +34,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -49,7 +50,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -64,7 +66,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -117,6 +120,7 @@
         </a>
     </div>
 </body>
+
 </html>
 
 <?php include 'footer.php'; ?>

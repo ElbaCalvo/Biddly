@@ -1,6 +1,7 @@
 <?php
 
-function getDBConnection() {
+function getDBConnection()
+{
     $host = "localhost";
     $db_name = "biddly";
     $username = "adrian";

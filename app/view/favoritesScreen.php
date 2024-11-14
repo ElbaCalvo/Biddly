@@ -15,8 +15,10 @@
         </div>
 
         <div class="buttonSection">
-            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos" class="favoritesImage"></a>
-            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage"></a>
+            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos"
+                    class="favoritesImage"></a>
+            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
+                    class="profileImage"></a>
             <span class="profileName">NombreUsuario</span>
         </div>
     </header>
@@ -42,7 +44,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -50,6 +53,7 @@
         </div>
     </div>
 </body>
+
 </html>
 
 <?php include 'footer.php'; ?>
