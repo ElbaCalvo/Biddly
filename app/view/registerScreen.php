@@ -17,24 +17,27 @@
     $usuarioController = new UsuarioController();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registerForm'])) {
-
-        $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
-        $contrasena = filter_input(INPUT_POST, 'contrasena', FILTER_SANITIZE_STRING);
-        $correo = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_EMAIL);
-        $dni = filter_input(INPUT_POST, 'dni', FILTER_SANITIZE_STRING);
-        if (!$usuario && !$correo && !$contrasena && !$dni) {
-
-            $isRegistered = $usuarioController->addUsuario($usuario, $contrasena, $correo, $_POST['telefono'], $dni);
-            if ($isRegistered) {
-                $_SESSION['usuario'] = $usuario;
-                $_SESSION['contrasena'] = $contrasena;
-                header("Location: loggedMainScreen.php");
-                exit();
-            } else {
-                echo "<script>alert('Error al registrar el usuario.')</script>";
-            }
+        if ($_POST['contrasena'] != $_POST['contrasena2']) {
+            echo "<script>alert('Las contraseñas no coinciden.')</script>";
         } else {
-            echo "<script>alert('Error al registrar el usuario, caracteres no válidos.')</script>";
+            $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
+            $contrasena = filter_input(INPUT_POST, 'contrasena', FILTER_SANITIZE_STRING);
+            $correo = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_EMAIL);
+            $dni = filter_input(INPUT_POST, 'dni', FILTER_SANITIZE_STRING);
+            if (!$usuario && !$correo && !$contrasena && !$dni) {
+
+                $isRegistered = $usuarioController->addUsuario($usuario, $contrasena, $correo, $_POST['telefono'], $dni);
+                if ($isRegistered) {
+                    $_SESSION['usuario'] = $usuario;
+                    $_SESSION['contrasena'] = $contrasena;
+                    header("Location: loggedMainScreen.php");
+                    exit();
+                } else {
+                    echo "<script>alert('Error al registrar el usuario.')</script>";
+                }
+            } else {
+                echo "<script>alert('Error al registrar el usuario, caracteres no válidos.')</script>";
+            }
         }
     }
     ?>
@@ -62,7 +65,7 @@
                 <input type="password" name="contrasena" id="password" placeholder="••••••••" required>
 
                 <label>Repetir contraseña</label>
-                <input type="password" id="password2" placeholder="••••••••" required>
+                <input type="password" name="contrasena2" id="password2" placeholder="••••••••" required>
 
                 <label>DNI/NIF</label>
                 <input type="text" name="dni" id="dni" placeholder="12345678A" required>
