@@ -37,7 +37,14 @@
                 <input type="number" name="precio" id="price" placeholder="50€" required>
 
                 <label>Categoría</label>
-                <input type="password" name="contrasena" id="password" placeholder="••••••••" required>
+                <select name="categoria" id="categoria" required>
+                    <option value="">Seleccione una categoría</option>
+                    <option value="ropa">Ropa</option>
+                    <option value="deporte">Deporte</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="mobiliario">Mobiliario</option>
+                    <option value="vehiculo">Vehículo</option>
+                </select>
 
                 <label>URL de la imagen</label>
                 <input type="text" id="url" placeholder="https://safetypricelectronics.com/spcontents/u/2022/07/games-g664c6d5aa_1920.jpg" required>

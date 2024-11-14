@@ -18,6 +18,7 @@
         <input class="searchBar" type="text" placeholder="Empieza a buscar por categoria o nombre...">
 
         <div class="buttonSection">
+            <a href="addProductScreen.php"><img src="../../img/addProductEmpty.png" alt="Boton añadir prducto" class="addButton"></a>
             <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos" class="favoritesImage"></a>
             <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage"></a>
             <span class="profileName">NombreUsuario</span>
