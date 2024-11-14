@@ -7,6 +7,27 @@
     <link rel="stylesheet" href="addProductScreen.css">
 </head>
 <body>
+    <?php
+    require_once "../controller/productController.php";
+    $productController = new ProductController();
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addProductForm'])) {
+        $nombre = $_POST['nombre'];
+        $precio = $_POST['precio'];
+        $categoria = $_POST['categoria'];
+        $descripcion = $_POST['descripcion'];
+        $img = $_POST['url'];
+        $vendedor = "_SESSION['usuario']";
+        $fecha = $_POST['fecha'];
+
+        $productController->addProduct($nombre,$descripcion,$categoria,$precio,$img,$fecha,$vendedor);
+
+        echo "<script>alert('Producto registrado con exito.')</script>";
+        header('Location: mainScreen.php');
+        exit();
+    }
+
+    ?>
         <!-- Logo, barra de busqueda y botones de inicio de favoritos y usuario. -->
         <header class="topBar">
             <div class="logoContainer">
@@ -28,7 +49,7 @@
             <a href="loggedMainScreen.php">
                 <div class="closeButton">✕</div>
             </a>
-            <form class="addProductForm">
+            <form class="addProductForm" method="POST" action="addProductScreen.php">
                 <input type="hidden" name="addProductForm">
                 <label>Nombre del producto</label>
                 <input type="text" name="nombre" id="name" placeholder="Mandos XBOX" required>
@@ -48,7 +69,7 @@
                 </select>
 
                 <label>URL de la imagen</label>
-                <input type="text" id="url" placeholder="https://safetypricelectronics.com/spcontents/u/2022/07/games-g664c6d5aa_1920.jpg" required>
+                <input type="text" id="url" name="url" placeholder="https://safetypricelectronics.com/spcontents/u/2022/07/games-g664c6d5aa_1920.jpg" required>
 
                 <label>Fecha de la subasta</label>
                 <input type="datetime-local" name="fecha" id="date" placeholder="14/06/2024, 22:00" required>
