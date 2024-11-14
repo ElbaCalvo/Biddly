@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    ?>
     <!-- Logo, barra de busqueda y botones de inicio de favoritos y usuario. -->
     <header class="topBar">
         <div class="logoContainer">
@@ -21,7 +24,10 @@
             <a href="addProductScreen.php"><img src="../../img/addProductEmpty.png" alt="Boton añadir prducto" class="addButton"></a>
             <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos" class="favoritesImage"></a>
             <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage"></a>
-            <span class="profileName">NombreUsuario</span>
+            <?php
+            echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
+            ?>
+            
         </div>
     </header>
 
