@@ -20,7 +20,7 @@
         $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
         $contrasena = filter_input(INPUT_POST, 'contrasena', FILTER_SANITIZE_STRING);
 
-        if (!$usuario && !$contrasena) {
+        if ($usuario && $contrasena) {
             $isRegistered = $usuarioController->comprobarUsuario($_POST['usuario'], $_POST['contrasena']);
             if ($isRegistered) {
                 $_SESSION['usuario'] = $_POST['usuario'];

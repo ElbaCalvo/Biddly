@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
     <link rel="stylesheet" href="addProductScreen.css">
 </head>
+
 <body>
     <?php
+    session_start();
     require_once "../controller/productController.php";
     $productController = new ProductController();
 
@@ -34,17 +37,21 @@
                 <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
             </div>
 
-            <div class="buttonSection">
-                <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos" class="favoritesImage"></a>
-                <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage"></a>
-                <span class="profileName">NombreUsuario</span>
-            </div>
-        </header>
+        <div class="buttonSection">
+            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos"
+                    class="favoritesImage"></a>
+            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
+                    class="profileImage"></a>
+            <?php
+            echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
+            ?>
+        </div>
+    </header>
 
-        <div class="orangeLine"></div>
-        <div class="title">Información del producto</div>
+    <div class="orangeLine"></div>
+    <div class="title">Información del producto</div>
 
-        <div class="mainContent">
+    <div class="mainContent">
         <div class="addProductContainer">
             <a href="loggedMainScreen.php">
                 <div class="closeButton">✕</div>
@@ -82,6 +89,7 @@
         </div>
     </div>
 </body>
+
 </html>
 
 <?php include 'footer.php'; ?>

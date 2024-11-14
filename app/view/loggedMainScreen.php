@@ -11,7 +11,7 @@
 <body>
     <?php
     session_start();
-    
+
     // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
     if (!isset($_SESSION['usuario'])) {
         header("Location: mainScreen.php");
@@ -27,13 +27,16 @@
         <input class="searchBar" type="text" placeholder="Empieza a buscar por categoria o nombre...">
 
         <div class="buttonSection">
-            <a href="addProductScreen.php"><img src="../../img/addProductEmpty.png" alt="Boton añadir prducto" class="addButton"></a>
-            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos" class="favoritesImage"></a>
-            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage"></a>
+            <a href="addProductScreen.php"><img src="../../img/addProductEmpty.png" alt="Boton añadir prducto"
+                    class="addButton"></a>
+            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos"
+                    class="favoritesImage"></a>
+            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
+                    class="profileImage"></a>
             <?php
             echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
             ?>
-            
+
         </div>
     </header>
 
@@ -51,7 +54,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -66,7 +70,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -81,7 +86,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -134,6 +140,7 @@
         </a>
     </div>
 </body>
+
 </html>
 
 <?php include 'footer.php'; ?>

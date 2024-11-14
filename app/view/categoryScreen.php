@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category</title>
     <link rel="stylesheet" href="categoryScreen.css">
 </head>
+
 <body>
     <header class="topBar">
         <div class="logoContainer">
@@ -44,7 +46,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -52,4 +55,5 @@
         </div>
     </div>
 </body>
+
 </html>
