@@ -11,6 +11,12 @@
 <body>
     <?php
     session_start();
+    
+    // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: mainScreen.php");
+        exit();
+    }
     ?>
     <!-- Logo, barra de busqueda y botones de inicio de favoritos y usuario. -->
     <header class="topBar">

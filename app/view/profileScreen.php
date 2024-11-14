@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="profileScreen.css">
     <title>Profile</title>
 </head>
+
 <body>
+<?php
+    session_start();
+
+    // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: mainScreen.php");
+        exit();
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cerrarsesion'])) {
+        session_destroy();
+        header("Location: mainScreen.php");
+        exit();
+    }
+    ?>
     <!-- Barra superior con el logo -->
     <header class="topBar">
         <div class="logoContainer">
@@ -15,7 +32,10 @@
 
         <div class="profileSection">
             <img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage">
-            <span class="profileName">NombreUsuario</span>
+            <?php
+                echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
+            ?>
+            
         </div>
     </header>
 
@@ -25,7 +45,7 @@
     <div class="mainContent">
         <!-- Contenedor del formulario de editar perfil -->
         <div class="profileContainer">
-            <a href="mainScreen.php">
+            <a href="loggedMainScreen.php">
                 <div class="closeButton">✕</div>
             </a>
 
@@ -73,15 +93,15 @@
                 <button type="submit" class="saveButton" formaction="profileScreen.php">Guardar</button>
 
             </form>
-            <form action = "mainScreen.php">
+            <form action="profileScreen.php" method="POST">
+                <input type="hidden" name="cerrarsesion">
                 <button type="submit" class="closeSession">Cerrar sesión</button>
-            </form> 
-            
+            </form>
+
         </div>
     </div>
 </body>
+
 </html>
 
 <?php include 'footer.php'; ?>
-
-
