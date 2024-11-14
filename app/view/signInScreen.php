@@ -12,11 +12,15 @@
     <?php
     require_once "../controller/UsuarioController.php";
 
+    session_start();
+
     $usuarioController = new UsuarioController();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signInForm'])) {
         $isRegistered = $usuarioController->comprobarUsuario($_POST['usuario'], $_POST['contrasena']);
         if ($isRegistered) {
+            $_SESSION['usuario'] = $_POST['usuario'];
+            $_SESSION['contrasena'] = $_POST['contrasena'];
             header("Location: loggedMainScreen.php");
             exit();
         } else {
