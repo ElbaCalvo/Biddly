@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <?php
+        session_start();
+    ?>
     <header class="topBar">
         <div class="logoContainer">
             <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
