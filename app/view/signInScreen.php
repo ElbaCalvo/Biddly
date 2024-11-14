@@ -17,15 +17,23 @@
     $usuarioController = new UsuarioController();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signInForm'])) {
-        $isRegistered = $usuarioController->comprobarUsuario($_POST['usuario'], $_POST['contrasena']);
-        if ($isRegistered) {
-            $_SESSION['usuario'] = $_POST['usuario'];
-            $_SESSION['contrasena'] = $_POST['contrasena'];
-            header("Location: loggedMainScreen.php");
-            exit();
+        $usuario = htmlspecialchars($_POST['usuario']);
+        $contrasena = htmlspecialchars($_POST['contrasena']);
+
+        if ($usuario && $contrasena) {
+            $isRegistered = $usuarioController->comprobarUsuario($_POST['usuario'], $_POST['contrasena']);
+            if ($isRegistered) {
+                $_SESSION['usuario'] = $_POST['usuario'];
+                $_SESSION['contrasena'] = $_POST['contrasena'];
+                header("Location: loggedMainScreen.php");
+                exit();
+            } else {
+                echo "<p>Error al iniciar sesión. Por favor, inténtelo de nuevo.</p>";
+            }
         } else {
-            echo "<p>Error al iniciar sesión. Por favor, inténtelo de nuevo.</p>";
+            echo "Valores no validos";
         }
+
     }
     ?>
     <!-- Barra superior con el logo -->
