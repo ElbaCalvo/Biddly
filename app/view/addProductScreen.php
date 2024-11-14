@@ -54,7 +54,7 @@
                 <input type="datetime-local" name="fecha" id="date" placeholder="14/06/2024, 22:00" required>
 
                 <label>Descripción del producto</label>
-                <input type="text" name="descripcion" id="description" placeholder="descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción..." required>
+                <input type="text" name="descripcion" id="description" placeholder="descripción" required>
 
                 <button type="submit" class="addButton">Subir producto</button>
             </form>
