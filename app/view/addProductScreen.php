@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    ?>
     <!-- Logo, barra de busqueda y botones de inicio de favoritos y usuario. -->
     <header class="topBar">
         <div class="logoContainer">
@@ -20,7 +23,9 @@
                     class="favoritesImage"></a>
             <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
                     class="profileImage"></a>
-            <span class="profileName">NombreUsuario</span>
+            <?php
+            echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
+            ?>
         </div>
     </header>
 
