@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    ?>
     <header class="topBar">
         <div class="logoContainer">
             <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
@@ -19,7 +22,9 @@
                     class="favoritesImage"></a>
             <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
                     class="profileImage"></a>
-            <span class="profileName">NombreUsuario</span>
+            <?php
+            echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
+            ?>
         </div>
     </header>
 
