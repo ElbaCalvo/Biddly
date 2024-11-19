@@ -82,37 +82,37 @@
 
     <!-- Categorías -->
     <div class="categoryContainer">
-        <a href="categoryScreen.php">
+        <a href="categoryScreen.php?category_id=1">
             <button class="contentContainer">
                 <img class="image" src="../../img/clothes.jpg" alt="clothes">
                 <div class="cat">ROPA</div>
             </button>
         </a>
-        <a href="categoryScreen.php">
+        <a href="categoryScreen.php?category_id=2">
             <button class="contentContainer">
                 <img class="image" src="../../img/sports.jpg" alt="sports">
                 <div class="cat">DEPORTES</div>
             </button>
         </a>
-        <a href="categoryScreen.php">
+        <a href="categoryScreen.php?category_id=3">
             <button class="contentContainer">
                 <img class="image" src="../../img/tecnology.jpg" alt="tecnology">
                 <div class="cat">TECNOLOGÍA</div>
             </button>
         </a>
-        <a href="categoryScreen.php">
+        <a href="categoryScreen.php?category_id=4">
             <button class="contentContainer">
                 <img class="image" src="../../img/vehicles.jpg" alt="vehicles">
                 <div class="cat">VEHÍCULOS</div>
             </button>
         </a>
-        <a href="categoryScreen.php">
+        <a href="categoryScreen.php?category_id=5">
             <button class="contentContainer">
                 <img class="image" src="../../img/books.jpg" alt="books">
                 <div class="cat">LIBROS</div>
             </button>
         </a>
-        <a href="categoryScreen.php">
+        <a href="categoryScreen.php?category_id=6">
             <button class="contentContainer">
                 <img class="image" src="../../img/furniture.jpg" alt="furniture">
                 <div class="cat">MOBILIARIA</div>

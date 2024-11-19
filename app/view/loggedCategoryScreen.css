@@ -75,7 +75,6 @@ body {
     margin: 50px auto 70px auto;
     justify-content: center;
     flex-direction: row;
-    justify-content: space-between;
     font-weight: bold;
     width: 50%;
   }
@@ -120,7 +119,7 @@ body {
 
   .contentContainer {
     display: flex;
-    width: 900px;
+    width: 880px;
     height: 380px;
     background-color: #ffefe6;
     border: 1px solid #b8b8b8;
@@ -139,13 +138,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
   }
   
   .contentContainer img {
-    width: 95%;
-    height: 95%;
+    width: 500px;
+    height: 375px;
     border-radius: 8px;
-    margin-bottom: 12px;
     border: 2px solid #a8a8a8;
   }
   
