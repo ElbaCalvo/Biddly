@@ -60,7 +60,7 @@ body {
   }
   
   .searchBar {
-    margin: 0 100px;
+    margin: auto 80px auto auto;
     width: 400px;
     padding: 8px;
     font-size: 16px;
@@ -76,13 +76,13 @@ body {
     justify-content: center;
     flex-direction: row;
     font-weight: bold;
-    width: 50%;
+    width: 100%;
   }
-  
+
   .categoryForm img {
     width: 30px;
     vertical-align: middle;
-  }
+}
   
   .order {
     padding: 8px;
