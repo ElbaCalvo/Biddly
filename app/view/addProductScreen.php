@@ -20,7 +20,7 @@
         $categoria = $_POST['categoria'];
         $descripcion = $_POST['descripcion'];
         $img = $_POST['url'];
-        $vendedor = "_SESSION['usuario']";
+        $vendedor = 'angel';                 //"_SESSION['usuario']"; 
         $fecha = $_POST['fecha'];
 
         $productController->addProduct($nombre,$descripcion,$categoria,$precio,$img,$fecha,$vendedor);
@@ -67,12 +67,12 @@
                 <label>Categoría</label>
                 <select name="categoria" id="categoria" required>
                     <option value="">Seleccione una categoría</option>
-                    <option value="ropa">Ropa</option>
-                    <option value="deporte">Deporte</option>
-                    <option value="tecnologia">Tecnología</option>
-                    <option value="vehiculo">Vehículos</option>
-                    <option value="vehiculo">Libros</option>
-                    <option value="mobiliario">Mobiliario</option>
+                    <option value="1">Ropa</option>
+                    <option value="2">Deporte</option>
+                    <option value="3">Tecnología</option>
+                    <option value="4">Vehículos</option>
+                    <option value="5">Libros</option>
+                    <option value="6">Mobiliario</option>
                 </select>
 
                 <label>URL de la imagen</label>
