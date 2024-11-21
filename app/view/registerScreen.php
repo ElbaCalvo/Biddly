@@ -24,7 +24,7 @@
             $contrasena = filter_input(INPUT_POST, 'contrasena', FILTER_SANITIZE_STRING);
             $correo = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_EMAIL);
             $dni = filter_input(INPUT_POST, 'dni', FILTER_SANITIZE_STRING);
-            if (!$usuario && !$correo && !$contrasena && !$dni) {
+            if ($usuario && $correo && $contrasena && $dni) {
 
                 $isRegistered = $usuarioController->addUsuario($usuario, $contrasena, $correo, $_POST['telefono'], $dni);
                 if ($isRegistered) {

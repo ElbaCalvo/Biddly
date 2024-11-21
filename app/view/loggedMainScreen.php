@@ -11,13 +11,14 @@
 <body>
     <?php
     session_start();
-    
+
     // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
     if (!isset($_SESSION['usuario'])) {
         header("Location: mainScreen.php");
         exit();
     }
     ?>
+
     <!-- Logo, barra de busqueda y botones de inicio de favoritos y usuario. -->
     <header class="topBar">
         <div class="logoContainer">
@@ -27,13 +28,16 @@
         <input class="searchBar" type="text" placeholder="Empieza a buscar por categoria o nombre...">
 
         <div class="buttonSection">
-            <a href="addProductScreen.php"><img src="../../img/addProductEmpty.png" alt="Boton añadir prducto" class="addButton"></a>
-            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos" class="favoritesImage"></a>
-            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage"></a>
+            <a href="addProductScreen.php"><img src="../../img/addProductEmpty.png" alt="Boton añadir prducto"
+                    class="addButton"></a>
+            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos"
+                    class="favoritesImage"></a>
+            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
+                    class="profileImage"></a>
             <?php
             echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
             ?>
-            
+
         </div>
     </header>
 
@@ -51,7 +55,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -66,7 +71,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -81,7 +87,8 @@
             <button class="bidButton">Pujar</button>
             <div class="description">
                 <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+                <p>descripción descripción descripción descripción descripción descripción descripción descripción
+                    descripción descripción descripción...</p>
             </div>
             <div class="bidTime">
                 3 Dec. 2024, 08:41
@@ -96,37 +103,37 @@
 
     <!-- Categorías -->
     <div class="categoryContainer">
-        <a href="loggedCategoryScreen.php">
+        <a href="loggedCategoryScreen.php?category_id=1">
             <button class="contentContainer">
                 <img class="image" src="../../img/clothes.jpg" alt="clothes">
                 <div class="cat">ROPA</div>
             </button>
         </a>
-        <a href="loggedCategoryScreen.php">
+        <a href="loggedCategoryScreen.php?category_id=2">
             <button class="contentContainer">
                 <img class="image" src="../../img/sports.jpg" alt="sports">
                 <div class="cat">DEPORTES</div>
             </button>
         </a>
-        <a href="loggedCategoryScreen.php">
+        <a href="loggedCategoryScreen.php?category_id=3">
             <button class="contentContainer">
                 <img class="image" src="../../img/tecnology.jpg" alt="tecnology">
                 <div class="cat">TECNOLOGÍA</div>
             </button>
         </a>
-        <a href="loggedCategoryScreen.php">
+        <a href="loggedCategoryScreen.php?category_id=4">
             <button class="contentContainer">
                 <img class="image" src="../../img/vehicles.jpg" alt="vehicles">
                 <div class="cat">VEHÍCULOS</div>
             </button>
         </a>
-        <a href="loggedCategoryScreen.php">
+        <a href="loggedCategoryScreen.php?category_id=5">
             <button class="contentContainer">
                 <img class="image" src="../../img/books.jpg" alt="books">
                 <div class="cat">LIBROS</div>
             </button>
         </a>
-        <a href="loggedCategoryScreen.php">
+        <a href="loggedCategoryScreen.php?category_id=6">
             <button class="contentContainer">
                 <img class="image" src="../../img/furniture.jpg" alt="furniture">
                 <div class="cat">MOBILIARIA</div>
@@ -134,6 +141,7 @@
         </a>
     </div>
 </body>
+
 </html>
 
 <?php include 'footer.php'; ?>

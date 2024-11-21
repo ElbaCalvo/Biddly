@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2024 a las 13:02:59
+-- Tiempo de generación: 19-11-2024 a las 14:00:17
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -29,9 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categorias` (
   `ID` int(11) NOT NULL,
-  `Nombre` varchar(255) NOT NULL,
-  `Descripcion` varchar(255) NOT NULL
+  `Nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`ID`, `Nombre`) VALUES
+(1, 'Ropa'),
+(2, 'Deportes'),
+(3, 'Tecnología'),
+(4, 'Vehículos'),
+(5, 'Libros'),
+(6, 'Mobiliaria');
 
 -- --------------------------------------------------------
 
@@ -89,6 +100,22 @@ CREATE TABLE `productos` (
   `Numero_Likes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`ID`, `Nombre`, `Descripcion`, `Categoria`, `Precio`, `URL_Imagen`, `Fecha_fin_subasta`, `Vendedor`, `Numero_Likes`) VALUES
+(21, 'Raquetas de pádel', 'Perfectas para jugadores intermedios', 2, 15, 'https://padeljoy.com/wp-content/uploads/2019/08/racket-shape.jpg', '2024-12-01 10:15:00', 'Juan', 0),
+(22, 'Sofá marrón', 'Cómodo y elegante para tu sala de estar', 6, 160, 'https://yourconcept.hu/images/com_hikashop/upload/lounger2.jpg', '2024-12-02 14:30:00', 'María', 0),
+(23, 'Un mundo feliz', 'Novela distópica clásica de Aldous Huxley', 5, 18, 'https://http2.mlstatic.com/D_NQ_NP_2X_975670-MLA77601691617_072024-F.webp', '2024-12-03 08:45:00', 'María', 0),
+(24, 'La metamorfosis', 'Relato transformador de Franz Kafka', 5, 15, 'https://laliebrelibros.wordpress.com/wp-content/uploads/2012/08/metamorofosis.jpg', '2024-12-04 16:00:00', 'Juan', 0),
+(25, 'Zapatillas NIKE', 'Cómodas y perfectas para uso diario', 1, 23, 'https://dnvefa72aowie.cloudfront.net/business-profile/bizPlatform/profile/19215602/1701777969378/MzUyZmRlNjRkZjUxOTE2MGEzYTA3OTE0MmViYzQ2ZDM3NDI4OTkwMWQ2ZjdhYzI2Njk5NTM3NWU5Yjc2MWZmM18wLmpwZWc=.jpeg?q=95&s=1440x1440&t=inside', '2024-12-05 09:20:00', 'María', 0),
+(26, 'Cascos JBL', 'Sonido de alta calidad con diseño moderno', 3, 78, 'https://i.blogs.es/f4cefe/jbl00/1366_2000.jpg', '2024-12-06 18:10:00', 'Juan', 0),
+(27, 'Renault Espace', 'Vehículo espacioso y cómodo para viajes largos', 4, 5000, 'https://www.autoesa.cz/files/cars/221223182/221223182-1.jpg', '2024-12-07 12:30:00', 'Juan', 0),
+(28, 'Peugeot 308 S', 'Coche compacto y eficiente, ideal para la ciudad', 4, 2048, 'https://cdn.am-online.com/media/1/peugeot/12665.jpg', '2024-12-08 17:45:00', 'María', 0),
+(29, 'Macbook Pro', 'Portátil potente para trabajo y creatividad', 3, 1000, 'https://photos.smugmug.com/photos/i-JBWqZn6/0/63b5255f/L/i-JBWqZn6-L.jpg', '2024-12-09 11:05:00', 'Juan', 0),
+(30, 'Mesa de comedor', 'Ideal para cenas familiares, estilo moderno', 6, 90, 'https://www.treasure-f.com/images/blog/700/w500/202101041858232.jpg', '2024-12-10 19:00:00', 'María', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -102,8 +129,16 @@ CREATE TABLE `usuarios` (
   `Telefono` int(9) NOT NULL,
   `DNI` varchar(9) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
-  `Cuenta bancaria` int(11) NOT NULL
+  `Cuenta_bancaria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`Nombre`, `Contraseña`, `Correo_electronico`, `Telefono`, `DNI`, `Direccion`, `Cuenta_bancaria`) VALUES
+('Juan', '1234', 'juan@gmail.com', 111111111, '11111111A', 'Calle Ejemplo 123', 0),
+('Maria', '1234', 'maria@gmail.com', 222222222, '22222222B', 'Calle Ejemplo 456', 0);
 
 --
 -- Índices para tablas volcadas
@@ -161,7 +196,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
@@ -185,7 +220,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Restricciones para tablas volcadas

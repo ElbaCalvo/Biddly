@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category</title>
     <link rel="stylesheet" href="loggedCategoryScreen.css">
 </head>
+
 <body>
+    <?php
+        session_start();
+
+        // Incluir el controlador de productos
+        require_once '../controller/productController.php';
+        $productController = new ProductController();
+
+        // Obtener el ID de la categoría de la URL
+        $categoryId = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
+
+        // Obtener los productos de la categoría seleccionada
+        $productos = $productController->getProductsByCategory($categoryId);
+
+        // Obtener la información de la categoría
+        $category = $productController->getCategoryById($categoryId);
+    ?>
     <header class="topBar">
         <div class="logoContainer">
             <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
         </div>
 
         <div class="buttonSection">
-            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos" class="favoritesImage"></a>
-            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage"></a>
-            <span class="profileName">NombreUsuario</span>
+            <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos"
+                    class="favoritesImage"></a>
+            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
+                    class="profileImage"></a>
+            <?php
+            echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
+            ?>
         </div>
     </header>
 
     <div class="orangeLine"></div>
     <div class="categoryTypeContainer">
-        <div class="categoryType">Ropa</div>
+        <?php echo'<div class="categoryType">' . $category['Nombre'] . '</div>'; ?>
     </div>
 
 
@@ -36,21 +58,27 @@
         </form>
     </div>
 
-    <div class="contentContainer">
-        <img src="../../img/mando.png" alt="Xbox Elite Controller">
-        <div class="info">
-            <div class="productName">XBOX ELITE 2 Core Edition</div>
-            <div class="price">50€</div>
-            <button class="likeButton"></button>
-            <button class="bidButton">Pujar</button>
-            <div class="description">
-                <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción descripción...</p>
+    <?php
+    foreach ($productos as $producto) {
+        echo '
+        <div class="contentContainer">
+            <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
+            <div class="info">
+                <div class="productName">' . $producto['Nombre'] . '</div>
+                <div class="price">' . $producto['Precio'] . '€' . '</div>
+                <button class="likeButton"></button>
+                <button class="bidButton">Pujar</button>
+                <div class="description">
+                    <strong>Descripción</strong><br>
+                    <p>' . $producto['Descripcion'] . '</p>
+                </div>
+                <div class="bidTime">
+                    ' . $producto['Fecha_fin_subasta'] . '
+                </div>
             </div>
-            <div class="bidTime">
-                3 Dec. 2024, 08:41
-            </div>
-        </div>
-    </div>
+        </div>';
+    }
+    ?>
 </body>
+
 </html>

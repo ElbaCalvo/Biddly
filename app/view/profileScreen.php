@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<?php
+    <?php
     session_start();
 
     // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
@@ -33,9 +33,9 @@
         <div class="profileSection">
             <img src="../../img/logoUser.png" alt="Imagen de perfil" class="profileImage">
             <?php
-                echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
+            echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
             ?>
-            
+
         </div>
     </header>
 
