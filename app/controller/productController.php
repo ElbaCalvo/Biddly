@@ -17,9 +17,7 @@ class ProductController {
         $product->setImg($img);
         $product->setFecha($fecha);
         $product->setVendedor($vendedor);
-        $product->addProduct();
-
-        return $this->conn->lastInsertId(); // Devuelve el ID del producto recién insertado
+        return $product->addProduct();
     }
 
     public function getProductsByCategory($categoryId) {

@@ -60,6 +60,6 @@ class Product {
         $sql->bindParam(6, $this->fecha);
         $sql->bindParam(7, $this->vendedor);
         $sql->execute();
+        return $conn->lastInsertId(); // Devuelve el ID del producto recién insertado
     }
-
 }

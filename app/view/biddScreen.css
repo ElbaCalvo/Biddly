@@ -17,11 +17,10 @@ body {
 .buttonSection {
     display: flex;
     justify-content: flex-end;
-    /* Alinea los elementos a la derecha */
     align-items: center;
     gap: 10px;
-    /* Espacio entre la imagen y el nombre */
-    margin-right: 50px;
+    margin-right: 50px; /* Espacio entre la imagen y el nombre */
+
 }
 
 .profileImage {
@@ -130,9 +129,8 @@ input[type="number"] {
 
 .imgContent {
     width: 500px;
-    height: auto;
+    height: 375px;
     border-radius: 8px;
-    margin-bottom: 12px;
     border: 2px solid #a8a8a8;
 }
 
