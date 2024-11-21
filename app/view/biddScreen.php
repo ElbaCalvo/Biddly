@@ -14,7 +14,10 @@
 
     require_once '../controller/productController.php';
     $productController = new ProductController();
-    $producto = $productController->getProductsById(productId: 22);
+
+    $productId = isset($_GET['product_id']) ? $_GET['product_id'] : 0;
+
+    $producto = $productController->getProductsById($productId);
 
     ?>
     <header class="topBar">
