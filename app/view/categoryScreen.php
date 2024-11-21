@@ -54,6 +54,7 @@
     <?php
     foreach ($productos as $producto) {
         echo '
+        <form action="signInScreen.php">
         <div class="contentContainer">
             <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
             <div class="info">
@@ -69,7 +70,8 @@
                     ' . $producto['Fecha_fin_subasta'] . '
                 </div>
             </div>
-        </div>';
+        </div>
+        </form>';
     }
     ?>
 </body>
