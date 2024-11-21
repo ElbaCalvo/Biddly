@@ -20,7 +20,7 @@
         $categoria = $_POST['categoria'];
         $descripcion = $_POST['descripcion'];
         $img = $_POST['url'];
-        $vendedor = 'angel';                 //"_SESSION['usuario']"; 
+        $vendedor = $_SESSION['usuario'];                 //"_SESSION['usuario']"; 
         $fecha = $_POST['fecha'];
 
         $productController->addProduct($nombre,$descripcion,$categoria,$precio,$img,$fecha,$vendedor);
