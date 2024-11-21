@@ -14,10 +14,30 @@ body {
     padding-top: 10px;
 }
 
-.topBarButtons {
-    justify-content: end;
-    width: 100px;
-    margin: 0px;
+.buttonSection {
+    display: flex;
+    justify-content: flex-end;
+    /* Alinea los elementos a la derecha */
+    align-items: center;
+    gap: 10px;
+    /* Espacio entre la imagen y el nombre */
+    margin-right: 50px;
+}
+
+.profileImage {
+    width: 43px;
+    height: 40px;
+}
+
+.favoritesImage {
+    width: 43px;
+    height: 40px;
+}
+
+.profileName {
+    font-size: 16px;
+    color: #4d4c4c;
+    font-weight: bold;
 }
 
 .topBar {
@@ -26,10 +46,23 @@ body {
     padding: 10px 20px;
 }
 
+.orangeLine {
+    min-height: 5px;
+    background-color: #f67b21;
+    width: 100%;
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
 .searchBar {
-    margin: 0 200px;
+    margin: auto 80px auto auto;
+    width: 400px;
     padding: 8px;
-    flex: 1;
     font-size: 16px;
     border-radius: 12px;
     border: solid 1px black;

@@ -39,4 +39,17 @@ class ProductController {
             return null;
         }
     }
+
+    public function getProductsById($productId) {
+        try {
+            $conn = getDBConnection();
+            $sql = $conn->prepare('SELECT * FROM productos WHERE id = :id');
+            $sql->bindParam(':id', $productId);
+            $sql->execute();
+            return $sql->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return null;
+        }
+    }
 }
