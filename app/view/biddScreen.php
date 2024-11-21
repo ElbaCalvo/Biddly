@@ -14,7 +14,7 @@
 
     require_once '../controller/productController.php';
     $productController = new ProductController();
-    $producto = $productController->getProductsById(24);
+    $producto = $productController->getProductsById(productId: 22);
 
     ?>
     <header class="topBar">
@@ -39,7 +39,7 @@
     echo '
     <div class="content">
         <div class="contentLeft">
-            <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
+            <img class="imgContent" src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
             <div class="user">
                 <img src="../../img/logoUser.png" alt="Icono Usuario">
                 ' . $producto['Vendedor'] . '
