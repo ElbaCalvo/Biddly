@@ -27,11 +27,13 @@
 
     <div class="favoritesContainer">
         <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="price">50€</div>
-            <div class="productName">XBOX ELITE 2 Core Edition</div>
-            <button class="likeButton"></button>
-            <button class="bidButton">Pujar</button>
+            <form action="signInScreen.php">
+                <img src="../../img/mando.png" alt="Xbox Elite Controller">
+                <div class="price">50€</div>
+                <div class="productName">XBOX ELITE 2 Core Edition</div>
+                <button class="likeButton"></button>
+                <button class="bidButton">Pujar</button>
+            </form>
             <div class="description">
                 <strong>Descripción</strong><br>
                 <p>descripción descripción descripción descripción descripción descripción descripción descripción
@@ -43,11 +45,13 @@
         </div>
 
         <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="price">50€</div>
-            <div class="productName">XBOX ELITE 2 Core Edition</div>
-            <button class="likeButton"></button>
-            <button class="bidButton">Pujar</button>
+            <form action="signInScreen.php">
+                <img src="../../img/mando.png" alt="Xbox Elite Controller">
+                <div class="price">50€</div>
+                <div class="productName">XBOX ELITE 2 Core Edition</div>
+                <button class="likeButton"></button>
+                <button class="bidButton">Pujar</button>
+            </form>
             <div class="description">
                 <strong>Descripción</strong><br>
                 <p>descripción descripción descripción descripción descripción descripción descripción descripción
@@ -59,11 +63,13 @@
         </div>
 
         <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="price">50€</div>
-            <div class="productName">XBOX ELITE 2 Core Edition</div>
-            <button class="likeButton"></button>
-            <button class="bidButton">Pujar</button>
+            <form action="signInScreen.php">
+                <img src="../../img/mando.png" alt="Xbox Elite Controller">
+                <div class="price">50€</div>
+                <div class="productName">XBOX ELITE 2 Core Edition</div>
+                <button class="likeButton"></button>
+                <button class="bidButton">Pujar</button>
+            </form>
             <div class="description">
                 <strong>Descripción</strong><br>
                 <p>descripción descripción descripción descripción descripción descripción descripción descripción
