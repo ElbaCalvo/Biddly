@@ -2,6 +2,12 @@
 require_once '../model/product.php';
 
 class ProductController {
+    private $conn;
+
+    public function __construct() {
+        $this->conn = getDBConnection();
+    }
+
     public function addProduct($nombre,$desc,$categoria,$precio,$img,$fecha,$vendedor) {
         $product = new Product();
         $product->setNombre($nombre);
@@ -11,7 +17,9 @@ class ProductController {
         $product->setImg($img);
         $product->setFecha($fecha);
         $product->setVendedor($vendedor);
-        return $product->addProduct();
+        $product->addProduct();
+
+        return $this->conn->lastInsertId(); // Devuelve el ID del producto recién insertado
     }
 
     public function getProductsByCategory($categoryId) {
@@ -23,7 +31,7 @@ class ProductController {
             return $sql->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
-            return [];
+            return null;
         }
     }
 
@@ -40,7 +48,7 @@ class ProductController {
         }
     }
 
-    public function getProductsById($productId) {
+    public function getProductById($productId) {
         try {
             $conn = getDBConnection();
             $sql = $conn->prepare('SELECT * FROM productos WHERE id = :id');

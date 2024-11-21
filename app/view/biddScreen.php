@@ -14,9 +14,11 @@
 
     require_once '../controller/productController.php';
     $productController = new ProductController();
-    $producto = $productController->getProductsById(productId: 22);
 
+    $productId = isset($_GET['product_id']) ? $_GET['product_id'] : 0;  // Se obtiene el ID del producto desde la URL
+    $producto = $productController->getProductById($productId); // El producto utilizando el ID del producto
     ?>
+
     <header class="topBar">
         <div class="logoContainer">
             <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
