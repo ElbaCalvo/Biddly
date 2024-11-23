@@ -58,4 +58,15 @@ class ProductController {
             return null;
         }
     }
+
+    public function getTopLikedProducts() { 
+        try {
+            $sql = $this->conn->prepare('SELECT * FROM productos ORDER BY Numero_Likes DESC LIMIT 3');
+            $sql->execute();
+            return $sql->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return null;
+        }
+    }
 }

@@ -77,8 +77,8 @@ a {
 }
 
 .contentContainer img {
-  width: 100%;
-  height: auto;
+  width: 98%;
+  height: 250px;
   border-radius: 8px;
   margin-bottom: 12px;
   border: 2px solid #a8a8a8;
@@ -105,14 +105,13 @@ a {
 
 .likeButton {
   background-image: url("../../img/emptyHeart.png");
-  background-size: cover;
-  /* Ajusta la imagen para cubrir todo el botón */
-  background-position: center;
-  /* Centra la imagen en el botón */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
+  background-position: center; /* Centra la imagen en el botón */
   width: 35px;
   height: 35px;
   cursor: pointer;
   border: none;
+  border-radius: 50%; 
 }
 
 .bidButton {
@@ -137,9 +136,10 @@ a {
   background-color: #fff;
   padding: 8px;
   border: 1px solid #b8b8b8;
-  border-radius: 4px;
+  border-radius: 4px; 
   border-radius: 10px;
   margin-top: 8px;
+  width: 94%;
 }
 
 .description p {
