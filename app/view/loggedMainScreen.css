@@ -157,7 +157,7 @@ a {
     font-weight: bold;
     cursor: pointer;
     margin: 8px 0;
-    width: 100%;
+    width: 320px;
 }
 
 .bidButton:hover {

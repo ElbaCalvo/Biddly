@@ -60,8 +60,13 @@
             <div class="info">
                 <div class="productName">' . $producto['Nombre'] . '</div>
                 <div class="price">' . $producto['Precio'] . '€' . '</div>
-                <button class="likeButton"></button>
-                <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>
+                <form method="POST" action="signInScreen.php">
+                    <input type="hidden" name="productId" value="' . $producto['ID'] . '">
+                    <button type="submit" name="likeProduct" class="likeButton"></button>
+                </form>
+                <form method="POST" action="signInScreen.php">
+                    <button type="submit" class="bidButton">Pujar</button>
+                </form>
                 <div class="description">
                     <strong>Descripción</strong><br>
                     <p>' . $producto['Descripcion'] . '</p>

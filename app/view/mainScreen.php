@@ -40,11 +40,13 @@
                 <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
                 <div class="price">' . $producto['Precio'] . '€</div>
                 <div class="productName">' . $producto['Nombre'] . '</div>
-                <form method="POST" action="loggedMainScreen.php">
+                <form method="POST" action="signInScreen.php">
                     <input type="hidden" name="productId" value="' . $producto['ID'] . '">
                     <button type="submit" name="likeProduct" class="likeButton"></button>
                 </form>
-                <button class="bidButton">Pujar</button>
+                <form method="POST" action="signInScreen.php">
+                    <button type="submit" class="bidButton">Pujar</button>
+                </form>
                 <div class="description">
                     <strong>Descripción</strong><br>
                     <p>' . $producto['Descripcion'] . '</p>

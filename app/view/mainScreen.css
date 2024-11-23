@@ -125,7 +125,7 @@ a {
   cursor: pointer;
   /*para que se vea un dedo*/
   margin: 8px 0;
-  width: 100%;
+  width: 320px;
 }
 
 .bidButton:hover {
