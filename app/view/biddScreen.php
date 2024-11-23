@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pujas</title>
     <link rel="stylesheet" href="biddScreen.css">
 </head>
 
@@ -14,6 +14,25 @@
 
     require_once '../controller/productController.php';
     $productController = new ProductController();
+
+    // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: mainScreen.php");
+        exit();
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manageLikes'])) {
+        $productId = $_POST['productId'];
+        if (isset($_SESSION['usuario'])) {
+            $userId = $_SESSION['usuario'];
+            $productController->manageLikes($productId, $userId);
+            header("Location: biddScreen.php?product_id=" . $productId . "#product-" . $productId);
+            exit();
+        } else {
+            header("Location: signInScreen.php");
+            exit();
+        }
+    }
 
     $productId = isset($_GET['product_id']) ? $_GET['product_id'] : 0;  // Se obtiene el ID del producto desde la URL
     $producto = $productController->getProductById($productId); // El producto utilizando el ID del producto
@@ -38,6 +57,9 @@
     <div class="orangeLine1"></div>
 
     <?php
+    $liked = $productController->isLikedByUser($producto['ID'], $_SESSION['usuario']);
+    $likeButtonClass = $liked ? 'likeButton liked' : 'likeButton';
+
     echo '
     <div class="content">
         <div class="contentLeft">
@@ -54,7 +76,10 @@
         <div class="contentRight">
             <div class="price">' . $producto['Precio'] . '€</div>
             <div class="productName">' . $producto['Nombre'] . '</div>
-            <button class="likeButton"></button>
+            <form method="POST" action="biddScreen.php?product_id=' . $producto['ID'] . '#product-' . $producto['ID'] . '">
+                <input type="hidden" name="productId" value="' . $producto['ID'] . '">
+                <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
+            </form>
             <input type="number" name="puja">
             <button class="bidButton">Pujar</button>
             <div class="orangeLine2"></div>

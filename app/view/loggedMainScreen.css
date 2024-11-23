@@ -143,6 +143,10 @@ a {
     border-radius: 50%;
 }
 
+.likeButton.liked {
+    background-image: url("../../img/fullHeart.png");
+}
+
 .bidButton {
     font-size: 1em;
     background-color: #ff813f;

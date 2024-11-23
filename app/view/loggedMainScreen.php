@@ -21,6 +21,17 @@
         exit();
     }
 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manageLikes'])) {
+        $productId = $_POST['productId'];
+        if (isset($_SESSION['usuario'])) {
+            $userId = $_SESSION['usuario'];
+            $productController->manageLikes($productId, $userId);
+        } else {
+            header("Location: signInScreen.php");
+            exit();
+        }
+    }
+
     $productos = $productController->getTopLikedProducts(); // Obtener los 3 productos con más likes.
     ?>
 
@@ -54,6 +65,9 @@
     <div class="favoritesContainer">
     <?php
         foreach ($productos as $producto) {
+            $liked = $productController->isLikedByUser($producto['ID'], $_SESSION['usuario']);
+            $likeButtonClass = $liked ? 'likeButton liked' : 'likeButton';
+
             echo '
             <div class="contentContainer" data-product-id="' . $producto['ID'] . '">
                 <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
@@ -61,9 +75,9 @@
                 <div class="productName">' . $producto['Nombre'] . '</div>
                 <form method="POST" action="loggedMainScreen.php">
                     <input type="hidden" name="productId" value="' . $producto['ID'] . '">
-                    <button type="submit" name="likeProduct" class="likeButton"></button>
+                    <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
                 </form>
-                <button class="bidButton">Pujar</button>
+                <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>
                 <div class="description">
                     <strong>Descripción</strong><br>
                     <p>' . $producto['Descripcion'] . '</p>

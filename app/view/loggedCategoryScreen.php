@@ -10,20 +10,35 @@
 
 <body>
     <?php
-        session_start();
+    session_start();
 
-        // Incluir el controlador de productos
-        require_once '../controller/productController.php';
-        $productController = new ProductController();
+    require_once '../controller/productController.php';
+    $productController = new ProductController();
 
-        // Obtener el ID de la categoría de la URL
-        $categoryId = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
+    // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: mainScreen.php");
+        exit();
+    }
 
-        // Obtener los productos de la categoría seleccionada
-        $productos = $productController->getProductsByCategory($categoryId);
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manageLikes'])) {
+        $productId = $_POST['productId'];
+        if (isset($_SESSION['usuario'])) {
+            $userId = $_SESSION['usuario'];
+            $productController->manageLikes($productId, $userId);
+            header("Location: loggedCategoryScreen.php?category_id=" . $_GET['category_id'] . "#product-" . $productId);
+            exit();
+        } else {
+            header("Location: signInScreen.php");
+            exit();
+        }
+    }
 
-        // Obtener la información de la categoría
-        $category = $productController->getCategoryById($categoryId);
+    // Obtener el ID de la categoría de la URL
+    $categoryId = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
+
+    $productos = $productController->getProductsByCategory($categoryId); // Obtener los productos de la categoría seleccionada
+    $category = $productController->getCategoryById($categoryId); // Obtener la información de la categoría
     ?>
     <header class="topBar">
         <div class="logoContainer">
@@ -43,7 +58,7 @@
 
     <div class="orangeLine"></div>
     <div class="categoryTypeContainer">
-        <?php echo'<div class="categoryType">' . $category['Nombre'] . '</div>'; ?>
+        <?php echo '<div class="categoryType">' . $category['Nombre'] . '</div>'; ?>
     </div>
 
 
@@ -60,13 +75,19 @@
 
     <?php
     foreach ($productos as $producto) {
+        $liked = $productController->isLikedByUser($producto['ID'], $_SESSION['usuario']);
+        $likeButtonClass = $liked ? 'likeButton liked' : 'likeButton';
+
         echo '
-        <div class="contentContainer">
+        <div id="product-' . $producto['ID'] . '" class="contentContainer">
             <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
             <div class="info">
                 <div class="productName">' . $producto['Nombre'] . '</div>
                 <div class="price">' . $producto['Precio'] . '€' . '</div>
-                <button class="likeButton"></button>
+                <form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '#product-' . $producto['ID'] . '">
+                    <input type="hidden" name="productId" value="' . $producto['ID'] . '">
+                    <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
+                </form>
                 <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>
                 <div class="description">
                     <strong>Descripción</strong><br>
@@ -80,5 +101,6 @@
     }
     ?>
 </body>
-
 </html>
+
+<?php include 'footer.php'; ?>

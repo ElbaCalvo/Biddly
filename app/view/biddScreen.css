@@ -143,27 +143,34 @@ input[type="number"] {
     font-size: 1.8em;
     font-weight: bold;
     color: #333;
-    margin: 15px 0px;
+    margin: 10px 0px;
 }
 
 .productName {
     font-weight: bold;
     color: #333;
-    margin: 4px 0;
-    margin: 15px 0px;
+    margin: 5px 0px 15px 0px;
+    font-size: 1.3em;
 }
 
 .likeButton {
     background-image: url("../../img/emptyHeart.png");
-    background-size: cover;
-    /* Ajusta la imagen para cubrir todo el botón */
-    background-position: center;
-    /* Centra la imagen en el botón */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
+    background-position: center; /* Centra la imagen en el botón */
     width: 35px;
     height: 35px;
-    margin: 15px 0px;
+    margin: 5px 0px;
+    border-radius: 50%;
     cursor: pointer;
     border: none;
+}
+
+.likeButton.liked {
+    background-image: url("../../img/fullHeart.png");
+}
+
+.bidButton:hover {
+    background-color: #f67b21;
 }
 
 .bidButton {
@@ -203,8 +210,8 @@ input[type="number"] {
     border-radius: 4px;
     border-radius: 10px;
     margin: 15px 0px;
-    width: 90%;
-    height: 200px;
+    width: 94%;
+    height: 450px;
 }
 
 .description p {
@@ -236,9 +243,9 @@ input[type="number"] {
 
 .orangeLine2 {
     min-height: 3px;
-    margin: auto;
     background-color: #f67b21;
-    width: 60%;
+    width: 75%;
+    margin: 40px auto;
 }
 
 .categoryContainer {
