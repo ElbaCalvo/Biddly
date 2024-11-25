@@ -46,7 +46,7 @@ class ProductController {
             $sql = $conn->prepare('DELETE FROM productos WHERE id = :id');
             $sql->bindParam(':id', $ID);
             $sql->execute();
-            echo 'Producto eliminado';
+            echo "<scrip>alert('Producto eliminado')</script>";
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
             return null;

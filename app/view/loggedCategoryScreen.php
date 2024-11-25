@@ -16,6 +16,11 @@
     require_once '../controller/productController.php';
     $productController = new ProductController();
 
+    // Eliminar producto si es necesario
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['usuario'] == 'Admin') {
+        $productController->deleteProduct($_POST['deleteProduct']);
+    }
+
     // Obtener el ID de la categoría de la URL
     $categoryId = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
 
@@ -24,12 +29,6 @@
 
     // Obtener la información de la categoría
     $category = $productController->getCategoryById($categoryId);
-
-    
-
-    if($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['usuario']=='Admin'){
-        $delete = $productController->deleteProduct($_POST['deleteProduct']);
-    }
 
     ?>
     <header class="topBar">
@@ -66,16 +65,15 @@
     </div>
 
     <?php
-    try {
-        foreach ($productos as $producto) {
-        echo ' <form action=loggedCategoryScreen.php method="POST">
+    foreach ($productos as $producto) {
+        echo ' <form action=loggedCategoryScreen.php?category_id='.$_GET['category_id'].' method="POST">
         <div class="contentContainer">
             <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
             <div class="info">
                 <div class="productName">' . $producto['Nombre'] . '</div>
                 <div class="price">' . $producto['Precio'] . '€' . '</div>';
         if ($_SESSION["usuario"] = "Admin") {
-            echo '<button class="deleteButton" name="deleteProduct" value="'.$producto['ID'].'">Eliminar</button>';
+            echo '<button class="deleteButton" name="deleteProduct" value="' . $producto['ID'] . '">Eliminar</button>';
         } else {
             echo '<button class="likeButton"></button>
                 <button class="bidButton">Pujar</button>';
@@ -90,9 +88,6 @@
             </div>
         </div>
         </form>';
-    }
-    } catch (Exception) {
-        echo 'No hay productos disponibles';
     }
     ?>
 </body>
