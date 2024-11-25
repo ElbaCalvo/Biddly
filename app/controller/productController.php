@@ -1,14 +1,17 @@
 <?php
 require_once '../model/product.php';
 
-class ProductController {
+class ProductController
+{
     private $conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->conn = getDBConnection();
     }
 
-    public function addProduct($nombre,$desc,$categoria,$precio,$img,$fecha,$vendedor) {
+    public function addProduct($nombre, $desc, $categoria, $precio, $img, $fecha, $vendedor)
+    {
         $product = new Product();
         $product->setNombre($nombre);
         $product->setDesc($desc);
@@ -20,7 +23,8 @@ class ProductController {
         return $product->addProduct();
     }
 
-    public function getProductsByCategory($categoryId) {
+    public function getProductsByCategory($categoryId)
+    {
         try {
             $conn = getDBConnection();
             $sql = $conn->prepare('SELECT * FROM productos WHERE categoria = :categoria');
@@ -33,7 +37,8 @@ class ProductController {
         }
     }
 
-    public function getCategoryById($categoryId) {
+    public function getCategoryById($categoryId)
+    {
         try {
             $conn = getDBConnection();
             $sql = $conn->prepare('SELECT * FROM categorias WHERE id = :id');
@@ -46,7 +51,8 @@ class ProductController {
         }
     }
 
-    public function getProductById($productId) {
+    public function getProductById($productId)
+    {
         try {
             $conn = getDBConnection();
             $sql = $conn->prepare('SELECT * FROM productos WHERE id = :id');
@@ -58,7 +64,6 @@ class ProductController {
             return null;
         }
     }
-
     public function updateProductPrice($productId, $newPrice) {
         $product = new Product();
         return $product->updatePrice($productId, $newPrice);
@@ -75,7 +80,8 @@ class ProductController {
         }
     }
 
-    public function manageLikes($productId, $userId) { // Añadir o eliminar un like.
+    public function manageLikes($productId, $userId)
+    { // Añadir o eliminar un like.
         try {
             $sql = $this->conn->prepare('SELECT * FROM favoritos WHERE producto = :producto AND usuario = :usuario'); // Comprobar si el usuario ya ha dado like
             $sql->bindParam(':producto', $productId);
@@ -93,7 +99,6 @@ class ProductController {
                 $sql = $this->conn->prepare('UPDATE productos SET Numero_Likes = Numero_Likes - 1 WHERE ID = :id');
                 $sql->bindParam(':id', $productId);
                 $sql->execute();
-
             } else { // Si el booleano devuelve false, añadir el like.
                 $sql = $this->conn->prepare('INSERT INTO favoritos (producto, usuario) VALUES (:producto, :usuario)');
                 $sql->bindParam(':producto', $productId);
@@ -110,7 +115,8 @@ class ProductController {
         }
     }
 
-    public function isLikedByUser($productId, $userId) { // Comprobar si un usuario ha dado like a un producto.
+    public function isLikedByUser($productId, $userId)
+    { // Comprobar si un usuario ha dado like a un producto.
         try {
             $sql = $this->conn->prepare('SELECT * FROM favoritos WHERE producto = :producto AND usuario = :usuario');
             $sql->bindParam(':producto', $productId);
@@ -123,12 +129,27 @@ class ProductController {
         }
     }
 
-    public function getUserFavorites($userId) { // Obtener los productos favoritos del usuario.
+    public function getUserFavorites($userId)
+    { // Obtener los productos favoritos del usuario.
         try {
             $sql = $this->conn->prepare('SELECT producto FROM favoritos WHERE usuario = :usuario');
             $sql->bindParam(':usuario', $userId);
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return null;
+        }
+    }
+
+    public function deleteProduct($ID)
+    { //eliminar producto
+        try {
+            $conn = getDBConnection();
+            $sql = $conn->prepare('DELETE FROM productos WHERE id = :id');
+            $sql->bindParam(':id', $ID);
+            $sql->execute();
+            echo "<script>alert('Producto eliminado')</script>";
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
             return null;
