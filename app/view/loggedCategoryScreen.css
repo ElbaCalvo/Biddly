@@ -203,6 +203,20 @@ body {
     margin: 8px 0;
     width: 100%;
   }
+
+  .updateButton {
+    font-size: 1em;
+    background-color: rgb(0, 76, 255);
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    /*para que se vea un dedo*/
+    margin: 8px 0;
+    width: 100%;
+  }
   
   .favoritesContainer .contentContainer {
     border: groove 4px #f67b21;
@@ -214,6 +228,10 @@ body {
 
   .deleteButton:hover {
     background-color: rgb(143, 0, 0);
+  }
+
+  .updateButton:hover {
+    background-color: rgb(1, 58, 190);
   }
   
   .description {
@@ -235,4 +253,11 @@ body {
     font-size: 0.9em;
     color: #666;
     margin-top: 8px;
+  }
+
+  .updateForm {
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-size: 14px;
+    display: block;
   }
