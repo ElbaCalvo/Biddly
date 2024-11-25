@@ -59,6 +59,11 @@ class ProductController {
         }
     }
 
+    public function updateProductPrice($productId, $newPrice) {
+        $product = new Product();
+        return $product->updatePrice($productId, $newPrice);
+    }
+
     public function getTopLikedProducts() { 
         try {
             $sql = $this->conn->prepare('SELECT * FROM productos ORDER BY Numero_Likes DESC LIMIT 3');
