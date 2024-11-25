@@ -39,4 +39,17 @@ class ProductController {
             return null;
         }
     }
+
+    public function deleteProduct($ID){
+        try {
+            $conn = getDBConnection();
+            $sql = $conn->prepare('DELETE FROM productos WHERE id = :id');
+            $sql->bindParam(':id', $ID);
+            $sql->execute();
+            echo 'Producto eliminado';
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return null;
+        }
+    }
 }
