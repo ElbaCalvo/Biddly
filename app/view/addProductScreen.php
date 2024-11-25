@@ -20,13 +20,13 @@
         $categoria = $_POST['categoria'];
         $descripcion = $_POST['descripcion'];
         $img = $_POST['url'];
-        $vendedor = $_SESSION['usuario'];                 //"_SESSION['usuario']"; 
+        $vendedor = $_SESSION['usuario'];
         $fecha = $_POST['fecha'];
 
-        $productController->addProduct($nombre,$descripcion,$categoria,$precio,$img,$fecha,$vendedor);
+        $product_id = $productController->addProduct($nombre, $descripcion, $categoria, $precio, $img, $fecha, $vendedor);
 
         echo "<script>alert('Producto registrado con exito.')</script>";
-        header('Location: mainScreen.php');
+        header("Location: biddScreen.php?product_id=$product_id");
         exit();
     }
 

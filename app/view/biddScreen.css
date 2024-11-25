@@ -14,10 +14,29 @@ body {
     padding-top: 10px;
 }
 
-.topBarButtons {
-    justify-content: end;
-    width: 100px;
-    margin: 0px;
+.buttonSection {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-right: 50px; /* Espacio entre la imagen y el nombre */
+
+}
+
+.profileImage {
+    width: 43px;
+    height: 40px;
+}
+
+.favoritesImage {
+    width: 43px;
+    height: 40px;
+}
+
+.profileName {
+    font-size: 16px;
+    color: #4d4c4c;
+    font-weight: bold;
 }
 
 .topBar {
@@ -26,10 +45,23 @@ body {
     padding: 10px 20px;
 }
 
+.orangeLine {
+    min-height: 5px;
+    background-color: #f67b21;
+    width: 100%;
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
 .searchBar {
-    margin: 0 200px;
+    margin: auto 80px auto auto;
+    width: 400px;
     padding: 8px;
-    flex: 1;
     font-size: 16px;
     border-radius: 12px;
     border: solid 1px black;
@@ -97,9 +129,8 @@ input[type="number"] {
 
 .imgContent {
     width: 500px;
-    height: auto;
+    height: 375px;
     border-radius: 8px;
-    margin-bottom: 12px;
     border: 2px solid #a8a8a8;
 }
 
@@ -112,27 +143,34 @@ input[type="number"] {
     font-size: 1.8em;
     font-weight: bold;
     color: #333;
-    margin: 15px 0px;
+    margin: 10px 0px;
 }
 
 .productName {
     font-weight: bold;
     color: #333;
-    margin: 4px 0;
-    margin: 15px 0px;
+    margin: 5px 0px 15px 0px;
+    font-size: 1.3em;
 }
 
 .likeButton {
     background-image: url("../../img/emptyHeart.png");
-    background-size: cover;
-    /* Ajusta la imagen para cubrir todo el botón */
-    background-position: center;
-    /* Centra la imagen en el botón */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
+    background-position: center; /* Centra la imagen en el botón */
     width: 35px;
     height: 35px;
-    margin: 15px 0px;
+    margin: 5px 0px;
+    border-radius: 50%;
     cursor: pointer;
     border: none;
+}
+
+.likeButton.liked {
+    background-image: url("../../img/fullHeart.png");
+}
+
+.bidButton:hover {
+    background-color: #f67b21;
 }
 
 .bidButton {
@@ -172,8 +210,8 @@ input[type="number"] {
     border-radius: 4px;
     border-radius: 10px;
     margin: 15px 0px;
-    width: 90%;
-    height: 200px;
+    width: 94%;
+    height: 450px;
 }
 
 .description p {
@@ -205,9 +243,9 @@ input[type="number"] {
 
 .orangeLine2 {
     min-height: 3px;
-    margin: auto;
     background-color: #f67b21;
-    width: 60%;
+    width: 75%;
+    margin: 40px auto;
 }
 
 .categoryContainer {

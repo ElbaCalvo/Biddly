@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    <?php
+        require_once "../controller/productController.php";
+        $productController = new ProductController();
+
+        $productos = $productController->getTopLikedProducts(); // Obtener los 3 productos con más likes.
+    ?>
+
     <!-- Logo, barra de busqueda y botones de inicio de sesión y registro. -->
     <header class="topBar">
         <div class="logoContainer">
@@ -26,59 +33,30 @@
     <div class="comunityFavorites">Favoritos de la comunidad</div>
 
     <div class="favoritesContainer">
-        <div class="contentContainer">
-            <form action="signInScreen.php">
-                <img src="../../img/mando.png" alt="Xbox Elite Controller">
-                <div class="price">50€</div>
-                <div class="productName">XBOX ELITE 2 Core Edition</div>
-                <button class="likeButton"></button>
-                <button class="bidButton">Pujar</button>
-            </form>
-            <div class="description">
-                <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción
-                    descripción descripción descripción...</p>
-            </div>
-            <div class="bidTime">
-                3 Dec. 2024, 08:41
-            </div>
-        </div>
-
-        <div class="contentContainer">
-            <form action="signInScreen.php">
-                <img src="../../img/mando.png" alt="Xbox Elite Controller">
-                <div class="price">50€</div>
-                <div class="productName">XBOX ELITE 2 Core Edition</div>
-                <button class="likeButton"></button>
-                <button class="bidButton">Pujar</button>
-            </form>
-            <div class="description">
-                <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción
-                    descripción descripción descripción...</p>
-            </div>
-            <div class="bidTime">
-                3 Dec. 2024, 08:41
-            </div>
-        </div>
-
-        <div class="contentContainer">
-            <form action="signInScreen.php">
-                <img src="../../img/mando.png" alt="Xbox Elite Controller">
-                <div class="price">50€</div>
-                <div class="productName">XBOX ELITE 2 Core Edition</div>
-                <button class="likeButton"></button>
-                <button class="bidButton">Pujar</button>
-            </form>
-            <div class="description">
-                <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción
-                    descripción descripción descripción...</p>
-            </div>
-            <div class="bidTime">
-                3 Dec. 2024, 08:41
-            </div>
-        </div>
+    <?php
+        foreach ($productos as $producto) {
+            echo '
+            <div class="contentContainer" data-product-id="' . $producto['ID'] . '">
+                <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
+                <div class="price">' . $producto['Precio'] . '€</div>
+                <div class="productName">' . $producto['Nombre'] . '</div>
+                <form method="POST" action="signInScreen.php">
+                    <input type="hidden" name="productId" value="' . $producto['ID'] . '">
+                    <button type="submit" name="likeProduct" class="likeButton"></button>
+                </form>
+                <form method="POST" action="signInScreen.php">
+                    <button type="submit" class="bidButton">Pujar</button>
+                </form>
+                <div class="description">
+                    <strong>Descripción</strong><br>
+                    <p>' . $producto['Descripcion'] . '</p>
+                </div>
+                <div class="bidTime">
+                    ' . $producto['Fecha_fin_subasta'] . '
+                </div>
+            </div>';
+        }
+    ?>
     </div>
 
     <!-- Barra naranja de separacion -->

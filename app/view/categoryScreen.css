@@ -143,15 +143,17 @@ body {
 
 .likeButton {
   background-image: url("../../img/emptyHeart.png");
-  background-size: cover;
-  /* Ajusta la imagen para cubrir todo el botón */
-  background-position: center;
-  /* Centra la imagen en el botón */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
+  background-position: center; /* Centra la imagen en el botón */
   border-radius: 50%;
   width: 35px;
   height: 35px;
   cursor: pointer;
   border: none;
+}
+
+.likeButton.liked {
+  background-image: url("../../img/fullHeart.png");
 }
 
 .bidButton {

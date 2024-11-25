@@ -12,11 +12,27 @@
     <?php
     session_start();
 
+    require_once "../controller/productController.php";
+    $productController = new ProductController();
+
     // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
     if (!isset($_SESSION['usuario'])) {
         header("Location: mainScreen.php");
         exit();
     }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manageLikes'])) {
+        $productId = $_POST['productId'];
+        if (isset($_SESSION['usuario'])) {
+            $userId = $_SESSION['usuario'];
+            $productController->manageLikes($productId, $userId);
+        } else {
+            header("Location: signInScreen.php");
+            exit();
+        }
+    }
+
+    $productos = $productController->getTopLikedProducts(); // Obtener los 3 productos con más likes.
     ?>
 
     <!-- Logo, barra de busqueda y botones de inicio de favoritos y usuario. -->
@@ -47,53 +63,31 @@
     <div class="comunityFavorites">Favoritos de la comunidad</div>
 
     <div class="favoritesContainer">
-        <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="price">50€</div>
-            <div class="productName">XBOX ELITE 2 Core Edition</div>
-            <button class="likeButton"></button>
-            <button class="bidButton">Pujar</button>
-            <div class="description">
-                <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción
-                    descripción descripción descripción...</p>
-            </div>
-            <div class="bidTime">
-                3 Dec. 2024, 08:41
-            </div>
-        </div>
+    <?php
+        foreach ($productos as $producto) {
+            $liked = $productController->isLikedByUser($producto['ID'], $_SESSION['usuario']);
+            $likeButtonClass = $liked ? 'likeButton liked' : 'likeButton';
 
-        <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="price">50€</div>
-            <div class="productName">XBOX ELITE 2 Core Edition</div>
-            <button class="likeButton"></button>
-            <button class="bidButton">Pujar</button>
-            <div class="description">
-                <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción
-                    descripción descripción descripción...</p>
-            </div>
-            <div class="bidTime">
-                3 Dec. 2024, 08:41
-            </div>
-        </div>
-
-        <div class="contentContainer">
-            <img src="../../img/mando.png" alt="Xbox Elite Controller">
-            <div class="price">50€</div>
-            <div class="productName">XBOX ELITE 2 Core Edition</div>
-            <button class="likeButton"></button>
-            <button class="bidButton">Pujar</button>
-            <div class="description">
-                <strong>Descripción</strong><br>
-                <p>descripción descripción descripción descripción descripción descripción descripción descripción
-                    descripción descripción descripción...</p>
-            </div>
-            <div class="bidTime">
-                3 Dec. 2024, 08:41
-            </div>
-        </div>
+            echo '
+            <div class="contentContainer" data-product-id="' . $producto['ID'] . '">
+                <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
+                <div class="price">' . $producto['Precio'] . '€</div>
+                <div class="productName">' . $producto['Nombre'] . '</div>
+                <form method="POST" action="loggedMainScreen.php">
+                    <input type="hidden" name="productId" value="' . $producto['ID'] . '">
+                    <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
+                </form>
+                <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>
+                <div class="description">
+                    <strong>Descripción</strong><br>
+                    <p>' . $producto['Descripcion'] . '</p>
+                </div>
+                <div class="bidTime">
+                    ' . $producto['Fecha_fin_subasta'] . '
+                </div>
+            </div>';
+        }
+    ?>
     </div>
 
     <!-- Barra naranja de separacion -->

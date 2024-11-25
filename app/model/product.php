@@ -60,6 +60,20 @@ class Product {
         $sql->bindParam(6, $this->fecha);
         $sql->bindParam(7, $this->vendedor);
         $sql->execute();
+        return $conn->lastInsertId(); // Devuelve el ID del producto recién insertado
     }
 
+    public function incrementLikes($productId) {
+        $conn = getDBConnection();
+        $sql = $conn->prepare('UPDATE productos SET Numero_Likes = Numero_Likes + 1 WHERE id = ?');
+        $sql->bindParam(1, $productId);
+        $sql->execute();
+    }
+
+    public function decrementLikes($productId) {
+        $conn = getDBConnection();
+        $sql = $conn->prepare('UPDATE productos SET Numero_Likes = Numero_Likes - 1 WHERE id = ?');
+        $sql->bindParam(1, $productId);
+        $sql->execute();
+    }
 }
