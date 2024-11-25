@@ -25,7 +25,7 @@ class Bid {
 
     public function addBid() {
         $conn = getDBConnection();
-        $sql = $conn->prepare('INSERT INTO pujas (Producto,Comprador,Precio) VALUES (?,?,?)');
+        $sql = $conn->prepare('INSERT INTO ofertas (Producto,Comprador,Precio) VALUES (?,?,?)');
         $sql->bindParam(1, $this->producto);
         $sql->bindParam(2, $this->comprador);
         $sql->bindParam(3, $this->precio);
@@ -35,7 +35,7 @@ class Bid {
     public function getBidsByProduct($productId) {
         try {
             $conn = getDBConnection();
-            $sql = $conn->prepare('SELECT * FROM pujas WHERE Producto = :producto');
+            $sql = $conn->prepare('SELECT * FROM ofertas WHERE Producto = :producto ORDER BY ID DESC');
             $sql->bindParam(':producto', $productId);
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);

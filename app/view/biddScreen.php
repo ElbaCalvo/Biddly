@@ -1,5 +1,62 @@
+<?php
+session_start();
+
+require_once '../controller/productController.php';
+require_once '../controller/bidController.php';
+
+$productController = new ProductController();
+$bidController = new BidController();
+
+// Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
+if (!isset($_SESSION['usuario'])) {
+    header("Location: mainScreen.php");
+    exit();
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manageLikes'])) {
+    $productId = $_POST['productId'];
+    if (isset($_SESSION['usuario'])) {
+        $userId = $_SESSION['usuario'];
+        $productController->manageLikes($productId, $userId);
+        header("Location: biddScreen.php?product_id=" . $productId . "#product-" . $productId);
+        exit();
+    } else {
+        header("Location: signInScreen.php");
+        exit();
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addBid'])) {
+    $productId = $_POST['productId'];
+    $precio = $_POST['precio'];
+    $comprador = $_SESSION['usuario'];
+    $bids = $bidController->getBidsByProduct($productId);
+    $highestBid = 0;
+    if ($bids) {
+        foreach ($bids as $bid) {
+            if ($bid['precio'] > $highestBid) {
+                $highestBid = $bid['precio'];
+            }
+        }
+    }
+
+    // Verificar si la puja es válida
+    if (($highestBid > 0 && $precio > $highestBid) || ($highestBid == 0 && $precio > $producto['Precio'])) {
+        $bidController->addBid($productId, $comprador, $precio);
+        header("Location: biddScreen.php?product_id=" . $productId . "#product-" . $productId);
+        exit();
+    } else {
+        echo "<script>alert('La puja debe ser superior al precio del producto o a la puja más alta existente.');</script>";
+    }
+}
+
+$productId = isset($_GET['product_id']) ? $_GET['product_id'] : 0;
+$producto = $productController->getProductById($productId);
+$bids = $bidController->getBidsByProduct($productId);
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,35 +66,6 @@
 </head>
 
 <body>
-    <?php
-    session_start();
-
-    require_once '../controller/productController.php';
-    $productController = new ProductController();
-
-    // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
-    if (!isset($_SESSION['usuario'])) {
-        header("Location: mainScreen.php");
-        exit();
-    }
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manageLikes'])) {
-        $productId = $_POST['productId'];
-        if (isset($_SESSION['usuario'])) {
-            $userId = $_SESSION['usuario'];
-            $productController->manageLikes($productId, $userId);
-            header("Location: biddScreen.php?product_id=" . $productId . "#product-" . $productId);
-            exit();
-        } else {
-            header("Location: signInScreen.php");
-            exit();
-        }
-    }
-
-    $productId = isset($_GET['product_id']) ? $_GET['product_id'] : 0;  // Se obtiene el ID del producto desde la URL
-    $producto = $productController->getProductById($productId); // El producto utilizando el ID del producto
-    ?>
-
     <header class="topBar">
         <div class="logoContainer">
             <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
@@ -80,16 +108,24 @@
                 <input type="hidden" name="productId" value="' . $producto['ID'] . '">
                 <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
             </form>
-            <input type="number" name="puja">
-            <button class="bidButton">Pujar</button>
+            <form method="POST" action="biddScreen.php?product_id=' . $producto['ID'] . '">
+                <input type="hidden" name="productId" value="' . $producto['ID'] . '">
+                <input type="number" name="precio" placeholder="Introduce tu puja" required>
+                <button type="submit" name="addBid" class="bidButton">Pujar</button>
+            </form>
             <div class="orangeLine2"></div>
             <strong>Registro de pujas</strong><br>
-            <div class="biddingRegister">
-                <p>Ejemeplo1</p>
-            </div>
+            <div class="biddingRegister">';
+    if ($bids) {
+        foreach ($bids as $bid) {
+            echo '<p>' . $bid['comprador'] . ' pujó ' . $bid['precio'] . '€</p>';
+        }
+    } else {
+        echo '<p>No hay pujas para este producto.</p>';
+    }
+    echo '</div>
             <div class="bidTime">
                 ' . date("j M. Y, H:i", strtotime($producto['Fecha_fin_subasta'])) . '
-            
             </div>
         </div>
     </div>

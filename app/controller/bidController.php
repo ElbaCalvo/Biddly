@@ -19,7 +19,7 @@ class bidController {
     public function getBidsByProduct($productId) {
         try {
             $conn = getDBConnection();
-            $sql = $conn->prepare('SELECT * FROM pujas WHERE Producto = :producto');
+            $sql = $conn->prepare('SELECT * FROM ofertas WHERE Producto = :producto');
             $sql->bindParam(':producto', $productId);
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
