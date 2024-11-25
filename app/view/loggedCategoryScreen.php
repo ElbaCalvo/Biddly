@@ -89,7 +89,7 @@
             <div class="info">
                 <div class="productName">' . $producto['Nombre'] . '</div>
                 <div class="price">' . $producto['Precio'] . '€' . '</div>';
-        if ($_SESSION["usuario"] = "Admin") {
+        if ($_SESSION["usuario"] == "Admin") {
             echo '<form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '#product-' . $producto['ID'] . '">
             <button class="deleteButton" name="deleteProduct" value="' . $producto['ID'] . '">Eliminar</button>
             </form>';
