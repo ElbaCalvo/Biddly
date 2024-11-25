@@ -91,15 +91,18 @@
                 <div class="price">' . $producto['Precio'] . '€' . '</div>';
         if ($_SESSION["usuario"] = "Admin") {
             echo '<form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '#product-' . $producto['ID'] . '">
-            <button class="deleteButton" name="deleteProduct" value="' . $producto['ID'] . '">Eliminar</button>';
+            <button class="deleteButton" name="deleteProduct" value="' . $producto['ID'] . '">Eliminar</button>
+            </form>';
         } else {
             echo '
                 <form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '#product-' . $producto['ID'] . '">
                     <input type="hidden" name="productId" value="' . $producto['ID'] . '">
-                    <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>';
+                    <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
+                    </form>  
+                    <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>';
                 
         }
-        echo '  </form>  <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>
+        echo ' 
                 <div class="description">
                     <strong>Descripción</strong><br>
                     <p>' . $producto['Descripcion'] . '</p>
