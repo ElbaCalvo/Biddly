@@ -187,6 +187,20 @@ body {
     margin: 8px 0;
     width: 100%;
   }
+
+  .deleteButton {
+    font-size: 1em;
+    background-color: red;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    /*para que se vea un dedo*/
+    margin: 8px 0;
+    width: 100%;
+  }
   
   .favoritesContainer .contentContainer {
     border: groove 4px #f67b21;
@@ -194,6 +208,10 @@ body {
   
   .bidButton:hover {
     background-color: #f67b21;
+  }
+
+  .deleteButton:hover {
+    background-color: rgb(143, 0, 0);
   }
   
   .description {
