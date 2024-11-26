@@ -39,13 +39,14 @@
 
     // Eliminar producto si es necesario
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['deleteProduct'])) {
-        $productController->deleteProduct($_POST['ProductId']);
+        $productController->deleteProduct($_POST['deleteProduct']);
     }
 
-    if ($_SERVER('REQUEST_METHOD') == 'POST' && isset($_POST['updateProduct'])) {
-    $productController->updateProduct($_POST['ProductId'], $_POST['nombreProducto'], $_POST['descripcionProducto'], $_POST['precioProducto'], $_POST['fechaProducto']);
+    // Modificar un producto
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['updateProduct'])) {
+        $productController->updateProduct($_POST['updateProduct'], $_POST['nombreProducto'], $_POST['descripcionProducto'], $_POST['precioProducto'], $_POST['fechaProducto']);
     }
-    
+
 
     $productos = $productController->getProductsByCategory($categoryId); // Obtener los productos de la categoría seleccionada
     $category = $productController->getCategoryById($categoryId); // Obtener la información de la categoría
@@ -71,17 +72,16 @@
         <?php echo '<div class="categoryType">' . $category['Nombre'] . '</div>'; ?>
     </div>
 
-
-    <div class="categoryForm">
+    <!-- <div class="categoryForm"> por ahora no se añade
         <form action="">
             <input class="searchBar" type="search" name="searchBar">
             <img src="../../img/orderIcon.png" alt="icono de Orden">
             <select class="order" name="orden">
-                <option>Precio más alto primero</option>
-                <option>Precio más bajo primero</option>
+                <option value="DESC">Precio más alto primero</option>
+                <option value="ASC">Precio más bajo primero</option>
             </select>
         </form>
-    </div>
+    </div> -->
 
     <?php
     foreach ($productos as $producto) {
@@ -95,17 +95,19 @@
                 ';
         if ($_SESSION["usuario"] == "Admin") {
             echo '
-            <form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '#product-' . $producto['ID'] . '">
+            <form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '">
+            Nombre:
             <input class="updateForm" type=text name="nombreProducto" value=' . $producto['Nombre'] . '>
+            Precio:
             <input class="updateForm" type=text name="precioProducto" value=' . $producto['Precio'] . '>
+            Descripción:
             <input class="updateForm" type=text name="descripcionProducto" value=' . $producto['Descripcion'] . '> 
+            Fecha de finalización de la subasta:
             <input class="updateForm" type=text name="fechaProducto" value=' . $producto['Fecha_fin_subasta'] . '> 
-            <button class="updateButton" name="updateProduct" value="' . $producto['ID'] . '">Guardar</button>
-            <input type="hidden" name="productId" value="' . $producto['ID'] . '">
+            <button class="updateButton" name="updateProduct" value="' . $producto['ID'] . '">Guardar</button> 
             </form>
-            <form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '#product-' . $producto['ID'] . '">
-            <input type="hidden" name="productId" value="' . $producto['ID'] . '">
-            <button class="deleteButton" name="deleteProduct">Eliminar</button>
+            <form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '">
+            <button class="deleteButton" name="deleteProduct" value="' . $producto['ID'] . '">Eliminar</button>
             </form>';
         } else {
             echo '

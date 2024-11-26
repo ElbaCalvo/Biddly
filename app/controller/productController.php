@@ -11,7 +11,7 @@ class ProductController
     }
 
     public function addProduct($nombre, $desc, $categoria, $precio, $img, $fecha, $vendedor)
-    {
+    { //crea un nuevo producto
         $product = new Product();
         $product->setNombre($nombre);
         $product->setDesc($desc);
@@ -23,20 +23,22 @@ class ProductController
         return $product->addProduct();
     }
 
-    public function updateProduct($productId, $nombre, $desc, $precio, $fecha){
-        try {
-            $sql = $this->conn->prepare('UPDATE productos SET nombre = :nombre, descripcion = :descripcion, precio = :precio, fecha = :fecha WHERE id = :id');
-            $sql->bindParam(':id', $productId);
-            $sql->bindParam(':nombre', $nombre);
-            $sql->bindParam(':descripcion', $desc);
-            $sql->bindParam(':precio', $precio);
-            $sql->bindParam(':fecha', $fecha);
-            $sql->execute();
-            echo "<script>alert('Producto actualizado')</script>";
-        } catch (PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-        }
+    public function updateProduct($productId, $nombre, $desc, $precio, $fecha)
+{
+    try {
+        $conn = getDBConnection();
+        $sql = $conn->prepare('UPDATE productos SET Nombre = :nombre, Descripcion = :descripcion, Precio = :precio, Fecha_fin_subasta = :fecha WHERE ID = :id');
+        $sql->bindParam(':id', $productId);
+        $sql->bindParam(':nombre', $nombre);
+        $sql->bindParam(':descripcion', $desc);
+        $sql->bindParam(':precio', $precio);
+        $sql->bindParam(':fecha', $fecha);
+        $sql->execute();
+        echo "<script>alert('Producto actualizado')</script>";
+    } catch (PDOException $e) {
+        echo 'Error: ' . $e->getMessage();
     }
+}
 
     public function getProductsByCategory($categoryId)
     {
