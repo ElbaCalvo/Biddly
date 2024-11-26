@@ -76,4 +76,12 @@ class Product {
         $sql->bindParam(1, $productId);
         $sql->execute();
     }
+
+    public function updatePrice($productId, $newPrice) {
+        $conn = getDBConnection();
+        $sql = $conn->prepare('UPDATE productos SET Precio = :precio WHERE ID = :id');
+        $sql->bindParam(':precio', $newPrice);
+        $sql->bindParam(':id', $productId);
+        return $sql->execute();
+    }
 }
