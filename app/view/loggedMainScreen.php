@@ -44,10 +44,13 @@
         <input class="searchBar" type="text" placeholder="Empieza a buscar por categoria o nombre...">
 
         <div class="buttonSection">
-            <a href="addProductScreen.php"><img src="../../img/addProductEmpty.png" alt="Boton añadir prducto"
+            <?php
+            if (!($_SESSION["usuario"] == "Admin")) {
+                echo '<a href="addProductScreen.php"><img src="../../img/addProductEmpty.png" alt="Boton añadir prducto"
                     class="addButton"></a>
             <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos"
-                    class="favoritesImage"></a>
+                    class="favoritesImage"></a>';
+            } ?>
             <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
                     class="profileImage"></a>
             <?php
@@ -63,7 +66,7 @@
     <div class="comunityFavorites">Favoritos de la comunidad</div>
 
     <div class="favoritesContainer">
-    <?php
+        <?php
         foreach ($productos as $producto) {
             $liked = $productController->isLikedByUser($producto['ID'], $_SESSION['usuario']);
             $likeButtonClass = $liked ? 'likeButton liked' : 'likeButton';
@@ -74,14 +77,14 @@
                 <div class="price">' . $producto['Precio'] . '€</div>
                 <div class="productName">' . $producto['Nombre'] . '</div>
                 ';
-                if(!($_SESSION['usuario']=="Admin")){
+            if (!($_SESSION['usuario'] == "Admin")) {
                 echo '<form method="POST" action="loggedMainScreen.php">
                     <input type="hidden" name="productId" value="' . $producto['ID'] . '">
                     <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
                 </form>
                 <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>';
-                }
-                echo '<div class="description">
+            }
+            echo '<div class="description">
                     <strong>Descripción</strong><br>
                     <p>' . $producto['Descripcion'] . '</p>
                 </div>
@@ -91,8 +94,8 @@
             </div>';
         }
 
-        
-    ?>
+
+        ?>
     </div>
 
     <!-- Barra naranja de separacion -->
