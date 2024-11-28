@@ -30,8 +30,10 @@ body {
 .addButton:hover {
     transform: scale(1.1);
     background-image: url('../../img/addProductFull.png');
-    background-size: cover; /* Asegura que la imagen de fondo se ajuste al tamaño del botón */
-    background-position: center; /* Centra la imagen de fondo */
+    background-size: cover;
+    /* Asegura que la imagen de fondo se ajuste al tamaño del botón */
+    background-position: center;
+    /* Centra la imagen de fondo */
 }
 
 .profileImage {
@@ -134,8 +136,10 @@ a {
 
 .likeButton {
     background-image: url("../../img/emptyHeart.png");
-    background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
-    background-position: center; /* Centra la imagen en el botón */
+    background-size: cover;
+    /* Ajusta la imagen para cubrir todo el botón */
+    background-position: center;
+    /* Centra la imagen en el botón */
     width: 35px;
     height: 35px;
     cursor: pointer;
@@ -160,6 +164,34 @@ a {
     width: 320px;
 }
 
+.deleteButton {
+    font-size: 1em;
+    background-color: red;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    /*para que se vea un dedo*/
+    margin: 8px 0;
+    width: 100%;
+}
+
+.updateButton {
+    font-size: 1em;
+    background-color: rgb(0, 76, 255);
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    /*para que se vea un dedo*/
+    margin: 8px 0;
+    width: 100%;
+}
+
 .bidButton:hover {
     background-color: #f67b21;
 }
@@ -168,7 +200,7 @@ a {
     background-color: #fff;
     padding: 8px;
     border: 1px solid #b8b8b8;
-    border-radius: 4px; 
+    border-radius: 4px;
     border-radius: 10px;
     margin-top: 8px;
     width: 94%;
@@ -225,4 +257,11 @@ a {
     border: solid 2px #f67b21;
     transform: scale(1.2);
     cursor: pointer;
+}
+
+.updateForm {
+    margin-top: 8px;
+    margin-bottom: 2px;
+    font-size: 14px;
+    display: block;
 }

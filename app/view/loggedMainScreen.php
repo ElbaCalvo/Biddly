@@ -73,12 +73,15 @@
                 <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
                 <div class="price">' . $producto['Precio'] . '€</div>
                 <div class="productName">' . $producto['Nombre'] . '</div>
-                <form method="POST" action="loggedMainScreen.php">
+                ';
+                if(!($_SESSION['usuario']=="Admin")){
+                echo '<form method="POST" action="loggedMainScreen.php">
                     <input type="hidden" name="productId" value="' . $producto['ID'] . '">
                     <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
                 </form>
-                <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>
-                <div class="description">
+                <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>';
+                }
+                echo '<div class="description">
                     <strong>Descripción</strong><br>
                     <p>' . $producto['Descripcion'] . '</p>
                 </div>
@@ -87,6 +90,8 @@
                 </div>
             </div>';
         }
+
+        
     ?>
     </div>
 
