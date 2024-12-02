@@ -37,13 +37,10 @@
     // Obtener el ID de la categoría de la URL
     $categoryId = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
 
-    // Eliminar producto si es necesario
+    // Eliminar o modificar producto si es necesario
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['deleteProduct'])) {
         $productController->deleteProduct($_POST['deleteProduct']);
-    }
-
-    // Modificar un producto
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['updateProduct'])) {
+    } else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['updateProduct'])) {
         $productController->updateProduct($_POST['updateProduct'], $_POST['nombreProducto'], $_POST['descripcionProducto'], $_POST['precioProducto'], $_POST['fechaProducto']);
     }
 
@@ -101,12 +98,10 @@
             Precio:
             <input class="updateForm" type=text name="precioProducto" value=' . $producto['Precio'] . '>
             Descripción:
-            <input class="updateForm" type=text name="descripcionProducto" value=' . $producto['Descripcion'] . '> 
+            <textarea class="updateForm" name="descripcionProducto">'. $producto['Descripcion'] .'</textarea>
             Fecha de finalización de la subasta:
-            <input class="updateForm" type=text name="fechaProducto" value=' . $producto['Fecha_fin_subasta'] . '> 
+            <textarea class="updateForm" name="fechaProducto">'. $producto['Fecha_fin_subasta'] .'</textarea>
             <button class="updateButton" name="updateProduct" value="' . $producto['ID'] . '">Guardar</button> 
-            </form>
-            <form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '">
             <button class="deleteButton" name="deleteProduct" value="' . $producto['ID'] . '">Eliminar</button>
             </form>';
         } else {

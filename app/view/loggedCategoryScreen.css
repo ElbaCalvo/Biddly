@@ -260,4 +260,10 @@ body {
     margin-bottom: 2px;
     font-size: 14px;
     display: block;
+    width: 100%;
+  }
+
+  textarea{
+    resize: none;
+    height: 58px;
   }
