@@ -25,7 +25,12 @@
         header("Location: mainScreen.php");
         exit();
     } else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['updateUser'])) {
-        $UsuarioController->updateUsuario($_SESSION["usuario"], $_POST['email'], $_POST['password'], $_POST['dni'], $_POST['phone'], $_POST['adress'], $_POST['bankAccount']);
+        if ($_POST['password'] != $_POST['repeatPassword']) {
+            echo "<script>alert('Las contraseñas no coinciden.')</script>";
+        } else {
+            $UsuarioController->updateUsuario($_SESSION["usuario"], $_POST['email'], $_POST['password'], $_POST['dni'], $_POST['phone'], $_POST['address'], $_POST['bankAccount']);
+            echo "<script>alert('Perfil actualizado')</script>";
+        }
     }
     ?>
     <!-- Barra superior con el logo -->
@@ -57,37 +62,37 @@
 
                 <div class="email">
                     <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" value="sonia@gmail.com">
+                    <input type="email" name="email" value="sonia@gmail.com" required>
                 </div>
 
                 <div class="password">
                     <label for="password">Contraseña</label>
-                    <input type="password" name="password" placeholder="••••••••">
+                    <input type="password" name="password" placeholder="••••••••" required>
                 </div>
 
                 <div class="password2">
                     <label for="repeatPassword">Repetir contraseña</label>
-                    <input type="password" name="repeatPassword" placeholder="••••••••">
+                    <input type="password" name="repeatPassword" placeholder="••••••••" required>
                 </div>
 
                 <div class="dni">
                     <label for="dni">DNI</label>
-                    <input type="text" name="dni" placeholder="12345678A" maxlength="9">
+                    <input type="text" name="dni" placeholder="12345678A" maxlength="9" required>
                 </div>
 
                 <div class="phone">
                     <label for="phone">Teléfono</label>
-                    <input type="tel" name="phone" placeholder="123456789" maxlength="9">
+                    <input type="tel" name="phone" placeholder="123456789" maxlength="9" required>
                 </div>
 
                 <div class="address">
                     <label for="address">Dirección</label>
-                    <input type="text" name="address" placeholder="Calle Falsa 123" maxlength="20">
+                    <input type="text" name="address" placeholder="Calle Falsa 123" maxlength="20" required>
                 </div>
 
                 <div class="bankAccount">
                     <label for="bankAccount">Cuenta bancaria</label>
-                    <input type="text" name="bankAccount" placeholder="ES12 3456 7891 2345 6789" maxlength="24">
+                    <input type="text" name="bankAccount" placeholder="ES12 3456 7891 2345 6789" maxlength="24" required>
                 </div>
 
                 <button type="submit" class="saveButton" name="updateUser">Guardar</button>

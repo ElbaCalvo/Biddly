@@ -22,7 +22,7 @@ class UsuarioController {
     public function updateUsuario($usuario, $correo, $contrasena, $dni, $telefono, $direccion, $cuentaBanco) {
         try {
             $conn = getDBConnection();
-            $sql = $conn->prepare("UPDATE usuarios SET Contraseña = :contrasena, Correo_electronico = :correo, TELEFONO = :telefono, DNI = :dni, Direccion = :direccion, Cuenta_bancaria :cuentaBanco WHERE Nombre = :nombre");
+            $sql = $conn->prepare("UPDATE usuarios SET Contraseña = :contrasena, Correo_electronico = :correo, TELEFONO = :telefono, DNI = :dni, Direccion = :direccion, Cuenta_bancaria = :cuentaBanco WHERE Nombre = :nombre");
             $sql->bindParam(':nombre', $usuario);
             $sql->bindParam(':contrasena', $contrasena);
             $sql->bindParam(':correo', $correo);
