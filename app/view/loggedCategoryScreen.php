@@ -94,7 +94,7 @@
             echo '
             <form method="POST" action="loggedCategoryScreen.php?category_id=' . $categoryId . '">
             Nombre:
-            <input class="updateForm" type=text name="nombreProducto" value=' . $producto['Nombre'] . '>
+            <textarea class="updateForm" name="nombreProducto">'. $producto['Nombre'] .'</textarea>
             Precio:
             <input class="updateForm" type=text name="precioProducto" value=' . $producto['Precio'] . '>
             Descripción:
