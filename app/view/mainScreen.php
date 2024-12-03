@@ -15,7 +15,7 @@
 
         $productos = $productController->getTopLikedProducts(); // Obtener los 3 productos con más likes.
     ?>
-
+ 
     <!-- Logo, barra de busqueda y botones de inicio de sesión y registro. -->
     <header class="topBar">
         <div class="logoContainer">

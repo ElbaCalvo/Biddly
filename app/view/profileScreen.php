@@ -10,7 +10,9 @@
 
 <body>
     <?php
+    require_once '../controller/UsuarioController.php';
     session_start();
+    $UsuarioController = new UsuarioController();
 
     // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
     if (!isset($_SESSION['usuario'])) {
@@ -22,6 +24,13 @@
         session_destroy();
         header("Location: mainScreen.php");
         exit();
+    } else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['updateUser'])) {
+        if ($_POST['password'] != $_POST['repeatPassword']) {
+            echo "<script>alert('Las contraseñas no coinciden.')</script>";
+        } else {
+            $UsuarioController->updateUsuario($_SESSION["usuario"], $_POST['email'], $_POST['password'], $_POST['dni'], $_POST['phone'], $_POST['address'], $_POST['bankAccount']);
+            echo "<script>alert('Perfil actualizado')</script>";
+        }
     }
     ?>
     <!-- Barra superior con el logo -->
@@ -49,50 +58,47 @@
                 <div class="closeButton">✕</div>
             </a>
 
-            <form class="profileForm">
-                <div class="name">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" placeholder="Sonia">
-                </div>
+            <form class="profileForm" method="POST" action="profileScreen.php">
 
                 <div class="email">
                     <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" placeholder="sonia@gmail.com">
+                    <input type="email" name="email" value="sonia@gmail.com" required>
                 </div>
 
                 <div class="password">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" placeholder="••••••••">
+                    <input type="password" name="password" placeholder="••••••••" required>
                 </div>
 
                 <div class="password2">
                     <label for="repeatPassword">Repetir contraseña</label>
-                    <input type="password" id="repeatPassword" placeholder="••••••••">
+                    <input type="password" name="repeatPassword" placeholder="••••••••" required>
                 </div>
 
                 <div class="dni">
                     <label for="dni">DNI</label>
-                    <input type="text" id="dni" placeholder="12345678A">
+                    <input type="text" name="dni" placeholder="12345678A" maxlength="9" required>
                 </div>
 
                 <div class="phone">
                     <label for="phone">Teléfono</label>
-                    <input type="tel" id="phone" placeholder="123456789">
+                    <input type="tel" name="phone" placeholder="123456789" maxlength="9" required>
                 </div>
 
                 <div class="address">
                     <label for="address">Dirección</label>
-                    <input type="text" id="address" placeholder="Calle Falsa 123">
+                    <input type="text" name="address" placeholder="Calle Falsa 123" maxlength="20" required>
                 </div>
 
                 <div class="bankAccount">
                     <label for="bankAccount">Cuenta bancaria</label>
-                    <input type="text" id="bankAccount" placeholder="ES12 3456 7891 2345 6789">
+                    <input type="text" name="bankAccount" placeholder="ES12 3456 7891 2345 6789" maxlength="24" required>
                 </div>
 
-                <button type="submit" class="saveButton" formaction="profileScreen.php">Guardar</button>
+                <button type="submit" class="saveButton" name="updateUser">Guardar</button>
 
             </form>
+
             <form action="profileScreen.php" method="POST">
                 <input type="hidden" name="cerrarsesion">
                 <button type="submit" class="closeSession">Cerrar sesión</button>
