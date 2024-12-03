@@ -24,27 +24,27 @@ class ProductController
     }
 
     public function updateProduct($productId, $nombre, $desc, $precio, $fecha)
-{
-    try {
-        $conn = getDBConnection();
-        $sql = $conn->prepare('UPDATE productos SET Nombre = :nombre, Descripcion = :descripcion, Precio = :precio, Fecha_fin_subasta = :fecha WHERE ID = :id');
-        $sql->bindParam(':id', $productId);
-        $sql->bindParam(':nombre', $nombre);
-        $sql->bindParam(':descripcion', $desc);
-        $sql->bindParam(':precio', $precio);
-        $sql->bindParam(':fecha', $fecha);
-        $sql->execute();
-        echo "<script>alert('Producto actualizado')</script>";
-    } catch (PDOException $e) {
-        echo 'Error: ' . $e->getMessage();
+    {
+        try {
+            $conn = getDBConnection();
+            $sql = $conn->prepare('UPDATE productos SET Nombre = :nombre, Descripcion = :descripcion, Precio = :precio, Fecha_fin_subasta = :fecha WHERE ID = :id');
+            $sql->bindParam(':id', $productId);
+            $sql->bindParam(':nombre', $nombre);
+            $sql->bindParam(':descripcion', $desc);
+            $sql->bindParam(':precio', $precio);
+            $sql->bindParam(':fecha', $fecha);
+            $sql->execute();
+            echo "<script>alert('Producto actualizado')</script>";
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
     }
-}
 
     public function getProductsByCategory($categoryId)
     {
         try {
             $conn = getDBConnection();
-            $sql = $conn->prepare('SELECT * FROM productos WHERE categoria = :categoria');
+            $sql = $conn->prepare('SELECT * FROM productos WHERE categoria = :categoria AND activo = "yes"');
             $sql->bindParam(':categoria', $categoryId);
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -72,7 +72,7 @@ class ProductController
     {
         try {
             $conn = getDBConnection();
-            $sql = $conn->prepare('SELECT * FROM productos WHERE id = :id');
+            $sql = $conn->prepare('SELECT * FROM productos WHERE id = :id AND activo = "yes"');
             $sql->bindParam(':id', $productId);
             $sql->execute();
             return $sql->fetch(PDO::FETCH_ASSOC);
@@ -81,14 +81,16 @@ class ProductController
             return null;
         }
     }
-    public function updateProductPrice($productId, $newPrice) {
+    public function updateProductPrice($productId, $newPrice)
+    {
         $product = new Product();
         return $product->updatePrice($productId, $newPrice);
     }
 
-    public function getTopLikedProducts() { 
+    public function getTopLikedProducts()
+    {
         try {
-            $sql = $this->conn->prepare('SELECT * FROM productos ORDER BY Numero_Likes DESC LIMIT 3');
+            $sql = $this->conn->prepare('SELECT * FROM productos where activo = "yes" ORDER BY Numero_Likes DESC LIMIT 3');
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
@@ -167,6 +169,20 @@ class ProductController
             $sql->bindParam(':id', $ID);
             $sql->execute();
             echo "<script>alert('Producto eliminado')</script>";
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return null;
+        }
+    }
+
+    public function inactiveProduct($ID)
+    { //desactivar producto
+        try {
+            $conn = getDBConnection();
+            $sql = $conn->prepare('UPDATE productos SET activo = "no" WHERE id = :id');
+            $sql->bindParam(':id', $ID);
+            $sql->execute();
+            echo "<script>alert('Producto desactivado')</script>";
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
             return null;

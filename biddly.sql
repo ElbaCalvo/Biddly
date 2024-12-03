@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2024 a las 09:06:36
+-- Tiempo de generación: 03-12-2024 a las 09:54:42
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -146,7 +146,7 @@ CREATE TABLE `usuarios` (
   `Telefono` int(9) NOT NULL,
   `DNI` varchar(9) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
-  `Cuenta_bancaria` int(11) NOT NULL
+  `Cuenta_bancaria` varchar(24) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -154,10 +154,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`Nombre`, `Contraseña`, `Correo_electronico`, `Telefono`, `DNI`, `Direccion`, `Cuenta_bancaria`) VALUES
-('Admin', '1234', 'asd@asd.com', 666666666, '12345678A', '', 0),
-('adrian', '1234', 'asd@asd.com', 666666666, '12345678A', '', 0),
-('Juan', '1234', 'juan@gmail.com', 111111111, '11111111A', 'Calle Ejemplo 123', 0),
-('Maria', '1234', 'maria@gmail.com', 222222222, '22222222B', 'Calle Ejemplo 456', 0);
+('Admin', '1234', 'asd@asd.com', 666666666, '12345678A', '', '0'),
+('adrian', '1234', 'asd@asd.com', 666666666, '12345678A', '', '0'),
+('Juan', '1234', 'juan@gmail.com', 111111111, '11111111A', 'Calle Ejemplo 123', '0'),
+('Maria', '1234', 'maria@gmail.com', 222222222, '22222222B', 'Calle Ejemplo 456', '0');
 
 --
 -- Índices para tablas volcadas
