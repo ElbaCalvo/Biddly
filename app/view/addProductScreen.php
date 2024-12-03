@@ -65,10 +65,10 @@
             <form class="addProductForm" method="POST" action="addProductScreen.php">
                 <input type="hidden" name="addProductForm">
                 <label>Nombre del producto</label>
-                <input type="text" name="nombre" id="name" placeholder="Mandos XBOX" required>
+                <input type="text" name="nombre" id="name" placeholder="Mandos XBOX" maxlength="22" required>
 
                 <label>Precio del producto</label>
-                <input type="number" name="precio" id="price" placeholder="50€" min=1 required>
+                <input type="number" name="precio" id="price" maxlenght="9" placeholder="50€" min="1" required>
 
                 <label>Categoría</label>
                 <select name="categoria" id="categoria" required>
@@ -88,7 +88,7 @@
                 <input type="datetime-local" name="fecha" id="date" min=<?php echo date('Y-m-d\TH:i') ?> required> <!-- \T es la separacion y H:i la hora actual -->
 
                 <label>Descripción del producto</label>
-                <input type="text" name="descripcion" id="description" placeholder="descripción" required>
+                <input type="text" name="descripcion" id="description" placeholder="descripción" maxlenght="75" required>
 
                 <button type="submit" class="addButton">Subir producto</button>
             </form>
