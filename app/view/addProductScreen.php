@@ -88,7 +88,7 @@
                 <input type="datetime-local" name="fecha" id="date" min=<?php echo date('Y-m-d\TH:i') ?> required> <!-- \T es la separacion y H:i la hora actual -->
 
                 <label>Descripción del producto</label>
-                <input type="text" name="descripcion" id="description" placeholder="descripción" maxlenght="75" required>
+                <input type="text" name="descripcion" id="description" placeholder="descripción" maxlength="75" required>
 
                 <button type="submit" class="addButton">Subir producto</button>
             </form>
