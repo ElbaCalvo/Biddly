@@ -17,10 +17,8 @@ body {
 .buttonSection {
   display: flex;
   justify-content: flex-end;
-  /* Alinea los elementos a la derecha */
   align-items: center;
   gap: 10px;
-  /* Espacio entre la imagen y el nombre */
   margin-right: 50px;
 }
 
@@ -99,15 +97,13 @@ body {
 .contentContainer {
   display: flex;
   width: 920px;
-  height: 380px;
   background-color: #ffefe6;
   border: 1px solid #b8b8b8;
   border-radius: 10px;
-  padding: 16px;
+  padding: 16px 16px 0px 16px;
   box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
-  /* Sombra más visible */
   color: #333;
-  margin: auto auto 70px auto;
+  margin: auto auto 80px auto;
   flex-direction: row;
   align-items: start;
   gap: 20px;
