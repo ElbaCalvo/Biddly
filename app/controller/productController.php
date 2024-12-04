@@ -188,4 +188,18 @@ class ProductController
             return null;
         }
     }
+
+    public function getUserFavoritesOrdered($userId, $order) {
+        try {
+            $order = ($order === 'asc') ? 'ASC' : 'DESC'; // Si el orden es ascendente, se ordena de forma ascendente, si no, de forma descendente.
+
+            $sql = $this->conn->prepare('SELECT p.* FROM productos p JOIN favoritos f ON p.id = f.producto WHERE f.usuario = :userId ORDER BY p.precio ' . $order);
+            $sql->bindParam(':userId', $userId, PDO::PARAM_INT);
+            $sql->execute();
+            return $sql->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return [];
+        }
+    }
 }

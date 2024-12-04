@@ -35,14 +35,17 @@
     }
 
     $userId = $_SESSION['usuario'];
-    $favoriteProductIds = $productController->getUserFavorites($userId); // Obtener los IDs de los productos favoritos del usuario
-    $productos = [];
+    //$favoriteProductIds = $productController->getUserFavorites($userId); // Obtener los IDs de los productos favoritos del usuario
+    $order = isset($_GET['orden']) ? $_GET['orden'] : 'desc'; // Obtener el orden de los productos, si no se especifica, se ordenan de forma descendente.
+    $productos = $productController->getUserFavoritesOrdered($userId, $order);
+    
+    /*$productos = [];
     foreach ($favoriteProductIds as $favoriteProductId) {
         $producto = $productController->getProductById($favoriteProductId['producto']);
         if ($producto) {
             $productos[] = $producto;
         }
-    }
+    }*/
     ?>
     <header class="topBar">
         <div class="logoContainer">
@@ -62,13 +65,13 @@
 
     <div class="orangeLine"></div>
     <div class="favoritesForm">
-        <form action="">
+        <form method="GET" action="favoritesScreen.php" id="orderForm">
             Favoritos
             <input class="searchBar" type="search" name="searchBar">
             <img src="../../img/orderIcon.png" alt="icono de Orden">
-            <select class="order" name="orden">
-                <option>Precio más alto primero</option>
-                <option>Precio más bajo primero</option>
+            <select class="order" name="orden" onchange="document.getElementById('orderForm').submit();">
+                <option value="desc" <?php echo $order == 'desc' ? 'selected' : ''; ?>>Precio más alto primero</option>
+                <option value="asc" <?php echo $order == 'asc' ? 'selected' : ''; ?>>Precio más bajo primero</option>
             </select>
         </form>
     </div>
