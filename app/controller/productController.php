@@ -1,5 +1,6 @@
 <?php
 require_once '../model/product.php';
+require_once '../model/bid.php';
 
 class ProductController
 {
@@ -175,17 +176,33 @@ class ProductController
         }
     }
 
-    public function inactiveProduct($ID)
-    { //desactivar producto
-        try {
-            $conn = getDBConnection();
-            $sql = $conn->prepare('UPDATE productos SET activo = "no" WHERE id = :id');
-            $sql->bindParam(':id', $ID);
+    public function updateExpiredProducts() {
+        $conn = getDBConnection();
+        $sql = $conn->prepare('SELECT * FROM productos WHERE Fecha_fin_subasta < CURDATE() AND activo = "yes"');
+        $sql->execute();
+        $products = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($products as $product) {
+            // Obtener la puja más alta para el producto
+            $sql = $conn->prepare('SELECT * FROM ofertas WHERE Producto = :producto ORDER BY Precio DESC LIMIT 1');
+            $sql->bindParam(':producto', $product['ID']);
             $sql->execute();
-            echo "<script>alert('Producto desactivado')</script>";
-        } catch (PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-            return null;
+            $bid = $sql->fetch(PDO::FETCH_ASSOC);
+
+            if ($bid) {
+                // Crear un pedido en la tabla pedidos
+                $sql = $conn->prepare('INSERT INTO pedidos (idProducto, idUsuario, fechaEntrega) VALUES (:idProducto, :idUsuario, :fechaEntrega)');
+                $sql->bindParam(':idProducto', $product['ID']);
+                $sql->bindParam(':idUsuario', $bid['comprador']);
+                $deliveryDate = date('Y-m-d', strtotime($product['Fecha_fin_subasta'] . ' + 14 days'));
+                $sql->bindParam(':fechaEntrega', $deliveryDate);
+                $sql->execute();
+            }
+
+            // Actualizar el estado del producto a inactivo
+            $sql = $conn->prepare('UPDATE productos SET activo = "no" WHERE ID = :id');
+            $sql->bindParam(':id', $product['ID']);
+            $sql->execute();
         }
     }
 }
