@@ -148,19 +148,6 @@ class ProductController
         }
     }
 
-    public function getUserFavorites($userId)
-    { // Obtener los productos favoritos del usuario.
-        try {
-            $sql = $this->conn->prepare('SELECT producto FROM favoritos WHERE usuario = :usuario');
-            $sql->bindParam(':usuario', $userId);
-            $sql->execute();
-            return $sql->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
-            return null;
-        }
-    }
-
     public function deleteProduct($ID)
     { //eliminar producto
         try {

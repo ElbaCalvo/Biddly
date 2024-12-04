@@ -35,17 +35,9 @@
     }
 
     $userId = $_SESSION['usuario'];
-    //$favoriteProductIds = $productController->getUserFavorites($userId); // Obtener los IDs de los productos favoritos del usuario
     $order = isset($_GET['orden']) ? $_GET['orden'] : 'desc'; // Obtener el orden de los productos, si no se especifica, se ordenan de forma descendente.
     $productos = $productController->getUserFavoritesOrdered($userId, $order);
-    
-    /*$productos = [];
-    foreach ($favoriteProductIds as $favoriteProductId) {
-        $producto = $productController->getProductById($favoriteProductId['producto']);
-        if ($producto) {
-            $productos[] = $producto;
-        }
-    }*/
+
     ?>
     <header class="topBar">
         <div class="logoContainer">
