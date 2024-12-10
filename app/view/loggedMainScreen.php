@@ -15,6 +15,8 @@
     require_once "../controller/productController.php";
     $productController = new ProductController();
 
+    $productController->updateExpiredProducts();
+
     // Si no hay una sesión iniciada, redirige al usuario a la pantalla principal
     if (!isset($_SESSION['usuario'])) {
         header("Location: mainScreen.php");
