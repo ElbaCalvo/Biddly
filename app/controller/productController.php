@@ -186,7 +186,8 @@ class ProductController
             return $sql->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
-            return [];
+            return null;
         }
     }
+    
 }
