@@ -1,0 +1,10 @@
+# Ignorar la carpeta vendor (dependencias de Composer)
+/vendor
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos temporales de IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
