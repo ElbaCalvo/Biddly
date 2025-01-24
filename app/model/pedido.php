@@ -38,6 +38,4 @@ class Pedido
         return $sql->execute();
     }
 }
-
-// Al cargar mainscreen, select de las fechas anteriores a la actual y que este active="yes", hacer que se cambien todas a active="no"
 ?>

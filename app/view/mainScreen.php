@@ -13,6 +13,8 @@
         require_once "../controller/productController.php";
         $productController = new ProductController();
 
+        $productController->updateExpiredProducts();
+
         $productos = $productController->getTopLikedProducts(); // Obtener los 3 productos con más likes.
     ?>
  
