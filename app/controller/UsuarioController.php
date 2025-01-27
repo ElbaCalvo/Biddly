@@ -1,5 +1,5 @@
 <?php
-require_once '../model/usuario.php';
+require_once __DIR__ . '/../model/usuario.php';
 
 class UsuarioController {
     public function addUsuario($nombreUsuario, $contrasena, $correo, $telefono, $dni) {
