@@ -1,5 +1,5 @@
 <?php
-require_once "../../config/dbConnection.php";
+require_once __DIR__ ."/../../config/dbConnection.php";
 
 class Bid {
     private $id;

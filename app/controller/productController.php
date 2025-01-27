@@ -1,6 +1,6 @@
 <?php
-require_once '../model/product.php';
-require_once '../model/bid.php';
+require_once __DIR__ .'/../model/product.php';
+require_once __DIR__ .'/../model/bid.php';
 
 class ProductController
 {
