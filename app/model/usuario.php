@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../config/dbConnection.php';
+require_once "../../config/dbConnection.php";
 
 class Usuario {
     private $usuario;
@@ -39,6 +39,25 @@ class Usuario {
             $sql->bindParam(':dni', $this->dni);
             $sql->execute();
             return true;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function comprobarUsuario() {
+        try {
+            $conn = getDBConnection();
+            $sql = $conn->prepare("SELECT * FROM usuarios WHERE Nombre = :usuario && Contraseña = :contrasena");
+            $sql->bindParam(':usuario', $this->usuario);
+            $sql->bindParam(':contrasena', $this->contrasena);
+            $sql->execute();
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
             return false;
