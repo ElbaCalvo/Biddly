@@ -12,8 +12,10 @@ class UsuarioController {
         return $usuario->addUsuario();
     }
 
-    public function comprobarUsuario($nombreUsuario, $contrasena) {
-        $usuario = new Usuario();
+    public function comprobarUsuario($nombreUsuario, $contrasena, $usuario = null) {
+        if ($usuario === null) {
+            $usuario = new Usuario();
+        }
         $usuario->setUsuario($nombreUsuario);
         $usuario->setContrasena($contrasena);
         return $usuario->comprobarUsuario();

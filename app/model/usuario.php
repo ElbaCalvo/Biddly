@@ -44,24 +44,5 @@ class Usuario {
             return false;
         }
     }
-
-    public function comprobarUsuario() {
-        try {
-            $conn = getDBConnection();
-            $sql = $conn->prepare("SELECT * FROM usuarios WHERE Nombre = :usuario && Contraseña = :contrasena");
-            $sql->bindParam(':usuario', $this->usuario);
-            $sql->bindParam(':contrasena', $this->contrasena);
-            $sql->execute();
-            $result = $sql->fetch(PDO::FETCH_ASSOC);
-            if ($result) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-            return false;
-        }
-    }
 }
 ?>
