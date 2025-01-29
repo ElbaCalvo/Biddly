@@ -1,6 +1,9 @@
 <?php
 require_once "../../config/dbConnection.php";
 
+/**
+ * Clase Usuario que representa a un usuario en el sistema.
+ */
 class Usuario {
     private $usuario;
     private $correo;
@@ -8,26 +11,56 @@ class Usuario {
     private $dni;
     private $telefono;
 
+    /**
+     * Establece el nombre de usuario.
+     *
+     * @param string $usuario El nombre de usuario.
+     */
     public function setUsuario($usuario) {
         $this->usuario = $usuario;
     }
 
+    /**
+     * Establece el correo electrónico del usuario.
+     *
+     * @param string $correo El correo electrónico.
+     */
     public function setCorreo($correo) {
         $this->correo = $correo;
     }
 
+    /**
+     * Establece la contraseña del usuario.
+     *
+     * @param string $contrasena La contraseña.
+     */
     public function setContrasena($contrasena) {
         $this->contrasena = $contrasena;
     }
 
+    /**
+     * Establece el DNI del usuario.
+     *
+     * @param string $dni El DNI.
+     */
     public function setDni($dni) {
         $this->dni = $dni;
     }
 
+    /**
+     * Establece el teléfono del usuario.
+     *
+     * @param string $telefono El teléfono.
+     */
     public function setTelefono($telefono) {
         $this->telefono = $telefono;
     }
 
+    /**
+     * Añade un nuevo usuario a la base de datos.
+     *
+     * @return bool True si el usuario fue añadido correctamente, false en caso contrario.
+     */
     public function addUsuario() {
         try {
             $conn = getDBConnection();
@@ -45,6 +78,11 @@ class Usuario {
         }
     }
 
+    /**
+     * Comprueba si un usuario existe en la base de datos.
+     *
+     * @return bool True si el usuario existe, false en caso contrario.
+     */
     public function comprobarUsuario() {
         try {
             $conn = getDBConnection();
