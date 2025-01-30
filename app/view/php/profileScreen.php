@@ -26,12 +26,12 @@
         exit();
     } else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['updateUser'])) {
 
-        $contrasena = filter_input(INPUT_POST, 'contrasena', FILTER_SANITIZE_STRING);
-        $correo = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_EMAIL);
+        $contrasena = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $correo = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $dni = filter_input(INPUT_POST, 'dni', FILTER_SANITIZE_STRING);
-        $phone = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_NUMBER_INT);
-        $address = filter_input(INPUT_POST, 'contrasena', FILTER_SANITIZE_STRING);
-        $bankAccount = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_STRING);
+        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
+        $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
+        $bankAccount = filter_input(INPUT_POST, 'bankAccount', FILTER_SANITIZE_STRING);
 
         if ($_POST['password'] != $_POST['repeatPassword']) {
             echo "<script>alert('Las contraseñas no coinciden.')</script>";
