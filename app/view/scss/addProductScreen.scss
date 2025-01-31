@@ -1,18 +1,10 @@
-$font: Arial, Helvetica, sans-serif;
-$orange: #f67b21;
-$dark-grey: #4d4c4c;
-$medium-grey: #a3a3a3;
-$light-orange: #FF6600;
-$dark-orange: #e65a00;
-$black: #333;
-$light-grey: #4b4b4b;
-$light-pink: #FFE7D9;
-$border-grey: #4e4e4e;
+@import "variables";
 
 body {
-    margin: 0px;
-    font-family: $font;
-}
+    @each $property, $value in $body {
+      #{$property}: $value;
+    }
+  }
 
 .logo {
     width: 200px;
