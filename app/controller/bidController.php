@@ -1,11 +1,9 @@
 <?php
-/**
- * bidController.
- *
- * Controlador para gestionar las ofertas (bids) en Biddly.
- */
 require_once '../model/bid.php';
 
+/**
+ * Controlador para gestionar las ofertas (bids) en Biddly.
+ */
 class bidController {
     /**
      * Conexión a la base de datos.
