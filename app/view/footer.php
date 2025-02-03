@@ -15,12 +15,12 @@
                 <img src="../../img/logoBlack.png" alt="Logo" class="logoBlack">
             </div>
             <div class="footerText">
-                © 2024 Biddly. Todos los derechos reservados
+                © 2025 Biddly. Todos los derechos reservados
             </div>
             <div class="footerIcons">
-                <img src="../../img/xLogo.png" alt="Logo" class="xLogo">
-                <img src="../../img/ingstagramLogo.png" alt="Logo" class="ingstagramLogo">
-                <img src="../../img/youtubeLogo.png" alt="Logo" class="youtubeLogo">
+            <a href="https://x.com/" target="_blank"><img src="../../img/xLogo.png" alt="Logo" class="xLogo"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="../../img/ingstagramLogo.png" alt="Logo" class="ingstagramLogo"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="../../img/youtubeLogo.png" alt="Logo" class="youtubeLogo"></a>
             </div>
         </div>
     </footer>

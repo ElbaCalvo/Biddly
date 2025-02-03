@@ -1,6 +1,9 @@
+@import "variables";
+
 body {
-    margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    @each $property, $value in $body {
+        #{$property}: $value;
+    }
 }
 
 .logo {
@@ -35,7 +38,7 @@ body {
 
 .profileName {
     font-size: 16px;
-    color: #4d4c4c;
+    color: $dark-grey;
     font-weight: bold;
 }
 
@@ -47,7 +50,7 @@ body {
 
 .orangeLine {
     min-height: 5px;
-    background-color: #f67b21;
+    background-color: $orange;
     width: 100%;
 }
 
@@ -64,12 +67,12 @@ body {
     padding: 8px;
     font-size: 16px;
     border-radius: 12px;
-    border: solid 1px black;
+    border: solid 1px $black;
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: $black;
 }
 
 .content {
@@ -92,8 +95,8 @@ a {
 .contentRight {
     display: flex;
     width: 320px;
-    background-color: #ffefe6;
-    border: 1px solid #b8b8b8;
+    background-color: $light-pink;
+    border: 1px solid $gray;
     border-radius: 10px;
     padding: 16px;
     /* Sombra más visible */
@@ -115,7 +118,7 @@ input[type="number"] {
     width: 150px;
     padding: 8px;
     border-radius: 8px;
-    border: 1px solid #b8b8b8;
+    border: 1px solid $gray;
     font-size: 1.3em;
     margin: 15px 0px;
 }
@@ -170,7 +173,7 @@ input[type="number"] {
 }
 
 .bidButton:hover {
-    background-color: #f67b21;
+    background-color: $orange;
 }
 
 .bidButton {
@@ -188,13 +191,13 @@ input[type="number"] {
 }
 
 .bidButton:hover {
-    background-color: #f67b21;
+    background-color: $orange;
 }
 
 .description {
     background-color: #fff;
     padding: 8px;
-    border: 1px solid #b8b8b8;
+    border: 1px solid $gray;
     border-radius: 4px;
     border-radius: 10px;
     margin-top: 8px;
@@ -206,7 +209,7 @@ input[type="number"] {
 .biddingRegister {
     background-color: #fff;
     padding: 8px;
-    border: 1px solid #b8b8b8;
+    border: 1px solid $gray;
     border-radius: 4px;
     border-radius: 10px;
     margin: 15px 0px;
@@ -227,7 +230,7 @@ input[type="number"] {
 }
 
 .orangeLine2 {
-    background-color: #f67b21;
+    background-color: $orange;
     min-height: 3px;
     width: 80%;
     margin: 10px auto;
@@ -237,13 +240,13 @@ input[type="number"] {
 .orangeLine1 {
     min-height: 3px;
     margin: auto;
-    background-color: #f67b21;
+    background-color: $orange;
     width: 100%;
 }
 
 .orangeLine2 {
     min-height: 3px;
-    background-color: #f67b21;
+    background-color: $orange;
     width: 75%;
     margin: 40px auto;
 }
@@ -269,5 +272,5 @@ input[type="number"] {
 }
 
 .contentContainer:hover {
-    border: solid 2px #f67b21;
+    border: solid 2px $orange;
 }

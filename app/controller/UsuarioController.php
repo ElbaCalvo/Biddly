@@ -1,5 +1,5 @@
 <?php
-require_once '../model/usuario.php';
+require_once __DIR__ . '/../model/usuario.php';
 
 /**
  * Controlador para gestionar usuarios en Biddly.
@@ -28,7 +28,7 @@ class UsuarioController {
         $usuario->setTelefono($telefono);
         return $usuario->addUsuario();
     }
-
+    
     /**
      * Comprueba las credenciales de un usuario.
      *
@@ -39,8 +39,10 @@ class UsuarioController {
      *
      * @return mixed Resultado de la comprobación.
      */
-    public function comprobarUsuario($nombreUsuario, $contrasena) {
-        $usuario = new Usuario();
+    public function comprobarUsuario($nombreUsuario, $contrasena, $usuario = null) {
+        if ($usuario === null) {
+            $usuario = new Usuario();
+        }
         $usuario->setUsuario($nombreUsuario);
         $usuario->setContrasena($contrasena);
         return $usuario->comprobarUsuario();

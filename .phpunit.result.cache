@@ -1,1 +1,1 @@
-{"version":1,"defects":{"addBidTest::testAddBid":8,"addProductTest::testAddProduct":8},"times":{"addBidTest::testAddBid":0.042,"addProductTest::testAddProduct":0.017}}
+{"version":1,"defects":{"UsuarioTest::testAddUsuario":7,"UsuarioTest::testComprobarUsuario":8},"times":{"UsuarioTest::testAddUsuario":0.011,"UsuarioTest::testComprobarUsuario":0.012}}
