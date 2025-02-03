@@ -29,8 +29,8 @@
         </div>
 
         <div class="buttonSection">
-            <a href="signInScreen.php"><img class="topBarButtons" src="../../img/signin.png" alt=""></a>
-            <a href="registerScreen.php"><img class="topBarButtons" src="../../img/register.png" alt=""></a>
+            <a href="signInScreen.php"><button class="topBarButtons" alt="">Sign In</button></a>
+            <a href="registerScreen.php"><button class="topBarButtons" alt="">Register</button></a>
         </div>
     </header>
 
@@ -82,3 +82,5 @@
 </body>
 
 </html>
+
+<?php include 'footer.php'; ?>
