@@ -1,0 +1,276 @@
+@charset "UTF-8";
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.logo {
+  width: 200px;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.buttonSection {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-right: 50px; /* Espacio entre la imagen y el nombre */
+}
+
+.profileImage {
+  width: 43px;
+  height: 40px;
+}
+
+.favoritesImage {
+  width: 43px;
+  height: 40px;
+}
+
+.profileName {
+  font-size: 16px;
+  color: #4d4c4c;
+  font-weight: bold;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.orangeLine {
+  min-height: 5px;
+  background-color: #f67b21;
+  width: 100%;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.searchBar {
+  margin: auto 80px auto auto;
+  width: 400px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: solid 1px #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  margin: auto auto;
+  justify-content: center;
+}
+
+.contentLeft {
+  display: flex;
+  width: 500px;
+  color: #333;
+  margin: 40px;
+  /* Reduce el margen vertical entre filas */
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.contentRight {
+  display: flex;
+  width: 320px;
+  background-color: #FFE7D9;
+  border: 1px solid #b8b8b8;
+  border-radius: 10px;
+  padding: 16px;
+  /* Sombra más visible */
+  color: #333;
+  margin: 40px;
+  /* Reduce el margen vertical entre filas */
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.favoritesContainer {
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente los elementos */
+  align-items: center;
+}
+
+input[type=number] {
+  width: 150px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #b8b8b8;
+  font-size: 1.3em;
+  margin: 15px 0px;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.3em;
+  align-items: center;
+}
+
+.imgContent {
+  width: 500px;
+  height: 375px;
+  border-radius: 8px;
+  border: 2px solid #a8a8a8;
+}
+
+.user img {
+  width: 50px;
+  margin: 10px 5px 10px 0px;
+}
+
+.price {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0px;
+}
+
+.productName {
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0px 15px 0px;
+  font-size: 1.3em;
+}
+
+.likeButton {
+  background-image: url("../../img/emptyHeart.png");
+  background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
+  background-position: center; /* Centra la imagen en el botón */
+  width: 35px;
+  height: 35px;
+  margin: 5px 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.likeButton.liked {
+  background-image: url("../../img/fullHeart.png");
+}
+
+.bidButton:hover {
+  background-color: #f67b21;
+}
+
+.bidButton {
+  font-size: 1em;
+  background-color: #ff813f;
+  color: #ffffff;
+  padding: 8px 50px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  /*para que se vea un dedo*/
+  margin: 15px 0px;
+  width: 100%;
+}
+
+.bidButton:hover {
+  background-color: #f67b21;
+}
+
+.description {
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
+  border-radius: 10px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  height: 400px;
+  width: 490px;
+}
+
+.biddingRegister {
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
+  border-radius: 10px;
+  margin: 15px 0px;
+  width: 94%;
+  height: 450px;
+}
+
+.description p {
+  margin-top: 8px;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.bidTime {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 8px;
+}
+
+.orangeLine2 {
+  background-color: #f67b21;
+  min-height: 3px;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 50px;
+}
+
+.orangeLine1 {
+  min-height: 3px;
+  margin: auto;
+  background-color: #f67b21;
+  width: 100%;
+}
+
+.orangeLine2 {
+  min-height: 3px;
+  background-color: #f67b21;
+  width: 75%;
+  margin: 40px auto;
+}
+
+.categoryContainer {
+  width: 1500px;
+  margin: 30px auto 100px auto;
+  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.categoryContainer .contentContainer {
+  margin: auto;
+  background-color: #fde4d5;
+}
+
+.categoryContainer img {
+  width: 503px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 2px solid #a8a8a8;
+}
+
+.contentContainer:hover {
+  border: solid 2px #f67b21;
+}
+
+/*# sourceMappingURL=biddScreen.css.map */

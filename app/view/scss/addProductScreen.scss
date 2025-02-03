@@ -2,9 +2,9 @@
 
 body {
     @each $property, $value in $body {
-      #{$property}: $value;
+        #{$property}: $value;
     }
-  }
+}
 
 .logo {
     width: 200px;
@@ -100,13 +100,14 @@ label {
     font-weight: bold;
 }
 
-input, select {
+input,
+select {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid $medium-grey;
     border-radius: 15px;
     font-size: 14px;
-    appearance: none; 
+    appearance: none;
 }
 
 .addButton {
