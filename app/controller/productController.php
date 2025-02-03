@@ -1,18 +1,44 @@
 <?php
-require_once '../model/product.php';
-require_once '../model/bid.php';
+require_once __DIR__ . '/../model/product.php';
+require_once __DIR__ . '/../model/bid.php';
 
+/**
+ * Controlador para gestionar productos en Biddly.
+ */
 class ProductController
 {
+    /**
+     * Conexión a la base de datos.
+     *
+     * @var PDO
+     */
     private $conn;
 
+    /**
+     * Constructor de ProductController.
+     *
+     * Inicializa la conexión a la base de datos.
+     */
     public function __construct()
     {
         $this->conn = getDBConnection();
     }
 
+    /**
+     * Crea un nuevo producto.
+     *
+     * @param string $nombre    Nombre del producto.
+     * @param string $desc      Descripción del producto.
+     * @param mixed  $categoria Identificador de la categoría.
+     * @param float  $precio    Precio del producto.
+     * @param string $img       Ruta o URL de la imagen.
+     * @param string $fecha     Fecha asociada al producto.
+     * @param mixed  $vendedor  Identificador del vendedor.
+     *
+     * @return mixed Resultado de la operación para agregar el producto.
+     */
     public function addProduct($nombre, $desc, $categoria, $precio, $img, $fecha, $vendedor)
-    { //crea un nuevo producto
+    {
         $product = new Product();
         $product->setNombre($nombre);
         $product->setDesc($desc);
@@ -24,6 +50,17 @@ class ProductController
         return $product->addProduct();
     }
 
+    /**
+     * Actualiza un producto existente.
+     *
+     * @param mixed  $productId Identificador del producto.
+     * @param string $nombre    Nuevo nombre del producto.
+     * @param string $desc      Nueva descripción del producto.
+     * @param float  $precio    Nuevo precio del producto.
+     * @param string $fecha     Nueva fecha fin de subasta.
+     *
+     * @return void
+     */
     public function updateProduct($productId, $nombre, $desc, $precio, $fecha)
     {
         try {
@@ -41,6 +78,13 @@ class ProductController
         }
     }
 
+    /**
+     * Obtiene los productos de una categoría especificada.
+     *
+     * @param mixed $categoryId Identificador de la categoría.
+     *
+     * @return array|null Arreglo de productos o null en caso de error.
+     */
     public function getProductsByCategory($categoryId)
     {
         try {
@@ -55,6 +99,13 @@ class ProductController
         }
     }
 
+    /**
+     * Obtiene una categoría por su identificador.
+     *
+     * @param mixed $categoryId Identificador de la categoría.
+     *
+     * @return array|null Arreglo asociativo con la categoría o null en caso de error.
+     */
     public function getCategoryById($categoryId)
     {
         try {
@@ -69,6 +120,13 @@ class ProductController
         }
     }
 
+    /**
+     * Obtiene un producto por su identificador.
+     *
+     * @param mixed $productId Identificador del producto.
+     *
+     * @return array|null Devuelve los productos en caso de encontrarlos, o null en caso contrario.
+     */
     public function getProductById($productId)
     {
         try {
@@ -82,12 +140,26 @@ class ProductController
             return null;
         }
     }
+
+    /**
+     * Actualiza el precio de un producto.
+     *
+     * @param mixed $productId Identificador del producto.
+     * @param float $newPrice  Nuevo precio del producto.
+     *
+     * @return mixed Resultado de la operación de actualización.
+     */
     public function updateProductPrice($productId, $newPrice)
     {
         $product = new Product();
         return $product->updatePrice($productId, $newPrice);
     }
 
+    /**
+     * Obtiene los productos con mayor número de likes.
+     *
+     * @return array|null Devuelve los productos por los mas gustados en caso de encontrarlos, o null en caso contrario.
+     */
     public function getTopLikedProducts()
     {
         try {
@@ -100,32 +172,40 @@ class ProductController
         }
     }
 
+    /**
+     * Gestiona los likes de un producto.
+     *
+     * Añade o elimina un like y actualiza el contador de likes en el producto.
+     *
+     * @param mixed $productId Identificador del producto.
+     * @param mixed $userId    Identificador del usuario.
+     *
+     * @return void
+     */
     public function manageLikes($productId, $userId)
-    { // Añadir o eliminar un like.
+    {
         try {
-            $sql = $this->conn->prepare('SELECT * FROM favoritos WHERE producto = :producto AND usuario = :usuario'); // Comprobar si el usuario ya ha dado like
+            $sql = $this->conn->prepare('SELECT * FROM favoritos WHERE producto = :producto AND usuario = :usuario');
             $sql->bindParam(':producto', $productId);
             $sql->bindParam(':usuario', $userId);
             $sql->execute();
-            $like = $sql->fetch(PDO::FETCH_ASSOC); // Booleano que controla si existe un like o si no.
+            $like = $sql->fetch(PDO::FETCH_ASSOC);
 
-            if ($like) { // Si el booleano devuelve true, se elimina el like.
+            if ($like) {
                 $sql = $this->conn->prepare('DELETE FROM favoritos WHERE producto = :producto AND usuario = :usuario');
                 $sql->bindParam(':producto', $productId);
                 $sql->bindParam(':usuario', $userId);
                 $sql->execute();
 
-                // Restar un like sobre el número de likes que hay en la tabla productos.
                 $sql = $this->conn->prepare('UPDATE productos SET Numero_Likes = Numero_Likes - 1 WHERE ID = :id');
                 $sql->bindParam(':id', $productId);
                 $sql->execute();
-            } else { // Si el booleano devuelve false, añadir el like.
+            } else {
                 $sql = $this->conn->prepare('INSERT INTO favoritos (producto, usuario) VALUES (:producto, :usuario)');
                 $sql->bindParam(':producto', $productId);
                 $sql->bindParam(':usuario', $userId);
                 $sql->execute();
 
-                // Sumar un like sobre el número de likes que hay en la tabla productos.
                 $sql = $this->conn->prepare('UPDATE productos SET Numero_Likes = Numero_Likes + 1 WHERE ID = :id');
                 $sql->bindParam(':id', $productId);
                 $sql->execute();
@@ -135,22 +215,37 @@ class ProductController
         }
     }
 
+    /**
+     * Verifica si un usuario ha marcado como favorito un producto.
+     *
+     * @param mixed $productId Identificador del producto.
+     * @param mixed $userId    Identificador del usuario.
+     *
+     * @return bool True si el producto está marcado como favorito, false en caso contrario.
+     */
     public function isLikedByUser($productId, $userId)
-    { // Comprobar si un usuario ha dado like a un producto.
+    {
         try {
             $sql = $this->conn->prepare('SELECT * FROM favoritos WHERE producto = :producto AND usuario = :usuario');
             $sql->bindParam(':producto', $productId);
             $sql->bindParam(':usuario', $userId);
             $sql->execute();
-            return $sql->fetch(PDO::FETCH_ASSOC) ? true : false; // Devuelve true si el usuario ha dado like, false si no.
+            return $sql->fetch(PDO::FETCH_ASSOC) ? true : false;
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
             return false;
         }
     }
 
+    /**
+     * Elimina un producto.
+     *
+     * @param mixed $ID Identificador del producto.
+     *
+     * @return void
+     */
     public function deleteProduct($ID)
-    { //eliminar producto
+    {
         try {
             $conn = getDBConnection();
             $sql = $conn->prepare('DELETE FROM productos WHERE id = :id');
@@ -163,21 +258,27 @@ class ProductController
         }
     }
 
-    public function updateExpiredProducts() {
+    /**
+     * Actualiza los productos expirados.
+     *
+     * Para cada producto que ha expirado, obtiene la puja más alta, crea el pedido correspondiente y marca el producto como inactivo.
+     *
+     * @return void
+     */
+    public function updateExpiredProducts()
+    {
         $conn = getDBConnection();
         $sql = $conn->prepare('SELECT * FROM productos WHERE Fecha_fin_subasta < CURDATE() AND activo = "yes"');
         $sql->execute();
         $products = $sql->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($products as $product) {
-            // Obtener la puja más alta para el producto
             $sql = $conn->prepare('SELECT * FROM ofertas WHERE Producto = :producto ORDER BY Precio DESC LIMIT 1');
             $sql->bindParam(':producto', $product['ID']);
             $sql->execute();
             $bid = $sql->fetch(PDO::FETCH_ASSOC);
 
             if ($bid) {
-                // Crear un pedido en la tabla pedidos
                 $sql = $conn->prepare('INSERT INTO pedidos (idProducto, idUsuario, fechaEntrega) VALUES (:idProducto, :idUsuario, :fechaEntrega)');
                 $sql->bindParam(':idProducto', $product['ID']);
                 $sql->bindParam(':idUsuario', $bid['comprador']);
@@ -186,17 +287,24 @@ class ProductController
                 $sql->execute();
             }
 
-            // Actualizar el estado del producto a inactivo
             $sql = $conn->prepare('UPDATE productos SET activo = "no" WHERE ID = :id');
             $sql->bindParam(':id', $product['ID']);
             $sql->execute();
         }
     }
 
-    public function getUserFavoritesOrdered($userId, $order) {
+    /**
+     * Obtiene la lista de productos favoritos de un usuario ordenados por precio.
+     *
+     * @param mixed  $userId Identificador del usuario.
+     * @param string $order  Orden de clasificación ('asc' para ascendente, 'desc' para descendente).
+     *
+     * @return array|null Devuelve los productos favoritos ordenados por precio en caso de encontrarlos, o null en caso contrario.
+     */
+    public function getUserFavoritesOrdered($userId, $order)
+    {
         try {
-            $order = ($order === 'asc') ? 'ASC' : 'DESC'; // Si el orden es ascendente, se ordena de forma ascendente, si no, de forma descendente.
-
+            $order = ($order === 'asc') ? 'ASC' : 'DESC';
             $sql = $this->conn->prepare('SELECT p.* FROM productos p JOIN favoritos f ON p.id = f.producto WHERE f.usuario = :userId ORDER BY p.precio ' . $order);
             $sql->bindParam(':userId', $userId, PDO::PARAM_INT);
             $sql->execute();
@@ -206,5 +314,4 @@ class ProductController
             return null;
         }
     }
-    
 }
