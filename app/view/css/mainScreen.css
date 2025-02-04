@@ -63,7 +63,6 @@ a {
   box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
   /* Sombra más visible */
   color: #333;
-  margin: 40px;
   /* Reduce el margen vertical entre filas */
   flex-direction: column;
   align-items: baseline;
@@ -75,9 +74,9 @@ a {
   display: grid;
   width: 100%;
   margin: 30px auto 100px auto;
-  gap: 80px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  max-width: calc(3 * 280px + 2 * 80px + 120px);
+  gap: 55px;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  max-width: calc(3 * 330px + 2 * 90px);
 }
 
 .comunityFavorites {
@@ -190,9 +189,9 @@ a {
   display: grid;
   width: 100%;
   margin: 30px auto 100px auto;
-  gap: 60px 120px; /* 60px horizontal gap, 120px vertical gap */
+  gap: 70px;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  max-width: calc(3 * 280px + 2 * 60px + 120px);
+  max-width: calc(3 * 280px + 2 * 60px + 150px);
 }
 
 .categoryContainer .contentContainer {
