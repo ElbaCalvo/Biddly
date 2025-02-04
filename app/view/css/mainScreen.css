@@ -119,7 +119,7 @@ a {
 }
 
 .likeButton {
-  background-image: url("../../img/emptyHeart.png");
+  background-image: url("../../../img/emptyHeart.png");
   background-size: cover;
   /* Ajusta la imagen para cubrir todo el botón */
   background-position: center;

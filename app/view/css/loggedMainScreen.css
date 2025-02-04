@@ -29,7 +29,7 @@ body {
 
 .addButton:hover {
   transform: scale(1.1);
-  background-image: url("../../img/addProductFull.png");
+  background-image: url("../../../img/addProductFull.png");
   background-size: cover;
   /* Asegura que la imagen de fondo se ajuste al tamaño del botón */
   background-position: center;
@@ -136,7 +136,7 @@ a {
 }
 
 .likeButton {
-  background-image: url("../../img/emptyHeart.png");
+  background-image: url("../../../img/emptyHeart.png");
   background-size: cover;
   /* Ajusta la imagen para cubrir todo el botón */
   background-position: center;
@@ -149,7 +149,7 @@ a {
 }
 
 .likeButton.liked {
-  background-image: url("../../img/fullHeart.png");
+  background-image: url("../../../img/fullHeart.png");
 }
 
 .bidButton {

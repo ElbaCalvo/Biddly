@@ -155,7 +155,7 @@ input[type=number] {
 }
 
 .likeButton {
-  background-image: url("../../img/emptyHeart.png");
+  background-image: url("../../../img/emptyHeart.png");
   background-size: cover; /* Ajusta la imagen para cubrir todo el botón */
   background-position: center; /* Centra la imagen en el botón */
   width: 35px;
@@ -167,7 +167,7 @@ input[type=number] {
 }
 
 .likeButton.liked {
-  background-image: url("../../img/fullHeart.png");
+  background-image: url("../../../img/fullHeart.png");
 }
 
 .bidButton:hover {
