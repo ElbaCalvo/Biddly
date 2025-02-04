@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once 'app\controller\productController.php';
+require_once __DIR__ .'app\controller\productController.php';
 
 
 class ProductoTest extends TestCase
