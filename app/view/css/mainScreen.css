@@ -77,19 +77,16 @@ a {
   align-items: center;
 }
 
-
 .comunityFavorites {
   background: linear-gradient(45deg, #ff7f50, #ff4500);
   color: white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   font-size: 1.8em;
   padding: 8px 16px;
-
   border-radius: 8px;
   font-weight: bold;
   margin: 50px auto 20px auto;
 }
-
 
 .contentContainer img {
   width: 98%;
@@ -187,11 +184,12 @@ a {
 }
 
 .categoryContainer {
-  width: 1500px;
-  margin: 30px auto 100px auto;
-  gap: 40px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin: 30px auto 100px auto;
+  gap: 60px 120px; /* 60px horizontal gap, 120px vertical gap */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: calc(3 * 280px + 2 * 60px + 120px);
 }
 
 .categoryContainer .contentContainer {
