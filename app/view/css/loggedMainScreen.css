@@ -29,7 +29,6 @@ body {
 }
 
 .addButton:hover {
-
   transform: scale(1.1);
   background-image: url("../../../img/addProductFull.png");
   background-size: cover;
@@ -104,13 +103,12 @@ a {
 }
 
 .favoritesContainer {
-    display: grid;
-    width: 100%;
-    margin: 30px auto 100px auto;
-    gap: 60px 120px; /* 60px horizontal gap, 120px vertical gap */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    max-width: calc(3 * 280px + 2 * 60px + 120px);
-  
+  display: grid;
+  width: 100%;
+  margin: 30px auto 100px auto;
+  gap: 80px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: calc(3 * 280px + 2 * 80px + 120px);
 }
 
 .comunityFavorites {

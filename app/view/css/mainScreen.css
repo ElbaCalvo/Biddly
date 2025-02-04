@@ -26,6 +26,7 @@ body {
   font-size: 1em;
 }
 
+
 .topBarButtons:hover{
   background-color: #f67b21;
   cursor:pointer;
@@ -71,10 +72,12 @@ a {
 }
 
 .favoritesContainer {
-  display: flex;
-  justify-content: center;
-  /* Centra horizontalmente los elementos */
-  align-items: center;
+  display: grid;
+  width: 100%;
+  margin: 30px auto 100px auto;
+  gap: 80px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: calc(3 * 280px + 2 * 80px + 120px);
 }
 
 .comunityFavorites {
