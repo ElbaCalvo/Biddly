@@ -18,7 +18,7 @@
         $categoryId = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
 
         // Obtener los productos de la categoría seleccionada
-        $productos = $productController->getProductsByCategory($categoryId);
+        $productos = $productController->getProductsByCategory($categoryId, '');
 
         // Obtener la información de la categoría
         $category = $productController->getCategoryById($categoryId);

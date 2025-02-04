@@ -45,7 +45,7 @@
     }
 
 
-    $productos = $productController->getProductsByCategory($categoryId); // Obtener los productos de la categoría seleccionada
+    $productos = $productController->getProductsByCategory($categoryId, $_SESSION['usuario']); // Obtener los productos de la categoría seleccionada
     $category = $productController->getCategoryById($categoryId); // Obtener la información de la categoría
     ?>
     <header class="topBar">

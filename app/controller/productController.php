@@ -85,12 +85,13 @@ class ProductController
      *
      * @return array|null Arreglo de productos o null en caso de error.
      */
-    public function getProductsByCategory($categoryId)
+    public function getProductsByCategory($categoryId, $usuario)
     {
         try {
             $conn = getDBConnection();
-            $sql = $conn->prepare('SELECT * FROM productos WHERE categoria = :categoria AND activo = "yes"');
+            $sql = $conn->prepare('SELECT * FROM productos WHERE categoria = :categoria AND Vendedor != :usuario AND activo = "yes"');
             $sql->bindParam(':categoria', $categoryId);
+            $sql->bindParam(':usuario', $usuario);
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {

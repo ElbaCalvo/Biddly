@@ -66,7 +66,9 @@
                 <div class="closeButton">✕</div>
             </a>
 
-            <form class="profileForm" method="POST" action="profileScreen.php">
+            <?php
+            if ($_SESSION['usuario'] != 'Admin') {
+                echo '<form class="profileForm" method="POST" action="profileScreen.php">
 
                 <div class="email">
                     <label for="email">Correo electrónico</label>
@@ -105,8 +107,9 @@
 
                 <button type="submit" class="saveButton" name="updateUser">Guardar</button>
 
-            </form>
-
+            </form>';
+            }
+            ?>
             <form action="profileScreen.php" method="POST">
                 <input type="hidden" name="cerrarsesion">
                 <button type="submit" class="closeSession">Cerrar sesión</button>
