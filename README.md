@@ -31,16 +31,20 @@ El proyecto está en desarrollo.
 ## :camera: Vista previa de la Aplicación
 
 *Pantalla principal con opciones para explorar subastas.*
+<img src="https://raw.githubusercontent.com/ElbaCalvo/Biddly/refs/heads/main/img/capturas/pantalla_principal.png" alt="Biddly-Github" width="1000">
 
 *Vista de una subasta con productos y pujas en tiempo real.*
-
-*Pantalla mostrando el historial de pujas realizadas.*
+<img src="https://raw.githubusercontent.com/ElbaCalvo/Biddly/refs/heads/main/img/capturas/pujas.png" alt="Biddly-Github" width="1000">
 
 *Accede a tus productos y pujas favoritas fácilmente.*
+<img src="https://raw.githubusercontent.com/ElbaCalvo/Biddly/refs/heads/main/img/capturas/favoritos.png" alt="Biddly-Github" width="1000">
 
 *Formulario de autenticación para usuarios.*
+<img src="https://raw.githubusercontent.com/ElbaCalvo/Biddly/refs/heads/main/img/capturas/inicio_sesion.png" alt="Biddly-Github" width="1000">
 
 *Explora productos por categorías organizadas.*
+<img src="https://raw.githubusercontent.com/ElbaCalvo/Biddly/refs/heads/main/img/capturas/categorias.png" alt="Biddly-Github" width="1000">
+
 
 ## :gear: Tecnologías Utilizadas
 
