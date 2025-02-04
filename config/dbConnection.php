@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Establece una conexión a la base de datos.
+ *
+ * @return PDO|null Conexión PDO establecida o null en caso de error.
+ */
 function getDBConnection()
 {
     $host = "localhost";

@@ -23,7 +23,18 @@ body {
 .buttonSection .topBarButtons {
   justify-content: end;
   width: 100px;
-  margin: 0px;
+  margin: 10px;
+  padding: 10px;
+  transition: all 0.5s;
+  border-radius: 12px;
+  background-color: white;
+  border:solid 2px #f67b21;
+  font-size: 1em;
+}
+
+.topBarButtons:hover{
+  background-color: #f67b21;
+  cursor:pointer;
 }
 
 .topBar {

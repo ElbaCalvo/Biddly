@@ -2,12 +2,7 @@
 require_once "../../config/dbConnection.php";
 
 /**
- * Class Usuario
- *
- * This class represents a user in the Biddly application.
- * It provides methods for adding a new user, checking user credentials,
- * and setting user properties.
- *
+ * Clase Usuario que representa a un usuario en el sistema.
  */
 class Usuario {
     /**
@@ -36,54 +31,54 @@ class Usuario {
     private $telefono;
 
     /**
-     * Sets the username of the user.
+     * Establece el nombre de usuario.
      *
-     * @param string $usuario The username.
+     * @param string $usuario El nombre de usuario.
      */
     public function setUsuario($usuario) {
         $this->usuario = $usuario;
     }
 
     /**
-     * Sets the email address of the user.
+     * Establece el correo electrónico del usuario.
      *
-     * @param string $correo The email address.
+     * @param string $correo El correo electrónico.
      */
     public function setCorreo($correo) {
         $this->correo = $correo;
     }
 
     /**
-     * Sets the password of the user.
+     * Establece la contraseña del usuario.
      *
-     * @param string $contrasena The password.
+     * @param string $contrasena La contraseña.
      */
     public function setContrasena($contrasena) {
         $this->contrasena = $contrasena;
     }
 
     /**
-     * Sets the DNI (National Identification Number) of the user.
+     * Establece el DNI del usuario.
      *
-     * @param string $dni The DNI.
+     * @param string $dni El DNI.
      */
     public function setDni($dni) {
         $this->dni = $dni;
     }
 
     /**
-     * Sets the phone number of the user.
+     * Establece el teléfono del usuario.
      *
-     * @param string $telefono The phone number.
+     * @param string $telefono El teléfono.
      */
     public function setTelefono($telefono) {
         $this->telefono = $telefono;
     }
 
     /**
-     * Adds a new user to the database.
+     * Añade un nuevo usuario a la base de datos.
      *
-     * @return bool Returns true if the user is added successfully, false otherwise.
+     * @return bool True si el usuario fue añadido correctamente, false en caso contrario.
      */
     public function addUsuario() {
         try {
@@ -103,9 +98,9 @@ class Usuario {
     }
 
     /**
-     * Checks if the provided username and password match an existing user in the database.
+     * Comprueba si un usuario existe en la base de datos.
      *
-     * @return bool Returns true if the credentials are valid, false otherwise.
+     * @return bool True si el usuario existe, false en caso contrario.
      */
     public function comprobarUsuario() {
         try {

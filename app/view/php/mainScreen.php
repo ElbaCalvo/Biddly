@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biddly</title>
     <link rel="stylesheet" href="mainScreen.css">
+
 </head>
 
 <body>
@@ -25,8 +26,8 @@
         </div>
 
         <input class="searchBar" type="text" placeholder="Empieza a buscar por categoria o nombre...">
-        <a href="signInScreen.php"><img class="topBarButtons" src="../../img/signin.png" alt=""></a>
-        <a href="registerScreen.php"><img class="topBarButtons" src="../../img/register.png" alt=""></a>
+        <a href="signInScreen.php"><button class="topBarButtons">Sign In</button></a>
+        <a href="registerScreen.php"><button class="topBarButtons">Register</button></a>
     </header>
 
     <div class="orangeLine"></div>
