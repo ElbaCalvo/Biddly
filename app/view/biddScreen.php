@@ -63,7 +63,7 @@ $bids = $bidController->getBidsByProduct($productId);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pujas</title>
-    <link rel="stylesheet" href="biddScreen.css">
+    <link rel="stylesheet" href="css/biddScreen.css">
 </head>
 
 <body>
