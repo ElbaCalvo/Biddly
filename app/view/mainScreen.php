@@ -16,7 +16,7 @@
 
         $productController->updateExpiredProducts();
 
-        $productos = $productController->getTopLikedProducts(); // Obtener los 3 productos con más likes.
+        $productos = $productController->getTopLikedProducts(''); // Obtener los 3 productos con más likes.
     ?>
  
     <!-- Logo, barra de busqueda y botones de inicio de sesión y registro. -->

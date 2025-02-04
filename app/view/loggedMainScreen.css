@@ -1,267 +1,268 @@
 body {
-    margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .logo {
-    width: 200px;
+  width: 200px;
 }
 
 .logoContainer {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 10px;
-    padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .buttonSection {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    /* Espacio entre la imagen y el nombre */
-    margin-right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Espacio entre la imagen y el nombre */
+  margin-right: 50px;
 }
 
 .addButton {
-    width: 37px;
-    height: 37px;
+  width: 37px;
+  height: 37px;
 }
 
 .addButton:hover {
-    transform: scale(1.1);
-    background-image: url('../../img/addProductFull.png');
-    background-size: cover;
-    /* Asegura que la imagen de fondo se ajuste al tamaño del botón */
-    background-position: center;
-    /* Centra la imagen de fondo */
+  transform: scale(1.1);
+  background-image: url("../../img/addProductFull.png");
+  background-size: cover;
+  /* Asegura que la imagen de fondo se ajuste al tamaño del botón */
+  background-position: center;
+  /* Centra la imagen de fondo */
 }
 
 .profileImage {
-    width: 43px;
-    height: 40px;
+  width: 43px;
+  height: 40px;
 }
 
 .favoritesImage {
-    width: 43px;
-    height: 40px;
+  width: 43px;
+  height: 40px;
 }
 
 .profileName {
-    font-size: 16px;
-    color: #4d4c4c;
-    font-weight: bold;
+  font-size: 16px;
+  color: #4d4c4c;
+  font-weight: bold;
 }
 
 .topBar {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .searchBar {
-    margin: 0 200px;
-    padding: 8px;
-    flex: 1;
-    font-size: 16px;
-    border-radius: 12px;
-    border: solid 1px black;
+  margin: 0 200px;
+  padding: 8px;
+  flex: 1;
+  font-size: 16px;
+  border-radius: 12px;
+  border: solid 1px black;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 /* Tarjeta de "Favoritos de la comunidad" */
 .contentContainer {
-    display: flex;
-    width: 320px;
-    background-color: #ffefe6;
-    border: 1px solid #b8b8b8;
-    border-radius: 10px;
-    padding: 16px;
-    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
-    /* Sombra más visible */
-    color: #333;
-    margin: 40px;
-    /* Reduce el margen vertical entre filas */
-    flex-direction: column;
-    align-items: baseline;
+  display: flex;
+  width: 320px;
+  background-color: #ffefe6;
+  border: 1px solid #b8b8b8;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.3);
+  /* Sombra más visible */
+  color: #333;
+  margin: 40px;
+  /* Reduce el margen vertical entre filas */
+  flex-direction: column;
+  align-items: baseline;
+  /* Anima el efecto*/
+  transition: all 0.5s;
 }
 
 .favoritesContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .comunityFavorites {
-    font-size: 1.8em;
-    text-decoration: wavy;
-    background-color: #fff;
-    color: #ff813f;
-    padding: 4px 8px;
-    border: 4px solid #ff813f;
-    border-radius: 8px;
-    font-weight: bold;
-    margin: 50px auto 20px auto;
+  background: linear-gradient(45deg, #ff7f50, #ff4500);
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.8em;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 50px auto 20px auto;
 }
 
 .contentContainer img {
-    width: 98%;
-    height: 250px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    border: 2px solid #a8a8a8;
+  width: 98%;
+  height: 250px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 2px solid #a8a8a8;
 }
 
 .price {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #333;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
 }
 
 .cat {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #333;
-    margin: auto;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+  margin: auto;
 }
 
 .productName {
-    font-weight: bold;
-    color: #333;
-    margin: 4px 0;
+  font-weight: bold;
+  color: #333;
+  margin: 4px 0;
 }
 
 .likeButton {
-    background-image: url("../../img/emptyHeart.png");
-    background-size: cover;
-    /* Ajusta la imagen para cubrir todo el botón */
-    background-position: center;
-    /* Centra la imagen en el botón */
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    border: none;
-    border-radius: 50%;
+  background-image: url("../../img/emptyHeart.png");
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el botón */
+  background-position: center;
+  /* Centra la imagen en el botón */
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
 }
 
 .likeButton.liked {
-    background-image: url("../../img/fullHeart.png");
+  background-image: url("../../img/fullHeart.png");
 }
 
 .bidButton {
-    font-size: 1em;
-    background-color: #ff813f;
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 8px 0;
-    width: 320px;
+  font-size: 1em;
+  background-color: #ff813f;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 8px 0;
+  width: 320px;
 }
 
 .deleteButton {
-    font-size: 1em;
-    background-color: red;
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    /*para que se vea un dedo*/
-    margin: 8px 0;
-    width: 100%;
+  font-size: 1em;
+  background-color: red;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  /*para que se vea un dedo*/
+  margin: 8px 0;
+  width: 100%;
 }
 
 .updateButton {
-    font-size: 1em;
-    background-color: rgb(0, 76, 255);
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    /*para que se vea un dedo*/
-    margin: 8px 0;
-    width: 100%;
+  font-size: 1em;
+  background-color: rgb(0, 76, 255);
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  /*para que se vea un dedo*/
+  margin: 8px 0;
+  width: 100%;
 }
 
 .bidButton:hover {
-    background-color: #f67b21;
+  background-color: #f67b21;
 }
 
 .description {
-    background-color: #fff;
-    padding: 8px;
-    border: 1px solid #b8b8b8;
-    border-radius: 4px;
-    border-radius: 10px;
-    margin-top: 8px;
-    width: 94%;
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
+  border-radius: 10px;
+  margin-top: 8px;
+  width: 94%;
 }
 
 .description p {
-    margin-top: 8px;
-    margin-bottom: 2px;
-    font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  font-size: 14px;
 }
 
 .bidTime {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 8px;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 8px;
 }
 
 .orangeLine2 {
-    background-color: #f67b21;
-    min-height: 3px;
-    width: 80%;
-    margin: 10px auto;
-    border-radius: 50px;
+  background-color: #f67b21;
+  min-height: 3px;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 50px;
 }
 
 .orangeLine {
-    min-height: 5px;
-    background-color: #f67b21;
-    width: 100%;
+  min-height: 5px;
+  background-color: #f67b21;
+  width: 100%;
 }
 
 .categoryContainer {
-    width: 1500px;
-    margin: 30px auto 100px auto;
-    gap: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  width: 1500px;
+  margin: 30px auto 100px auto;
+  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .categoryContainer .contentContainer {
-    margin: auto;
-    background-color: #fde4d5
+  margin: auto;
+  background-color: #fde4d5;
 }
 
 .categoryContainer img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    border: 2px solid #a8a8a8;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 2px solid #a8a8a8;
 }
 
 .contentContainer:hover {
-    border: solid 2px #f67b21;
-    transform: scale(1.2);
-    cursor: pointer;
+  border: solid 2px #f67b21;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .updateForm {
-    margin-top: 8px;
-    margin-bottom: 2px;
-    font-size: 14px;
-    display: block;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  font-size: 14px;
+  display: block;
 }

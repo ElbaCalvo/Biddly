@@ -34,7 +34,9 @@
         }
     }
 
-    $productos = $productController->getTopLikedProducts(); // Obtener los 3 productos con más likes.
+    $productos = $productController->getTopLikedProducts($_SESSION['usuario']); // Obtener los 3 productos con más likes.
+
+
     ?>
 
     <!-- Logo, barra de busqueda y botones de inicio de favoritos y usuario. -->
@@ -72,7 +74,7 @@
         foreach ($productos as $producto) {
             $liked = $productController->isLikedByUser($producto['ID'], $_SESSION['usuario']);
             $likeButtonClass = $liked ? 'likeButton liked' : 'likeButton';
-
+            
             echo '
             <div class="contentContainer" data-product-id="' . $producto['ID'] . '">
                 <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">

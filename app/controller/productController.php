@@ -160,10 +160,11 @@ class ProductController
      *
      * @return array|null Devuelve los productos por los mas gustados en caso de encontrarlos, o null en caso contrario.
      */
-    public function getTopLikedProducts()
+    public function getTopLikedProducts($usuario)
     {
         try {
-            $sql = $this->conn->prepare('SELECT * FROM productos where activo = "yes" ORDER BY Numero_Likes DESC LIMIT 3');
+            $sql = $this->conn->prepare('SELECT * FROM productos where activo = "yes" AND Vendedor != :vendedor ORDER BY Numero_Likes DESC LIMIT 3');
+            $sql->bindParam(':vendedor', $usuario);
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
