@@ -15,7 +15,7 @@ Con una interfaz intuitiva y un sistema de pujas dinámico, ideal para quienes b
 El proyecto está en desarrollo.
 
 ## :clipboard: Características principales de la web
-- **Publicación de productos** con imágenes y descripción detallada..
+- **Publicación de productos** con imágenes y descripción detallada.
 - **Pujas** en tiempo real.
 - **Historial de pujas** para seguimiento del producto.
 - **Categorías organizadas** para encontrar productos fácilmente.
