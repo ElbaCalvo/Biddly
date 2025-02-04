@@ -78,10 +78,10 @@ a {
 }
 
 .comunityFavorites {
+  background: linear-gradient(45deg, #ff7f50, #ff4500);
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   font-size: 1.8em;
-  text-decoration: wavy;
-  background-color: #fff;
-  color: #ff813f;
   padding: 4px 8px;
   border: 4px solid #ff813f;
   border-radius: 8px;
