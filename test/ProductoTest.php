@@ -1,8 +1,6 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-// use PHPUnit\Framework\DBTestCase;
-// use PDO;
 
 require_once 'app\controller\productController.php';
 
@@ -10,7 +8,7 @@ require_once 'app\controller\productController.php';
 class ProductoTest extends TestCase
 {
 
-    public function testGetProductsByCategory()
+    public function testGetCategoryById()
     {
 
         $productController = new ProductController();
