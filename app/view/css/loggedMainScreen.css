@@ -25,9 +25,11 @@ body {
 .addButton {
   width: 37px;
   height: 37px;
+  transition: all 0.3s;
 }
 
 .addButton:hover {
+
   transform: scale(1.1);
   background-image: url("../../../img/addProductFull.png");
   background-size: cover;
@@ -39,11 +41,21 @@ body {
 .profileImage {
   width: 43px;
   height: 40px;
+  transition: all 0.3s;
+}
+
+.profileImage:hover{
+transform: scale(1,1.2);
 }
 
 .favoritesImage {
   width: 43px;
   height: 40px;
+  transition: all 0.3s;
+}
+
+.favoritesImage:hover {
+transform: scale(1,1.2);
 }
 
 .profileName {

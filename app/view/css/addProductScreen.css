@@ -28,11 +28,21 @@ body {
 .profileImage {
   width: 43px;
   height: 40px;
+  transition: all 0.3s;
+}
+
+.profileImage:hover{
+transform: scale(1,1);
 }
 
 .favoritesImage {
   width: 43px;
   height: 40px;
+  transition: all 0.3s;
+}
+
+.favoritesImage:hover {
+transform: scale(1,1);
 }
 
 .profileName {

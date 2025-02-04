@@ -54,13 +54,19 @@
         </div>
 
         <div class="buttonSection">
+            <?php
+            if (!($_SESSION["usuario"] == "Admin")) {
+                echo '<a href="addProductScreen.php"><img src="../../img/addProductEmpty.png" alt="Boton añadir prducto"
+                    class="addButton"></a>
             <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos"
-                    class="favoritesImage"></a>
+                    class="favoritesImage"></a>';
+            } ?>
             <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
                     class="profileImage"></a>
             <?php
             echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
             ?>
+
         </div>
     </header>
 
