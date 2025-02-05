@@ -142,7 +142,7 @@ class ProductController
         }
     }
 
-        /**
+    /**
      * Obtiene un producto por su vendedor.
      *
      * @param mixed $seller Identificador del vendedor.
@@ -155,6 +155,28 @@ class ProductController
             $conn = getDBConnection();
             $sql = $conn->prepare('SELECT * FROM productos WHERE Vendedor = :vendedor AND activo = "yes"');
             $sql->bindParam(':vendedor', $seller);
+            $sql->execute();
+            return $sql->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Error: ' . $e->getMessage();
+            return null;
+        }
+    }
+
+    /**
+     * Obtiene un producto por su vendedor.
+     *
+     * @param mixed $user Identificador del vendedor.
+     * 
+     * @return array|null Devuelve los productos en caso de encontrarlos, o null en caso contrario.
+     */
+    public function getProductBidded($user)
+    {
+        try {
+            $conn = getDBConnection();
+            $sql = $conn->prepare('SELECT * FROM productos JOIN ofertas
+                                    ON productos.ID = ofertas.producto WHERE ofertas.comprador = :user GROUP BY productos.ID;');
+            $sql->bindParam(':user', $user);
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
