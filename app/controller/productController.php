@@ -143,7 +143,7 @@ class ProductController
     }
 
     /**
-     * Obtiene un producto por su vendedor.
+     * Obtiene productos por su vendedor.
      *
      * @param mixed $seller Identificador del vendedor.
      *
@@ -164,9 +164,9 @@ class ProductController
     }
 
     /**
-     * Obtiene un producto por su vendedor.
+     * Obtiene los productos pujados por el usuario.
      *
-     * @param mixed $user Identificador del vendedor.
+     * @param mixed $user Identificador del usuario.
      * 
      * @return array|null Devuelve los productos en caso de encontrarlos, o null en caso contrario.
      */
