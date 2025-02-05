@@ -58,7 +58,7 @@
     <div class="mainContent">
         <!-- Contenedor del formulario de editar perfil -->
         <div class="profileContainer">
-            <a href="loggedMainScreen.php">
+            <a href="profile.php">
                 <div class="closeButton">✕</div>
             </a>
 
