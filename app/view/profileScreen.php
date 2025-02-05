@@ -20,11 +20,7 @@
         exit();
     }
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cerrarsesion'])) {
-        session_destroy();
-        header("Location: mainScreen.php");
-        exit();
-    } else if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['updateUser'])) {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['updateUser'])) {
 
         $contrasena = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
         $correo = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -110,11 +106,6 @@
             </form>';
             }
             ?>
-            <form action="profileScreen.php" method="POST">
-                <input type="hidden" name="cerrarsesion">
-                <button type="submit" class="closeSession">Cerrar sesión</button>
-            </form>
-
         </div>
     </div>
 </body>

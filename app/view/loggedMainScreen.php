@@ -55,7 +55,7 @@
             <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos"
                     class="favoritesImage"></a>';
             } ?>
-            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
+            <a href="profile.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
                     class="profileImage"></a>
             <?php
             echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
