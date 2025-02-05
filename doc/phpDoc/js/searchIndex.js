@@ -81,6 +81,16 @@ Search.appendIndex(
             "summary": "Obtiene\u0020un\u0020producto\u0020por\u0020su\u0020identificador.",
             "url": "classes/ProductController.html#method_getProductById"
         },                {
+            "fqsen": "\\ProductController\u003A\u003AgetProductBySeller\u0028\u0029",
+            "name": "getProductBySeller",
+            "summary": "Obtiene\u0020productos\u0020por\u0020su\u0020vendedor.",
+            "url": "classes/ProductController.html#method_getProductBySeller"
+        },                {
+            "fqsen": "\\ProductController\u003A\u003AgetProductBidded\u0028\u0029",
+            "name": "getProductBidded",
+            "summary": "Obtiene\u0020los\u0020productos\u0020pujados\u0020por\u0020el\u0020usuario.",
+            "url": "classes/ProductController.html#method_getProductBidded"
+        },                {
             "fqsen": "\\ProductController\u003A\u003AupdateProductPrice\u0028\u0029",
             "name": "updateProductPrice",
             "summary": "Actualiza\u0020el\u0020precio\u0020de\u0020un\u0020producto.",

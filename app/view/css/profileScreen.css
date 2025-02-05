@@ -247,12 +247,12 @@ form{
     grid-area: misProductos;
 }
 
-.cerrar {
+.cerrar{
     grid-area: cerrar;
     width: auto;
 }
 
-a {
+a{
     text-decoration: none;
 }
 

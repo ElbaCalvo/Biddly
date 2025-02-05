@@ -58,7 +58,7 @@
     <div class="mainContent">
         <!-- Contenedor del formulario de editar perfil -->
         <div class="profileContainer">
-            <a href="loggedMainScreen.php">
+            <a href="profile.php">
                 <div class="closeButton">✕</div>
             </a>
 
@@ -68,37 +68,37 @@
 
                 <div class="email">
                     <label for="email">Correo electrónico</label>
-                    <input type="email" name="email" value="sonia@gmail.com" required>
+                    <input type="email" name="email" required>
                 </div>
 
                 <div class="password">
                     <label for="password">Contraseña</label>
-                    <input type="password" name="password" placeholder="••••••••" required>
+                    <input type="password" name="password"  required>
                 </div>
 
                 <div class="password2">
                     <label for="repeatPassword">Repetir contraseña</label>
-                    <input type="password" name="repeatPassword" placeholder="••••••••" required>
+                    <input type="password" name="repeatPassword"  required>
                 </div>
 
                 <div class="dni">
                     <label for="dni">DNI</label>
-                    <input type="text" name="dni" placeholder="12345678A" maxlength="9" required>
+                    <input type="text" name="dni" maxlength="9" required>
                 </div>
 
                 <div class="phone">
                     <label for="phone">Teléfono</label>
-                    <input type="tel" name="phone" placeholder="123456789" maxlength="9" required>
+                    <input type="tel" name="phone" maxlength="9" required>
                 </div>
 
                 <div class="address">
                     <label for="address">Dirección</label>
-                    <input type="text" name="address" placeholder="Calle Falsa 123" maxlength="20" required>
+                    <input type="text" name="address" maxlength="20" required>
                 </div>
 
                 <div class="bankAccount">
                     <label for="bankAccount">Cuenta bancaria</label>
-                    <input type="text" name="bankAccount" placeholder="ES12 3456 7891 2345 6789" maxlength="24" required>
+                    <input type="text" name="bankAccount" maxlength="24" required>
                 </div>
 
                 <button type="submit" class="saveButton" name="updateUser">Guardar</button>

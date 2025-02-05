@@ -75,7 +75,7 @@ $bids = $bidController->getBidsByProduct($productId);
         <div class="buttonSection">
             <a href="favoritesScreen.php"><img src="../../img/favoritesIcon.png" alt="Imagen de favoritos"
                     class="favoritesImage"></a>
-            <a href="profileScreen.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
+            <a href="profile.php"><img src="../../img/logoUser.png" alt="Imagen de perfil"
                     class="profileImage"></a>
             <?php
             echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
@@ -104,16 +104,20 @@ $bids = $bidController->getBidsByProduct($productId);
         </div>
         <div class="contentRight">
             <div class="price">' . $producto['Precio'] . '€</div>
-            <div class="productName">' . $producto['Nombre'] . '</div>
+            <div class="productName">' . $producto['Nombre'] . '</div>';
+    if (!($producto['Vendedor'] == $_SESSION['usuario'])) {
+        echo '
             <form method="POST" action="biddScreen.php?product_id=' . $producto['ID'] . '#product-' . $producto['ID'] . '">
                 <input type="hidden" name="productId" value="' . $producto['ID'] . '">
                 <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
             </form>
-            <form method="POST" action="biddScreen.php?product_id=' . $producto['ID'] . '">
+                <form method="POST" action="biddScreen.php?product_id=' . $producto['ID'] . '">
                 <input type="hidden" name="productId" value="' . $producto['ID'] . '">
                 <input type="number" name="precio" placeholder="Introduce tu puja" required>
                 <button type="submit" name="addBid" class="bidButton">Pujar</button>
-            </form>
+            </form>';
+    }
+    echo '
             <div class="orangeLine2"></div>
             <strong>Registro de pujas</strong><br>
             <div class="biddingRegister">';

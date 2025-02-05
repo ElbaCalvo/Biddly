@@ -2,7 +2,6 @@
 body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
 }
 
 .logo {
@@ -283,4 +282,3 @@ input[type=number] {
   border: solid 2px #f67b21;
 }
 
-/*# sourceMappingURL=biddScreen.css.map */

@@ -35,8 +35,7 @@
     }
 
     $userId = $_SESSION['usuario'];
-    $order = isset($_GET['orden']) ? $_GET['orden'] : 'desc'; // Obtener el orden de los productos, si no se especifica, se ordenan de forma descendente.
-    $productos = $productController->getUserFavoritesOrdered($userId, $order);
+    $productos = $productController->getProductBidded($userId);
 
     ?>
     <header class="topBar">
@@ -56,34 +55,18 @@
     </header>
 
     <div class="orangeLine"></div>
-    <div class="favoritesForm">
-        <form method="GET" action="favoritesScreen.php" id="orderForm">
-            Favoritos
-            <img src="../../img/orderIcon.png" alt="icono de Orden">
-            <select class="order" name="orden" onchange="document.getElementById('orderForm').submit();">
-                <option value="desc" <?php echo $order == 'desc' ? 'selected' : ''; ?>>Precio más alto primero</option>
-                <option value="asc" <?php echo $order == 'asc' ? 'selected' : ''; ?>>Precio más bajo primero</option>
-            </select>
-        </form>
-    </div>
+    <div class="favoritesForm">Mis Pujas</div>
 
     <?php
     if (!empty($productos)) {
         foreach ($productos as $producto) {
-            $liked = $productController->isLikedByUser($producto['ID'], $userId);
-            $likeButtonClass = $liked ? 'likeButton liked' : 'likeButton';
-
             echo '
             <div class="contentContainer">
                 <img src="' . $producto['URL_Imagen'] . '" alt="' . $producto['Nombre'] . '">
                 <div class="info">
                     <div class="productName">' . $producto['Nombre'] . '</div>
                     <div class="price">' . $producto['Precio'] . '€</div>
-                    <form method="POST" action="favoritesScreen.php">
-                        <input type="hidden" name="productId" value="' . $producto['ID'] . '">
-                        <button type="submit" name="manageLikes" class="' . $likeButtonClass . '"></button>
-                    </form>
-                    <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>
+                    <a href="biddScreen.php?product_id=' . $producto['producto'] . '"><button class="bidButton">Pujar</button></a>
                     <div class="description">
                         <strong>Descripción</strong><br>
                         <p>' . $producto['Descripcion'] . '</p>

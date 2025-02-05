@@ -44,9 +44,9 @@
 
     <div class="profileContent">
         <!-- Contenedor del formulario de editar perfil -->
-        <a href="profileScreen.php" class="saveButton2 perfil">Editar perfil</button>
-        <a href="myBidsScreen.php" class="saveButton2 misPujas">Mis pujas</button>
-        <a href="myProductsScreem.php" class="saveButton2 misProductos">Mis productos</button>
+        <a href="profileScreen.php" class="saveButton2 perfil">Editar perfil</a>
+        <a href="misPujas.php" class="saveButton2 misPujas">Mis pujas</a>
+        <a href="misProductos.php" class="saveButton2 misProductos">Mis productos</a>
         <a href="profile.php?cerrarsesion=true" class="closeSession cerrar">Cerrar sesión</a>
     </div>
 </body>
