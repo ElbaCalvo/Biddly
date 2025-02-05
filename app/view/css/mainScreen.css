@@ -26,7 +26,6 @@ body {
   font-size: 1em;
 }
 
-
 .topBarButtons:hover{
   background-color: #f67b21;
   cursor:pointer;
@@ -35,16 +34,14 @@ body {
 .topBar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 20px;
 }
 
-.searchBar {
-  margin: 0 200px;
-  padding: 8px;
-  flex: 1;
-  font-size: 16px;
-  border-radius: 12px;
-  border: solid 1px black;
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 a {

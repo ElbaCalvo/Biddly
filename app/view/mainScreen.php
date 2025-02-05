@@ -18,16 +18,17 @@
 
         $productos = $productController->getTopLikedProducts(''); // Obtener los 3 productos con más likes.
     ?>
- 
+
     <!-- Logo, barra de busqueda y botones de inicio de sesión y registro. -->
     <header class="topBar">
         <div class="logoContainer">
             <a href="mainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
         </div>
 
-        <input class="searchBar" type="text" placeholder="Empieza a buscar por categoria o nombre...">
-        <a href="signInScreen.php"><button class="topBarButtons">Sign In</button></a>
-        <a href="registerScreen.php"><button class="topBarButtons">Register</button></a>
+        <div class="buttonContainer">
+            <a href="signInScreen.php"><button class="topBarButtons">Sign In</button></a>
+            <a href="registerScreen.php"><button class="topBarButtons">Register</button></a>
+        </div>
     </header>
 
     <div class="orangeLine"></div>

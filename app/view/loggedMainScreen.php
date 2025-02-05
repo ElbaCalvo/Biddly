@@ -45,8 +45,6 @@
             <a href="loggedMainScreen.php"><img class="logo" src="../../img/logoText.png" alt="Logo Biddly"></a>
         </div>
 
-        <input class="searchBar" type="text" placeholder="Empieza a buscar por categoria o nombre...">
-
         <div class="buttonSection">
             <?php
             if (!($_SESSION["usuario"] == "Admin")) {
@@ -60,7 +58,6 @@
             <?php
             echo '<span class="profileName">' . $_SESSION['usuario'] . '</span>';
             ?>
-
         </div>
     </header>
 
