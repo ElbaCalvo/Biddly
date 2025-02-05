@@ -67,7 +67,7 @@
                 <div class="info">
                     <div class="productName">' . $producto['Nombre'] . '</div>
                     <div class="price">' . $producto['Precio'] . '€</div>
-                    <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Pujar</button></a>
+                    <a href="biddScreen.php?product_id=' . $producto['ID'] . '"><button class="bidButton">Ver Pujas</button></a>
                     <div class="description">
                         <strong>Descripción</strong><br>
                         <p>' . $producto['Descripcion'] . '</p>
