@@ -57,15 +57,6 @@ body {
   justify-content: space-between;
 }
 
-.searchBar {
-  margin: 0 100px;
-  width: 400px;
-  padding: 8px;
-  font-size: 16px;
-  border-radius: 12px;
-  border: solid 1px black;
-}
-
 .favoritesForm {
   font-size: 1.4em;
   font-family: Arial, Helvetica, sans-serif;
@@ -116,8 +107,9 @@ body {
 }
 
 .contentContainer img {
-  width: 70%;
-  height: 95%;
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 12px;
   border: 2px solid #a8a8a8;

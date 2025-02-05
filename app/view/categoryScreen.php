@@ -42,7 +42,6 @@
 
     <div class="categoryForm">
         <form action="">
-            <input class="searchBar" type="search" name="searchBar">
             <img src="../../img/orderIcon.png" alt="icono de Orden">
             <select class="order" name="orden">
                 <option>Precio más alto primero</option>

@@ -75,16 +75,15 @@
         <?php echo '<div class="categoryType">' . $category['Nombre'] . '</div>'; ?>
     </div>
 
-    <!-- <div class="categoryForm"> por ahora no se añade
+    <div class="categoryForm">
         <form action="">
-            <input class="searchBar" type="search" name="searchBar">
             <img src="../../img/orderIcon.png" alt="icono de Orden">
             <select class="order" name="orden">
                 <option value="DESC">Precio más alto primero</option>
                 <option value="ASC">Precio más bajo primero</option>
             </select>
         </form>
-    </div> -->
+    </div>
 
     <?php
     foreach ($productos as $producto) {

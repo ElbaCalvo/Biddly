@@ -59,7 +59,6 @@
     <div class="favoritesForm">
         <form method="GET" action="favoritesScreen.php" id="orderForm">
             Favoritos
-            <input class="searchBar" type="search" name="searchBar">
             <img src="../../img/orderIcon.png" alt="icono de Orden">
             <select class="order" name="orden" onchange="document.getElementById('orderForm').submit();">
                 <option value="desc" <?php echo $order == 'desc' ? 'selected' : ''; ?>>Precio más alto primero</option>
