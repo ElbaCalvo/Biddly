@@ -45,6 +45,14 @@ El proyecto está en desarrollo.
 *Explora productos por categorías organizadas.*
 <img src="https://raw.githubusercontent.com/ElbaCalvo/Biddly/refs/heads/main/img/capturas/categorias.png" alt="Biddly-Github" width="1000">
 
+*Pantalla de las pujas que has realizado.*
+<img src="https://raw.githubusercontent.com/ElbaCalvo/Biddly/refs/heads/main/img/capturas/mis_pujas.png" alt="Biddly-Github" width="1000">
+
+*Pantalla de tus productos subidos.*
+<img src="https://raw.githubusercontent.com/ElbaCalvo/Biddly/refs/heads/main/img/capturas/mis_productos.png" alt="Biddly-Github" width="1000">
+
+*Pantalla para editar tu perfil.*
+<img src="https://raw.githubusercontent.com/ElbaCalvo/Biddly/refs/heads/main/img/capturas/editar_perfil.png" alt="Biddly-Github" width="1000">
 
 ## :gear: Tecnologías Utilizadas
 
