@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addBid'])) {
     }
 
     // Verificar si la puja es válida
-    if (($highestBid > 0 && $precio > $highestBid) || ($highestBid == 0 && $precio > $producto['Precio'])) {
+    if (($highestBid >= 0 && $precio > $highestBid) || ($highestBid == 0 && $precio > $producto['Precio'])) {
         $bidController->addBid($productId, $comprador, $precio);
         $productController->updateProductPrice($productId, $precio);
         header("Location: biddScreen.php?product_id=" . $productId . "#product-" . $productId);
